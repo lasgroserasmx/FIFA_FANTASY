@@ -1,6 +1,6 @@
 'use client'
 import { useState } from 'react'
-import { Shield, Star, Activity, Check, X, Edit } from 'lucide-react'
+import { Shield, Star, Activity, Check, X, Edit, RefreshCw } from 'lucide-react'
 import { Card, CardContent } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
@@ -44,12 +44,37 @@ function AdminPartidos() {
     onError: () => toast.error('Error al actualizar el partido'),
   })
 
+  const { mutate: sincronizarAPI, isPending: sincronizando } = useMutation({
+    mutationFn: async (mode: 'live' | 'all') => {
+      const res = await fetch(`/api/sync-matches?mode=${mode}`, { method: 'POST' })
+      if (!res.ok) throw new Error('Error al sincronizar')
+      return res.json()
+    },
+    onSuccess: (data) => {
+      qc.invalidateQueries({ queryKey: ['admin-matches'] })
+      toast.success(`Sincronizados: ${data.matchesUpdated} partidos, ${data.eventsAdded} eventos`)
+    },
+    onError: () => toast.error('Error al conectar con API-Football. ¿Tienes la API key configurada?'),
+  })
+
   const [editando, setEditando] = useState<string | null>(null)
   const [editData, setEditData] = useState<{ home: string; away: string; status: string }>({ home: '0', away: '0', status: 'scheduled' })
 
   return (
     <div className="space-y-3">
-      <h2 className="font-semibold">Gestión de partidos ({partidos?.length ?? 0})</h2>
+      <div className="flex items-center justify-between flex-wrap gap-2">
+        <h2 className="font-semibold">Gestión de partidos ({partidos?.length ?? 0})</h2>
+        <div className="flex gap-2">
+          <Button size="sm" variant="outline" disabled={sincronizando} onClick={() => sincronizarAPI('live')}>
+            <RefreshCw className={`h-3 w-3 mr-1 ${sincronizando ? 'animate-spin' : ''}`} />
+            Sync en vivo
+          </Button>
+          <Button size="sm" variant="outline" disabled={sincronizando} onClick={() => sincronizarAPI('all')}>
+            <RefreshCw className={`h-3 w-3 mr-1 ${sincronizando ? 'animate-spin' : ''}`} />
+            Sync completo
+          </Button>
+        </div>
+      </div>
       <div className="space-y-2">
         {partidos?.map(m => (
           <Card key={m.id}>
