@@ -12,9 +12,20 @@ TRUNCATE public.matches CASCADE;
 TRUNCATE public.players CASCADE;
 TRUNCATE public.teams CASCADE;
 
--- Añadir valores al enum match_stage para el formato del Mundial 2026
-ALTER TYPE public.match_stage ADD VALUE IF NOT EXISTS 'round_of_32';
-ALTER TYPE public.match_stage ADD VALUE IF NOT EXISTS 'third_place';
+-- Ampliar el enum match_stage reconstruyéndolo (ADD VALUE no se puede usar
+-- en la misma transacción que los INSERTs que lo usan — Postgres limita esto).
+ALTER TABLE public.matches ALTER COLUMN stage TYPE text;
+DROP TYPE public.match_stage;
+CREATE TYPE public.match_stage AS ENUM (
+  'group',
+  'round_of_32',
+  'round_of_16',
+  'quarter_final',
+  'semi_final',
+  'third_place',
+  'final'
+);
+ALTER TABLE public.matches ALTER COLUMN stage TYPE public.match_stage USING stage::public.match_stage;
 
 
 -- ============================================================
