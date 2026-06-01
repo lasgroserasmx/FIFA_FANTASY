@@ -1,0 +1,118 @@
+import { createClient } from '@/lib/supabase/client'
+import type { League, LeagueMember, CreateLeagueInput } from '@/types'
+
+export async function getLeagues(): Promise<League[]> {
+  const supabase = createClient()
+  const { data: { user } } = await supabase.auth.getUser()
+  if (!user) return []
+
+  const { data, error } = await supabase
+    .from('league_members')
+    .select('league:leagues(*)')
+    .eq('user_id', user.id)
+
+  if (error) throw error
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  return (data?.map((d: any) => d.league) ?? []) as League[]
+}
+
+export async function getLeague(id: string): Promise<League | null> {
+  const supabase = createClient()
+  const { data, error } = await supabase
+    .from('leagues')
+    .select('*')
+    .eq('id', id)
+    .single()
+
+  if (error) return null
+  return data as League
+}
+
+export async function getLeagueMembers(leagueId: string): Promise<LeagueMember[]> {
+  const supabase = createClient()
+  const { data, error } = await supabase
+    .from('league_members')
+    .select('*, profile:profiles(*)')
+    .eq('league_id', leagueId)
+    .order('total_fantasy_points', { ascending: false })
+
+  if (error) throw error
+  return (data ?? []) as LeagueMember[]
+}
+
+export async function createLeague(input: CreateLeagueInput): Promise<League> {
+  const supabase = createClient()
+  const { data: { user } } = await supabase.auth.getUser()
+  if (!user) throw new Error('Not authenticated')
+
+  const { data, error } = await supabase
+    .from('leagues')
+    .insert({ ...input, admin_id: user.id })
+    .select()
+    .single()
+
+  if (error) throw error
+
+  // Auto-join as admin
+  await supabase.from('league_members').insert({
+    league_id: data.id,
+    user_id: user.id,
+    role: 'admin',
+  })
+
+  return data as League
+}
+
+export async function joinLeague(inviteCode: string): Promise<League> {
+  const supabase = createClient()
+  const { data: { user } } = await supabase.auth.getUser()
+  if (!user) throw new Error('Not authenticated')
+
+  const { data: league, error: leagueError } = await supabase
+    .from('leagues')
+    .select('*')
+    .eq('invite_code', inviteCode)
+    .single()
+
+  if (leagueError || !league) throw new Error('League not found')
+
+  const { error } = await supabase.from('league_members').insert({
+    league_id: league.id,
+    user_id: user.id,
+    role: 'member',
+  })
+
+  if (error) {
+    if (error.code === '23505') throw new Error('Already a member of this league')
+    throw error
+  }
+
+  return league as League
+}
+
+export async function leaveLeague(leagueId: string): Promise<void> {
+  const supabase = createClient()
+  const { data: { user } } = await supabase.auth.getUser()
+  if (!user) throw new Error('Not authenticated')
+
+  const { error } = await supabase
+    .from('league_members')
+    .delete()
+    .eq('league_id', leagueId)
+    .eq('user_id', user.id)
+
+  if (error) throw error
+}
+
+export async function updateLeague(id: string, updates: Partial<League>): Promise<League> {
+  const supabase = createClient()
+  const { data, error } = await supabase
+    .from('leagues')
+    .update(updates)
+    .eq('id', id)
+    .select()
+    .single()
+
+  if (error) throw error
+  return data as League
+}
