@@ -14,6 +14,7 @@ TRUNCATE public.teams CASCADE;
 
 -- Ampliar el enum match_stage reconstruyéndolo (ADD VALUE no se puede usar
 -- en la misma transacción que los INSERTs que lo usan — Postgres limita esto).
+ALTER TABLE public.matches ALTER COLUMN stage DROP DEFAULT;
 ALTER TABLE public.matches ALTER COLUMN stage TYPE text;
 DROP TYPE public.match_stage;
 CREATE TYPE public.match_stage AS ENUM (
@@ -26,6 +27,7 @@ CREATE TYPE public.match_stage AS ENUM (
   'final'
 );
 ALTER TABLE public.matches ALTER COLUMN stage TYPE public.match_stage USING stage::public.match_stage;
+ALTER TABLE public.matches ALTER COLUMN stage SET DEFAULT 'group'::public.match_stage;
 
 
 -- ============================================================
