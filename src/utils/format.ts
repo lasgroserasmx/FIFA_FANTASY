@@ -52,9 +52,11 @@ export function getStatusColor(status: string) {
 export function getStageLabel(stage: string) {
   const labels: Record<string, string> = {
     group: 'Fase de grupos',
+    round_of_32: 'Ronda de 32',
     round_of_16: 'Octavos de final',
     quarter_final: 'Cuartos de final',
     semi_final: 'Semifinal',
+    third_place: '3er y 4to puesto',
     final: 'Final',
   }
   return labels[stage] || stage

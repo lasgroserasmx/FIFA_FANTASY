@@ -12,6 +12,11 @@ TRUNCATE public.matches CASCADE;
 TRUNCATE public.players CASCADE;
 TRUNCATE public.teams CASCADE;
 
+-- Añadir valores al enum match_stage para el formato del Mundial 2026
+ALTER TYPE public.match_stage ADD VALUE IF NOT EXISTS 'round_of_32';
+ALTER TYPE public.match_stage ADD VALUE IF NOT EXISTS 'third_place';
+
+
 -- ============================================================
 -- 48 EQUIPOS - 12 GRUPOS (A–L)
 -- ============================================================
