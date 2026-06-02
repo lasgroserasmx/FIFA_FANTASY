@@ -365,11 +365,11 @@ INSERT INTO public.players (team_id, name, short_name, position, nationality, sh
 -- -------------------------------------------------------
 INSERT INTO public.matches (id, home_team_id, away_team_id, match_date, venue, stage, status, matchday) VALUES
   -- Grupo A
-  ('33333333-0000-0000-0000-000000000001', 'aaa00001-0000-0000-0000-000000000001', 'aaa00001-0000-0000-0000-000000000002', '2026-06-11 19:00:00+00', 'Ciudad de México', 'group', 'finished', 1),
-  ('33333333-0000-0000-0000-000000000002', 'aaa00001-0000-0000-0000-000000000003', 'aaa00001-0000-0000-0000-000000000004', '2026-06-12 02:00:00+00', 'Guadalajara',      'group', 'finished', 1),
+  ('33333333-0000-0000-0000-000000000001', 'aaa00001-0000-0000-0000-000000000001', 'aaa00001-0000-0000-0000-000000000002', '2026-06-11 19:00:00+00', 'Ciudad de México', 'group', 'scheduled', 1),
+  ('33333333-0000-0000-0000-000000000002', 'aaa00001-0000-0000-0000-000000000003', 'aaa00001-0000-0000-0000-000000000004', '2026-06-12 02:00:00+00', 'Guadalajara',      'group', 'scheduled', 1),
   -- Grupo B
-  ('33333333-0000-0000-0000-000000000003', 'aaa00002-0000-0000-0000-000000000001', 'aaa00002-0000-0000-0000-000000000002', '2026-06-12 19:00:00+00', 'Toronto',          'group', 'finished', 1),
-  ('33333333-0000-0000-0000-000000000004', 'aaa00002-0000-0000-0000-000000000003', 'aaa00002-0000-0000-0000-000000000004', '2026-06-13 19:00:00+00', 'Vancouver',        'group', 'finished', 1),
+  ('33333333-0000-0000-0000-000000000003', 'aaa00002-0000-0000-0000-000000000001', 'aaa00002-0000-0000-0000-000000000002', '2026-06-12 19:00:00+00', 'Toronto',          'group', 'scheduled', 1),
+  ('33333333-0000-0000-0000-000000000004', 'aaa00002-0000-0000-0000-000000000003', 'aaa00002-0000-0000-0000-000000000004', '2026-06-13 19:00:00+00', 'Vancouver',        'group', 'scheduled', 1),
   -- Grupo C
   ('33333333-0000-0000-0000-000000000005', 'aaa00003-0000-0000-0000-000000000001', 'aaa00003-0000-0000-0000-000000000002', '2026-06-14 22:00:00+00', 'Nueva York/NJ',    'group', 'scheduled', 1),
   ('33333333-0000-0000-0000-000000000006', 'aaa00003-0000-0000-0000-000000000003', 'aaa00003-0000-0000-0000-000000000004', '2026-06-14 01:00:00+00', 'Boston',           'group', 'scheduled', 1),
@@ -542,10 +542,9 @@ INSERT INTO public.matches (id, home_team_id, away_team_id, match_date, venue, s
   ('33333333-0000-0000-0000-000000000104', NULL, NULL, '2026-07-19 19:00:00+00', 'Nueva York/NJ',  'final',       'scheduled', 1);
 
 -- -------------------------------------------------------
--- RESULTADOS REALES - JORNADA 1 ya jugada
--- (Actualiza con los resultados reales)
+-- RESULTADOS REALES - descomentar cuando los partidos se jueguen
 -- -------------------------------------------------------
-UPDATE public.matches SET home_score = 1, away_score = 0, status = 'finished' WHERE id = '33333333-0000-0000-0000-000000000001'; -- México 1-0 Sudáfrica
-UPDATE public.matches SET home_score = 3, away_score = 0, status = 'finished' WHERE id = '33333333-0000-0000-0000-000000000002'; -- Corea 3-0 Rep. Checa
-UPDATE public.matches SET home_score = 0, away_score = 0, status = 'finished' WHERE id = '33333333-0000-0000-0000-000000000003'; -- Canadá 0-0 Bosnia
-UPDATE public.matches SET home_score = 1, away_score = 2, status = 'finished' WHERE id = '33333333-0000-0000-0000-000000000004'; -- Qatar 1-2 Suiza
+-- UPDATE public.matches SET home_score = 1, away_score = 0, status = 'finished' WHERE id = '33333333-0000-0000-0000-000000000001'; -- México vs Sudáfrica
+-- UPDATE public.matches SET home_score = 3, away_score = 0, status = 'finished' WHERE id = '33333333-0000-0000-0000-000000000002'; -- Corea vs Rep. Checa
+-- UPDATE public.matches SET home_score = 0, away_score = 0, status = 'finished' WHERE id = '33333333-0000-0000-0000-000000000003'; -- Canadá vs Bosnia
+-- UPDATE public.matches SET home_score = 1, away_score = 2, status = 'finished' WHERE id = '33333333-0000-0000-0000-000000000004'; -- Qatar vs Suiza

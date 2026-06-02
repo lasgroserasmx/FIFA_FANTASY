@@ -57,6 +57,22 @@ function AdminPartidos() {
     onError: () => toast.error('Error al conectar con API-Football. ¿Tienes la API key configurada?'),
   })
 
+  const { mutate: recalcularPuntos, isPending: recalculando } = useMutation({
+    mutationFn: async (matchId: string) => {
+      const res = await fetch(`/api/calculate-points?match_id=${matchId}`, { method: 'POST' })
+      const data = await res.json()
+      if (!res.ok) throw new Error(data.error ?? 'Error al recalcular')
+      return data
+    },
+    onSuccess: (data) => {
+      qc.invalidateQueries({ queryKey: ['admin-matches'] })
+      toast.success(
+        `Puntos calculados ✓ — ${data.predicciones_puntuadas ?? 0} predicciones, ${data.rosters_fantasy_puntuados ?? 0} rosters fantasy`
+      )
+    },
+    onError: (err: Error) => toast.error(err.message),
+  })
+
   const [editando, setEditando] = useState<string | null>(null)
   const [editData, setEditData] = useState<{ home: string; away: string; status: string }>({ home: '0', away: '0', status: 'scheduled' })
 
@@ -118,6 +134,14 @@ function AdminPartidos() {
                       onClick={() => { setEditando(m.id); setEditData({ home: m.home_score?.toString() ?? '0', away: m.away_score?.toString() ?? '0', status: m.status }) }}>
                       <Edit className="h-4 w-4" />
                     </Button>
+                    {m.status === 'finished' && (
+                      <Button size="icon" variant="ghost" className="h-8 w-8 text-emerald-400"
+                        title="Recalcular puntos de quiniela y fantasy"
+                        disabled={recalculando}
+                        onClick={() => recalcularPuntos(m.id)}>
+                        <Star className={`h-4 w-4 ${recalculando ? 'animate-pulse' : ''}`} />
+                      </Button>
+                    )}
                   </div>
                 )}
               </div>
