@@ -46,27 +46,31 @@ export async function createFantasyTeam(leagueId: string, name: string): Promise
   return data as FantasyTeam
 }
 
-export async function addPlayerToTeam(fantasyTeamId: string, playerId: string, price: number): Promise<FantasyRoster> {
+export async function addPlayerToTeam(fantasyTeamId: string, playerId: string, price: number): Promise<void> {
   const supabase = createClient()
 
-  // Deduct budget
-  const { data: team } = await supabase.from('fantasy_teams').select('budget_remaining').eq('id', fantasyTeamId).single()
-  if (!team || team.budget_remaining < price) throw new Error('Insufficient budget')
+  // 1. Verificar presupuesto
+  const { data: team } = await supabase
+    .from('fantasy_teams')
+    .select('budget_remaining')
+    .eq('id', fantasyTeamId)
+    .single()
+  if (!team || team.budget_remaining < price) throw new Error('Presupuesto insuficiente')
 
-  const { data, error } = await supabase
+  // 2. Insertar en roster — separado del select para evitar el bug RLS silent-null
+  const { error: insertError } = await supabase
     .from('fantasy_rosters')
     .insert({ fantasy_team_id: fantasyTeamId, player_id: playerId, purchase_price: price })
-    .select('*, player:players(*, team:teams(*))')
-    .single()
 
-  if (error) throw error
+  if (insertError) throw new Error(insertError.message)
 
-  await supabase
+  // 3. Descontar presupuesto solo si el insert fue exitoso
+  const { error: budgetError } = await supabase
     .from('fantasy_teams')
     .update({ budget_remaining: team.budget_remaining - price })
     .eq('id', fantasyTeamId)
 
-  return data as FantasyRoster
+  if (budgetError) throw new Error(budgetError.message)
 }
 
 export async function removePlayerFromTeam(fantasyTeamId: string, playerId: string): Promise<void> {
