@@ -5,7 +5,7 @@ import { Badge } from '@/components/ui/badge'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { LinkButton } from '@/components/ui/link-button'
 import {
-  Trophy, Star, Target, Users, Zap, Shield, Goal,
+  Trophy, Star, Target, Users, Zap, Shield,
   CheckCircle, AlertCircle, Info, ChevronRight, Award,
   TrendingUp, Clock, Lock, Crown, Shuffle
 } from 'lucide-react'
