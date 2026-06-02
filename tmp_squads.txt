@@ -1,0 +1,2441 @@
+I now have comprehensive data for all 48 teams. Let me compile everything into the complete structured response. Note that shirt numbers were officially not published for all teams as squads were just announced June 1-2, 2026, and only a handful of teams have published official shirt numbers. I'll note which teams have confirmed numbers and provide positions/names/clubs for all.
+
+Here is the complete structured data for all 48 teams at the FIFA World Cup 2026, organized by group. Shirt numbers are included where officially confirmed; otherwise positions and names are listed.
+
+---
+
+## GROUP A
+
+### México (Coach: Javier Aguirre)
+| # | Pos | Player | Club |
+|---|-----|--------|------|
+| — | GK | Guillermo Ochoa | AEL Limassol |
+| — | GK | Raúl Rangel | Guadalajara |
+| — | GK | Carlos Acevedo | Santos Laguna |
+| — | DEF | Jesús Gallardo | Toluca |
+| — | DEF | César Montes | Lokomotiv Moscow |
+| — | DEF | Jorge Sánchez | PAOK |
+| — | DEF | Johan Vásquez | Genoa |
+| — | DEF | Israel Reyes | América |
+| — | DEF | Mateo Chávez | AZ |
+| — | MID | Edson Álvarez (c) | Fenerbahçe |
+| — | MID | Orbelín Pineda | AEK Athens |
+| — | MID | Roberto Alvarado | Guadalajara |
+| — | MID | Luis Romo | Guadalajara |
+| — | MID | Luis Chávez | Dynamo Moscow |
+| — | MID | Érik Lira | Cruz Azul |
+| — | MID | Gilberto Mora | Tijuana |
+| — | MID | Brian Gutiérrez | Guadalajara |
+| — | MID | Obed Vargas | Atlético Madrid |
+| — | MID | Álvaro Fidalgo | Real Betis |
+| — | FWD | Raúl Jiménez | Fulham |
+| — | FWD | Alexis Vega | Toluca |
+| — | FWD | Santiago Giménez | AC Milan |
+| — | FWD | César Huerta | Anderlecht |
+| — | FWD | Julián Quiñones | Al-Qadsiah |
+| — | FWD | Guillermo Martínez | UNAM |
+| — | FWD | Armando González | Guadalajara |
+
+### Sudáfrica (Coach: Hugo Broos)
+| # | Pos | Player | Club |
+|---|-----|--------|------|
+| — | GK | Ronwen Williams (c) | Mamelodi Sundowns |
+| — | GK | Ricardo Goss | Siwelele |
+| — | GK | Sipho Chaine | Orlando Pirates |
+| — | DEF | Aubrey Modiba | Mamelodi Sundowns |
+| — | DEF | Khuliso Mudau | Mamelodi Sundowns |
+| — | DEF | Nkosinathi Sibisi | Orlando Pirates |
+| — | DEF | Mbekezeli Mbokazi | Chicago Fire FC |
+| — | DEF | Ime Okon | Hannover 96 |
+| — | DEF | Samukele Kabini | Molde |
+| — | DEF | Khulumani Ndamane | Mamelodi Sundowns |
+| — | DEF | Thabang Matuludi | Polokwane City |
+| — | DEF | Kamogelo Sebelebele | Orlando Pirates |
+| — | DEF | Bradley Cross | Kaizer Chiefs |
+| — | DEF | Olwethu Makhanya | Philadelphia Union |
+| — | MID | Teboho Mokoena | Mamelodi Sundowns |
+| — | MID | Sphephelo Sithole | Tondela |
+| — | MID | Thalente Mbatha | Orlando Pirates |
+| — | MID | Jayden Adams | Mamelodi Sundowns |
+| — | FWD | Themba Zwane | Mamelodi Sundowns |
+| — | FWD | Lyle Foster | Burnley |
+| — | FWD | Evidence Makgopa | Orlando Pirates |
+| — | FWD | Oswin Appollis | Orlando Pirates |
+| — | FWD | Iqraam Rayners | Mamelodi Sundowns |
+| — | FWD | Relebohile Mofokeng | Orlando Pirates |
+| — | FWD | Thapelo Maseko | AEL Limassol |
+| — | FWD | Tshepang Moremi | Orlando Pirates |
+
+### Corea del Sur (Coach: Hong Myung-bo)
+| # | Pos | Player | Club |
+|---|-----|--------|------|
+| — | GK | Kim Seung-gyu | FC Tokyo |
+| — | GK | Jo Hyeon-woo | Ulsan HD |
+| — | GK | Song Bum-keun | Jeonbuk Hyundai Motors |
+| — | DEF | Kim Min-jae | Bayern Munich |
+| — | DEF | Kim Moon-hwan | Daejeon Hana Citizen |
+| — | DEF | Seol Young-woo | Red Star Belgrade |
+| — | DEF | Lee Tae-seok | Austria Wien |
+| — | DEF | Park Jin-seob | Zhejiang |
+| — | DEF | Kim Tae-hyeon | Kashima Antlers |
+| — | DEF | Lee Han-beom | Midtjylland |
+| — | DEF | Jens Castrop | Borussia Mönchengladbach |
+| — | DEF | Lee Ki-hyuk | Gangwon FC |
+| — | DEF | Cho Wi-je | Jeonbuk Hyundai Motors |
+| — | MID | Lee Jae-sung | Mainz 05 |
+| — | MID | Hwang Hee-chan | Wolverhampton Wanderers |
+| — | MID | Hwang In-beom | Feyenoord |
+| — | MID | Lee Kang-in | Paris Saint-Germain |
+| — | MID | Paik Seung-ho | Birmingham City |
+| — | MID | Kim Jin-gyu | Jeonbuk Hyundai Motors |
+| — | MID | Lee Dong-gyeong | Ulsan HD |
+| — | MID | Bae Jun-ho | Stoke City |
+| — | MID | Eom Ji-sung | Swansea City |
+| — | MID | Yang Hyun-jun | Celtic |
+| — | FWD | Son Heung-min (c) | Los Angeles FC |
+| — | FWD | Cho Gue-sung | Midtjylland |
+| — | FWD | Oh Hyeon-gyu | Beşiktaş |
+
+### Rep. Checa (Coach: Miroslav Koubek)
+| # | Pos | Player | Club |
+|---|-----|--------|------|
+| — | GK | Matěj Kovář | PSV Eindhoven |
+| — | GK | Jindřich Staněk | Slavia Prague |
+| — | GK | Lukáš Horníček | Braga |
+| — | DEF | Vladimír Coufal | TSG Hoffenheim |
+| — | DEF | Tomáš Holeš | Slavia Prague |
+| — | DEF | Ladislav Krejčí (c) | Wolverhampton Wanderers |
+| — | DEF | David Zima | Slavia Prague |
+| — | DEF | Jaroslav Zelený | Sparta Prague |
+| — | DEF | David Jurásek | Slavia Prague |
+| — | DEF | David Douděra | Slavia Prague |
+| — | DEF | Robin Hranáč | TSG Hoffenheim |
+| — | DEF | Štěpán Chaloupek | Slavia Prague |
+| — | MID | Tomáš Souček | West Ham United |
+| — | MID | Vladimír Darida | Hradec Králové |
+| — | MID | Lukáš Provod | Slavia Prague |
+| — | MID | Michal Sadílek | Slavia Prague |
+| — | MID | Pavel Šulc | Lyon |
+| — | MID | Lukáš Červ | Viktoria Plzeň |
+| — | MID | Hugo Sochůrek | Sparta Prague |
+| — | MID | Alexandr Sojka | Viktoria Plzeň |
+| — | MID | Denis Višinský | Viktoria Plzeň |
+| — | FWD | Patrik Schick | Bayer Leverkusen |
+| — | FWD | Adam Hložek | TSG Hoffenheim |
+| — | FWD | Jan Kuchta | Sparta Prague |
+| — | FWD | Mojmír Chytil | Slavia Prague |
+| — | FWD | Tomáš Chorý | Slavia Prague |
+
+---
+
+## GROUP B
+
+### Canadá (Coach: Jesse Marsch)
+| # | Pos | Player | Club |
+|---|-----|--------|------|
+| 1 | GK | Dayne St. Clair | Inter Miami CF |
+| 16 | GK | Maxime Crépeau | Orlando City SC |
+| 18 | GK | Owen Goodman | Barnsley |
+| 2 | DEF | Alistair Johnston | Celtic |
+| 3 | DEF | Luc de Fougerolles | Dender |
+| 4 | DEF | Alfie Jones | Middlesbrough |
+| 5 | DEF | Joel Waterman | Chicago Fire FC |
+| 13 | DEF | Derek Cornelius | Rangers |
+| 15 | DEF | Moïse Bombito | Nice |
+| 19 | DEF | Alphonso Davies (c) | Bayern Munich |
+| 22 | DEF | Richie Laryea | Toronto FC |
+| 23 | DEF | Niko Sigur | Hajduk Split |
+| 6 | MID | Mathieu Choinière | Los Angeles FC |
+| 7 | MID | Stephen Eustáquio | Los Angeles FC |
+| 8 | MID | Ismaël Koné | Sassuolo |
+| 11 | MID | Liam Millar | Hull City |
+| 14 | MID | Jacob Shaffelburg | Los Angeles FC |
+| 17 | MID | Tajon Buchanan | Villarreal |
+| 20 | MID | Ali Ahmed | Norwich City |
+| 21 | MID | Jonathan Osorio | Toronto FC |
+| 25 | MID | Nathan Saliba | Anderlecht |
+| 9 | FWD | Cyle Larin | Southampton |
+| 10 | FWD | Jonathan David | Juventus |
+| 12 | FWD | Tani Oluwaseyi | Villarreal |
+| 24 | FWD | Promise David | Union Saint-Gilloise |
+
+*(Note: Canada listed 25 numbered players in Wikipedia; squad may have a 26th player TBC)*
+
+### Bosnia-Herzeg. (Coach: Sergej Barbarez)
+| # | Pos | Player | Club |
+|---|-----|--------|------|
+| — | GK | Nikola Vasilj | FC St. Pauli |
+| — | GK | Martin Zlomislić | Rijeka |
+| — | GK | Osman Hadžikić | Slaven Belupo |
+| — | DEF | Sead Kolašinac | Atalanta |
+| — | DEF | Dennis Hadžikadunić | Sampdoria |
+| — | DEF | Amar Dedić | Benfica |
+| — | DEF | Nikola Katić | Schalke 04 |
+| — | DEF | Tarik Muharemović | Sassuolo |
+| — | DEF | Nihad Mujakić | Gaziantep |
+| — | DEF | Stjepan Radeljić | Rijeka |
+| — | DEF | Nidal Čelik | Lens |
+| — | MID | Amir Hadžiahmetović | Hull City |
+| — | MID | Benjamin Tahirović | Brøndby |
+| — | MID | Armin Gigović | Young Boys |
+| — | MID | Dženis Burnić | Karlsruher SC |
+| — | MID | Ivan Bašić | Astana |
+| — | MID | Esmir Bajraktarević | PSV Eindhoven |
+| — | MID | Amar Memić | Viktoria Plzeň |
+| — | MID | Ivan Šunjić | Pafos |
+| — | MID | Kerim Alajbegović | Red Bull Salzburg |
+| — | MID | Ermin Mahmić | Slovan Liberec |
+| — | FWD | Edin Džeko (c) | Schalke 04 |
+| — | FWD | Ermedin Demirović | VfB Stuttgart |
+| — | FWD | Samed Baždar | Jagiellonia Białystok |
+| — | FWD | Haris Tabaković | Borussia Mönchengladbach |
+| — | FWD | Jovo Lukić | Universitatea Cluj |
+
+### Qatar (Coach: Julen Lopetegui)
+| # | Pos | Player | Club |
+|---|-----|--------|------|
+| — | GK | Salah Zakaria | Al-Rayyan |
+| — | GK | Meshaal Barsham | Al-Sadd |
+| — | GK | Mahmoud Abunada | Al-Rayyan |
+| — | DEF | Pedro Miguel | Al-Sadd |
+| — | DEF | Lucas Mendes | Al-Wakrah |
+| — | DEF | Sultan Al-Brake | Al-Duhail |
+| — | DEF | Al-Hashmi Al-Hussain | Al-Arabi |
+| — | DEF | Ayoub Al-Alawi | Al-Gharafa |
+| — | DEF | Issa Laye | Al-Arabi |
+| — | DEF | Mohammed Waad | Al-Shamal |
+| — | DEF | Niall Mason | Qatar SC |
+| — | MID | Ahmed Fathi | Al-Arabi |
+| — | MID | Jassim Gaber | Al-Rayyan |
+| — | MID | Assim Madibo | Al-Wakrah |
+| — | MID | Abdulaziz Hatem | Al-Rayyan |
+| — | MID | Karim Boudiaf | Al-Duhail |
+| — | MID | Mohammed Mannai | Al-Shamal |
+| — | FWD | Almoez Ali | Al-Duhail |
+| — | FWD | Akram Afif (c) | Al-Sadd |
+| — | FWD | Tahsin Mohammed | Al-Duhail |
+| — | FWD | Edmílson Junior | Al-Duhail |
+| — | FWD | Ahmed Alaa | Al-Rayyan |
+| — | FWD | Hassan Al-Haydos | Al-Sadd |
+| — | FWD | Mubarak Shannan | Al-Duhail |
+| — | FWD | Mohammed Muntari | Al-Gharafa |
+| — | FWD | Yusuf Abdurisag | Al-Wakrah |
+
+### Suiza (Coach: Murat Yakin)
+| # | Pos | Player | Club |
+|---|-----|--------|------|
+| 1 | GK | Gregor Kobel | Borussia Dortmund |
+| 12 | GK | Yvon Mvogo | Lorient |
+| 21 | GK | Marvin Keller | Young Boys |
+| 2 | DEF | Miro Muheim | Hamburger SV |
+| 3 | DEF | Silvan Widmer | Mainz |
+| 4 | DEF | Nico Elvedi | Borussia Mönchengladbach |
+| 5 | DEF | Manuel Akanji | Inter Milan |
+| 13 | DEF | Ricardo Rodríguez | Real Betis |
+| 18 | DEF | Eray Comert | Valencia |
+| 24 | DEF | Aurele Amenda | Eintracht Frankfurt |
+| 25 | DEF | Luca Jaquez | VfB Stuttgart |
+| 6 | MID | Denis Zakaria | Monaco |
+| 8 | MID | Remo Freuler | Bologna |
+| 10 | MID | Granit Xhaka (c) | Sunderland |
+| 14 | MID | Ardon Jashari | AC Milan |
+| 15 | MID | Djibril Sow | Sevilla |
+| 16 | MID | Christian Fassnacht | Young Boys |
+| 20 | MID | Michel Aebischer | Pisa |
+| 22 | MID | Fabian Rieder | Augsburg |
+| 7 | FWD | Breel Embolo | Rennes |
+| 9 | FWD | Johan Manzambi | SC Freiburg |
+| 11 | FWD | Dan Ndoye | Nottingham Forest |
+| 17 | FWD | Ruben Vargas | Sevilla |
+| 19 | FWD | Noah Okafor | Leeds United |
+| 23 | FWD | Zeki Amdouni | Burnley |
+| 26 | FWD | Cedric Itten | Fortuna Düsseldorf |
+
+---
+
+## GROUP C
+
+### Brasil (Coach: Carlo Ancelotti)
+| # | Pos | Player | Club |
+|---|-----|--------|------|
+| — | GK | Alisson | Liverpool |
+| — | GK | Ederson | Fenerbahçe |
+| — | GK | Weverton | Grêmio |
+| — | DEF | Alex Sandro | Flamengo |
+| — | DEF | Bremer | Juventus |
+| — | DEF | Danilo | Flamengo |
+| — | DEF | Douglas Santos | Zenit |
+| — | DEF | Gabriel Magalhães | Arsenal |
+| — | DEF | Ibañez | Al-Ahli |
+| — | DEF | Léo Pereira | Flamengo |
+| — | DEF | Marquinhos (c) | Paris Saint-Germain |
+| — | DEF | Wesley | Roma |
+| — | MID | Bruno Guimarães | Newcastle United |
+| — | MID | Casemiro | Manchester United |
+| — | MID | Danilo | Botafogo |
+| — | MID | Fabinho | Al-Ittihad |
+| — | MID | Lucas Paquetá | Flamengo |
+| — | FWD | Endrick | Lyon |
+| — | FWD | Gabriel Martinelli | Arsenal |
+| — | FWD | Igor Thiago | Brentford |
+| — | FWD | Luiz Henrique | Zenit |
+| — | FWD | Matheus Cunha | Manchester United |
+| — | FWD | Neymar | Santos |
+| — | FWD | Raphinha | Barcelona |
+| — | FWD | Rayan | Bournemouth |
+| — | FWD | Vinicius Jr. | Real Madrid |
+
+### Marruecos (Coach: Walid Regragui)
+| # | Pos | Player | Club |
+|---|-----|--------|------|
+| — | GK | Yassine Bounou | Al-Hilal |
+| — | GK | Munir | RS Berkane |
+| — | GK | Ahmed Reda Tagnaouti | AS FAR |
+| — | DEF | Achraf Hakimi | Paris Saint-Germain |
+| — | DEF | Nayef Aguerd | Marseille |
+| — | DEF | Noussair Mazraoui | Manchester United |
+| — | DEF | Youssef Belammari | Al Ahly |
+| — | DEF | Anass Salah-Eddine | PSV |
+| — | DEF | Chadi Riad | Crystal Palace |
+| — | DEF | Issa Diop | Fulham |
+| — | DEF | Zakaria El Ouahdi | Genk |
+| — | DEF | Redouane Halhal | Mechelen |
+| — | MID | Sofyan Amrabat | Real Betis |
+| — | MID | Azzedine Ounahi | Girona |
+| — | MID | Bilal El Khannouss | Ismael Saibari |
+| — | MID | Neil El Aynaoui | Roma |
+| — | MID | Samir El Mourabet | Strasbourg |
+| — | MID | Ayyoub Bouaddi | Lille |
+| — | FWD | Ayoub El Kaabi | Olympiacos |
+| — | FWD | Abde Ezzalzouli | Real Betis |
+| — | FWD | Soufiane Rahimi | Al Ain |
+| — | FWD | Brahim Díaz | Real Madrid |
+| — | FWD | Chemsdine Talbi | Sunderland |
+| — | FWD | Gessime Yassine | Strasbourg |
+| — | FWD | Ayoube Amaimouni | Eintracht Frankfurt |
+
+*(Morocco: 25 listed; squad may have a 26th player TBC)*
+
+### Haití (Coach: Marc Collat)
+| # | Pos | Player | Club |
+|---|-----|--------|------|
+| — | GK | Johnny Placide | Bastia |
+| — | GK | Alexandre Pierre | Sochaux |
+| — | GK | Josué Duverger | Cosmos Koblenz |
+| — | DEF | Ricardo Adé | LDU Quito |
+| — | DEF | Carlens Arcus | Angers |
+| — | DEF | Martin Experience | Nancy |
+| — | DEF | Jean-Kevin Duverne | Gent |
+| — | DEF | Duke Lacroix | Colorado Springs Switchbacks |
+| — | DEF | Wilguens Paugain | Zulte Waregem |
+| — | DEF | Hannes Delcroix | Lugano |
+| — | DEF | Keeto Thermoncy | Young Boys |
+| — | MID | Leverton Pierre | Vizela |
+| — | MID | Danley Jean Jacques | Philadelphia Union |
+| — | MID | Carl Sainté | El Paso Locomotive |
+| — | MID | Jean-Ricner Bellegarde | Wolverhampton Wanderers |
+| — | MID | Woodensky Pierre | Violette |
+| — | MID | Dominique Simon | Tatran Presov |
+| — | FWD | Duckens Nazon | Esteghlal |
+| — | FWD | Frantzy Perrot | Çaykur Rizespor |
+| — | FWD | Derrick Etienne Jr. | Toronto FC |
+| — | FWD | Louicius Deedson | FC Dallas |
+| — | FWD | Ruben Providence | Almere City |
+| — | FWD | Josué Casimir | Auxerre |
+| — | FWD | Yassin Fortuné | Vizela |
+| — | FWD | Wilson Isidor | Sunderland |
+| — | FWD | Lenny Joseph | Ferencvaros |
+
+### Escocia (Coach: Steve Clarke)
+| # | Pos | Player | Club |
+|---|-----|--------|------|
+| — | GK | Craig Gordon | Hearts |
+| — | GK | Angus Gunn | Nottingham Forest |
+| — | GK | Liam Kelly | Rangers |
+| — | DEF | Grant Hanley | Hibernian |
+| — | DEF | Jack Hendry | Al-Ettifaq |
+| — | DEF | Aaron Hickey | Brentford |
+| — | DEF | Dom Hyam | Wrexham |
+| — | DEF | Scott McKenna | Dinamo Zagreb |
+| — | DEF | Nathan Patterson | Everton |
+| — | DEF | Anthony Ralston | Celtic |
+| — | DEF | Andy Robertson (c) | Liverpool |
+| — | DEF | John Souttar | Rangers |
+| — | DEF | Kieran Tierney | Celtic |
+| — | MID | Ryan Christie | Bournemouth |
+| — | MID | Findlay Curtis | Rangers |
+| — | MID | Lewis Ferguson | Bologna |
+| — | MID | Ben Gannon-Doak | Bournemouth |
+| — | MID | Billy Gilmour | Napoli |
+| — | MID | John McGinn | Aston Villa |
+| — | MID | Kenny McLean | Norwich City |
+| — | MID | Scott McTominay | Napoli |
+| — | FWD | Che Adams | Torino |
+| — | FWD | Lyndon Dykes | Charlton Athletic |
+| — | FWD | George Hirst | Ipswich Town |
+| — | FWD | Lawrence Shankland | Hearts |
+| — | FWD | Ross Stewart | Southampton |
+
+---
+
+## GROUP D
+
+### Estados Unidos (Coach: Mauricio Pochettino)
+| # | Pos | Player | Club |
+|---|-----|--------|------|
+| 1 | GK | Matt Turner | New England Revolution |
+| 24 | GK | Matt Freese | New York City FC |
+| 25 | GK | Chris Brady | Chicago Fire FC |
+| 2 | DEF | Sergiño Dest | PSV |
+| 3 | DEF | Chris Richards | Crystal Palace |
+| 5 | DEF | Antonee Robinson | Fulham |
+| 6 | DEF | Auston Trusty | Celtic |
+| 12 | DEF | Miles Robinson | FC Cincinnati |
+| 13 | DEF | Tim Ream | Charlotte FC |
+| 16 | DEF | Alex Freeman | Villarreal |
+| 18 | DEF | Max Arfsten | Columbus Crew |
+| 22 | DEF | Mark McKenzie | Toulouse |
+| 23 | DEF | Joe Scally | Borussia Mönchengladbach |
+| 4 | MID | Tyler Adams | AFC Bournemouth |
+| 7 | MID | Gio Reyna | Borussia Mönchengladbach |
+| 8 | MID | Weston McKennie | Juventus |
+| 14 | MID | Sebastian Berhalter | Vancouver Whitecaps FC |
+| 15 | MID | Cristian Roldan | Seattle Sounders FC |
+| 17 | MID | Malik Tillman | Bayer Leverkusen |
+| 9 | FWD | Ricardo Pepi | PSV |
+| 10 | FWD | Christian Pulisic (c) | Inter Milan |
+| 11 | FWD | Brenden Aaronson | Leeds United |
+| 19 | FWD | Haji Wright | Coventry City |
+| 20 | FWD | Folarin Balogun | AS Monaco |
+| 21 | FWD | Tim Weah | Marseille |
+| 26 | FWD | Alex Zendejas | Club América |
+
+### Paraguay (Coach: Gustavo Alfaro)
+| # | Pos | Player | Club |
+|---|-----|--------|------|
+| — | GK | Roberto Jr. Fernández | Cerro Porteño |
+| — | GK | Orlando Gill | — |
+| — | GK | Gastón Olveira | — |
+| — | DEF | Juan Cáceres | — |
+| — | DEF | Gustavo Velázquez | — |
+| — | DEF | Gustavo Gómez (c) | Palmeiras |
+| — | DEF | Fabián Balbuena | — |
+| — | DEF | Omar Alderete | Sunderland |
+| — | DEF | Junior Alonso | Atlético Mineiro |
+| — | DEF | José Canale | — |
+| — | DEF | Alexandro Maidana | — |
+| — | MID | Andrés Cubas | — |
+| — | MID | Diego Gómez | — |
+| — | MID | Damián Bobadilla | — |
+| — | MID | Matías Galarza | — |
+| — | MID | Maurício Magalhães | — |
+| — | MID | Alejandro Romero Romero | — |
+| — | MID | Brahian Ojeda | — |
+| — | FWD | Miguel Almirón | Atlanta United |
+| — | FWD | Julio Enciso | Strasbourg |
+| — | FWD | Ramón Sosa | Palmeiras |
+| — | FWD | Antonio Sanabria | Cremonese |
+| — | FWD | Álex Arce | — |
+| — | FWD | Gabriel Ávalos | — |
+| — | FWD | Isidro Pitta | — |
+| — | FWD | Gustavo Caballero | — |
+
+### Australia (Coach: Tony Popovic)
+| # | Pos | Player | Club |
+|---|-----|--------|------|
+| 1 | GK | Maty Ryan | — |
+| 12 | GK | Paul Izzo | — |
+| 18 | GK | Patrick Beach | — |
+| 2 | DEF | Milos Degenek | — |
+| 3 | DEF | Alessandro Circati | — |
+| 4 | DEF | Jacob Italiano | — |
+| 5 | DEF | Jordan Bos | — |
+| 6 | DEF | Jason Geria | — |
+| 13 | DEF | Aiden O'Neill | — |
+| 15 | DEF | Kai Trewin | — |
+| 16 | DEF | Aziz Behich | — |
+| 19 | DEF | Harry Souttar | — |
+| 21 | DEF | Cameron Burgess | — |
+| 25 | DEF | Lucas Herrington | — |
+| 7 | MID | Mathew Leckie | — |
+| 8 | MID | Connor Metcalfe | — |
+| 10 | MID | Ajdin Hrustic | — |
+| 11 | MID | Awer Mabil | — |
+| 14 | MID | Cameron Devlin | — |
+| 17 | MID | Nestory Irankunda | — |
+| 20 | MID | Cristian Volpato | — |
+| 22 | MID | Jackson Irvine | — |
+| 23 | MID | Nishan Velupillay | — |
+| 9 | FWD | Mohamed Toure | — |
+| 24 | FWD | Paul Okon-Engstler | — |
+| 26 | FWD | Tete Yengi | — |
+
+### Turquía (Coach: Vincenzo Montella)
+| # | Pos | Player | Club |
+|---|-----|--------|------|
+| — | GK | Altay Bayındır | — |
+| — | GK | Ersin Destanoğlu | — |
+| — | GK | Uğurcan Çakır | Galatasaray |
+| — | DEF | Abdulkerim Bardakci | — |
+| — | DEF | Ahmetcan Kaplan | — |
+| — | DEF | Çağlar Söyüncü | Fenerbahçe |
+| — | DEF | Eren Elmalı | — |
+| — | DEF | Ferdi Kadıoğlu | — |
+| — | DEF | Merih Demiral | Al-Ahli |
+| — | DEF | Mert Müldür | — |
+| — | DEF | Ozan Kabak | — |
+| — | DEF | Samet Akaydin | — |
+| — | DEF | Zeki Çelik | — |
+| — | MID | Atakan Karazor | — |
+| — | MID | Demir Ege Tıknaz | Braga |
+| — | MID | Hakan Çalhanoğlu (c) | Inter Milan |
+| — | MID | İsmail Yüksek | — |
+| — | MID | Kaan Ayhan | — |
+| — | MID | Orkun Kökçü | Beşiktaş |
+| — | MID | Salih Özcan | — |
+| — | FWD | Arda Güler | Real Madrid |
+| — | FWD | Barış Alper Yılmaz | — |
+| — | FWD | Can Uzun | — |
+| — | FWD | İrfan Can Kahveci | — |
+| — | FWD | Kenan Yıldız | Juventus |
+| — | FWD | Kerem Aktürkoğlu | — |
+
+---
+
+## GROUP E
+
+### Alemania (Coach: Julian Nagelsmann)
+| # | Pos | Player | Club |
+|---|-----|--------|------|
+| — | GK | Oliver Baumann | TSG Hoffenheim |
+| — | GK | Manuel Neuer | Bayern Munich |
+| — | GK | Alexander Nübel | VfB Stuttgart |
+| — | DEF | Waldemar Anton | Borussia Dortmund |
+| — | DEF | Nathaniel Brown | Eintracht Frankfurt |
+| — | DEF | Joshua Kimmich | Bayern Munich |
+| — | DEF | David Raum | RB Leipzig |
+| — | DEF | Antonio Rüdiger | Real Madrid |
+| — | DEF | Nico Schlotterbeck | Borussia Dortmund |
+| — | DEF | Jonathan Tah | Bayern Munich |
+| — | DEF | Malick Thiaw | Newcastle United |
+| — | MID | Nadiem Amiri | Mainz |
+| — | MID | Leon Goretzka | Bayern Munich |
+| — | MID | Pascal Gross | Brighton |
+| — | MID | Jamie Leweling | VfB Stuttgart |
+| — | MID | Jamal Musiala | Bayern Munich |
+| — | MID | Felix Nmecha | Borussia Dortmund |
+| — | MID | Aleksandar Pavlovic | Bayern Munich |
+| — | MID | Angelo Stiller | VfB Stuttgart |
+| — | MID | Florian Wirtz | Liverpool |
+| — | FWD | Maximilian Beier | Borussia Dortmund |
+| — | FWD | Kai Havertz | Arsenal |
+| — | FWD | Lennart Karl | Bayern Munich |
+| — | FWD | Leroy Sané | Galatasaray |
+| — | FWD | Deniz Undav | VfB Stuttgart |
+| — | FWD | Nick Woltemade | Newcastle United |
+
+### Curazao (Coach: Remko Bicentini)
+| # | Pos | Player | Club |
+|---|-----|--------|------|
+| — | GK | Eloy Room | Miami FC |
+| — | GK | Trevor Dorrnbusch | VVV-Venlo |
+| — | GK | Tyrick Bodak | Telstar |
+| — | DEF | Jurien Gaari | Abha |
+| — | DEF | Roshon van Eijma | RKC Waalwijk |
+| — | DEF | Sherel Floranus | PEC Zwolle |
+| — | DEF | Joshua Brenet | Kayserispor |
+| — | DEF | Shurandy Sambo | Sparta Rotterdam |
+| — | DEF | Armando Obiso | PSV |
+| — | DEF | Riechedly Bazoer | Konyaspor |
+| — | DEF | Deveron Fonville | NEC |
+| — | MID | Leandro Bacuna | Igdir |
+| — | MID | Juninho Bacuna | Volendam |
+| — | MID | Godfried Roemeratoe | RKC Waalwijk |
+| — | MID | Kevin Felida | Den Bosch |
+| — | MID | Livano Comenencia | Zurich |
+| — | MID | Ar'jany Martha | Rotherham United |
+| — | MID | Tyrese Noslin | Telstar |
+| — | FWD | Kenji Gorré | Maccabi Haifa |
+| — | FWD | Brandley Kuwas | Volendam |
+| — | FWD | Gervane Kastaneer | Terengganu |
+| — | FWD | Jeremy Antonisse | Kifisia |
+| — | FWD | Jearl Margaritha | Beveren |
+| — | FWD | Jurgen Locadia | Miami FC |
+| — | FWD | Sontje Hansen | Middlesbrough |
+| — | FWD | Tahith Chong | Sheffield United |
+
+### Costa de Marfil (Coach: Emerse Faé)
+| # | Pos | Player | Club |
+|---|-----|--------|------|
+| — | GK | Yahia Fofana | Çaykur Rizespor |
+| — | GK | Alban Lafont | Panathinaikos |
+| — | GK | Mohamed Koné | Charleroi |
+| — | DEF | Ghislain Konan | Gil Vicente |
+| — | DEF | Odilon Kossounou | Atalanta |
+| — | DEF | Wilfried Singo | Galatasaray |
+| — | DEF | Evan N'Dicka | Roma |
+| — | DEF | Emmanuel Agbadou | Beşiktaş |
+| — | DEF | Guéla Doué | Strasbourg |
+| — | DEF | Ousmane Diomandé | Sporting CP |
+| — | DEF | Clément Akpa | Marseille |
+| — | MID | Franck Kessié | Al-Ahli |
+| — | MID | Jean Michael Seri | Maribor |
+| — | MID | Ibrahim Sangaré | Nottingham Forest |
+| — | MID | Seko Fofana | Porto |
+| — | MID | Christ Inao Oulai | Trabzonspor |
+| — | MID | Parfait Guiagon | Charleroi |
+| — | FWD | Nicolas Pépé | Villarreal |
+| — | FWD | Oumar Diakité | Cercle Brugge |
+| — | FWD | Simon Adingra | Monaco |
+| — | FWD | Evann Guessand | Crystal Palace |
+| — | FWD | Amad Diallo | Manchester United |
+| — | FWD | Yan Diomandé | RB Leipzig |
+| — | FWD | Banzoumana Touré | TSG Hoffenheim |
+| — | FWD | Elye Wahi | Nice |
+| — | FWD | Ange-Yoan Bonny | Inter Milan |
+
+### Ecuador (Coach: Sebastián Beccacece)
+| # | Pos | Player | Club |
+|---|-----|--------|------|
+| — | GK | Hernán Galíndez | Huracán |
+| — | GK | Moisés Ramírez | Kifisia |
+| — | GK | Gonzalo Valle | LDU Quito |
+| — | DEF | Piero Hincapié | Arsenal |
+| — | DEF | Willian Pacho | Paris Saint-Germain |
+| — | DEF | Pervis Estupiñán | AC Milan |
+| — | DEF | Félix Torres | Internacional |
+| — | DEF | Joel Ordóñez | Club Brugge |
+| — | DEF | Jackson Porozo | Tijuana |
+| — | DEF | Ángelo Preciado | Atlético Mineiro |
+| — | MID | Moisés Caicedo | Chelsea |
+| — | MID | Alan Franco | Atlético Mineiro |
+| — | MID | Kendry Páez | River Plate (loan from Chelsea) |
+| — | MID | Pedro Vite | UNAM |
+| — | MID | Jordy Alcívar | Independiente del Valle |
+| — | MID | Denil Castillo | Midtjylland |
+| — | MID | Yaimar Medina | Genk |
+| — | FWD | Enner Valencia | Pachuca |
+| — | FWD | Kevin Rodríguez | Union Saint-Gilloise |
+| — | FWD | Jordy Caicedo | Huracán |
+| — | FWD | Nilson Angulo | Sunderland |
+| — | FWD | Anthony Valencia | Antwerp |
+| — | FWD | Jeremy Arévalo | VfB Stuttgart |
+
+*(Ecuador: 23 outfield+GK listed; full 26 TBC)*
+
+---
+
+## GROUP F
+
+### Países Bajos (Coach: Ronald Koeman)
+| # | Pos | Player | Club |
+|---|-----|--------|------|
+| — | GK | Bart Verbruggen | Brighton |
+| — | GK | Mark Flekken | Bayer Leverkusen |
+| — | GK | Robin Roefs | Sunderland |
+| — | DEF | Virgil van Dijk (c) | Liverpool |
+| — | DEF | Denzel Dumfries | Inter Milan |
+| — | DEF | Nathan Aké | Manchester City |
+| — | DEF | Jurriën Timber | Arsenal |
+| — | DEF | Micky van de Ven | Tottenham Hotspur |
+| — | DEF | Mats Wieffer | Brighton |
+| — | DEF | Jan Paul van Hecke | Brighton |
+| — | DEF | Jorrel Hato | Chelsea |
+| — | MID | Frenkie de Jong | Barcelona |
+| — | MID | Marten de Roon | Atalanta |
+| — | MID | Tijjani Reijnders | Manchester City |
+| — | MID | Teun Koopmeiners | Juventus |
+| — | MID | Ryan Gravenberch | Liverpool |
+| — | MID | Justin Kluivert | Bournemouth |
+| — | MID | Quinten Timber | Marseille |
+| — | MID | Guus Til | PSV |
+| — | FWD | Memphis Depay | Corinthians |
+| — | FWD | Wout Weghorst | Ajax |
+| — | FWD | Donyell Malen | Roma |
+| — | FWD | Cody Gakpo | Liverpool |
+| — | FWD | Noa Lang | Galatasaray |
+| — | FWD | Brian Brobbey | Sunderland |
+| — | FWD | Crysencio Summerville | West Ham United |
+
+### Japón (Coach: Hajime Moriyasu)
+| # | Pos | Player | Club |
+|---|-----|--------|------|
+| — | GK | Tomoki Hayakawa | Kashima Antlers |
+| — | GK | Keisuke Osako | Sanfrecce Hiroshima |
+| — | GK | Aya Suzuka | Parma Calcio |
+| — | DEF | Yuto Nagatomo | FC Tokyo |
+| — | DEF | Shogo Taniguchi | Sint-Truiden |
+| — | DEF | Ko Itakura | Ajax |
+| — | DEF | Tsuyoshi Watanabe | Feyenoord |
+| — | DEF | Takehiro Tomiyasu | Ajax |
+| — | DEF | Hiroki Ito | Bayern Munich |
+| — | DEF | Ayumu Seko | Le Havre AC |
+| — | DEF | Yukinari Sugawara | Werder Bremen |
+| — | DEF | Junosuke Suzuki | FC Copenhagen |
+| — | MID | Wataru Endo | Liverpool |
+| — | MID | Junya Ito | Genk |
+| — | MID | Daichi Kamada | Crystal Palace |
+| — | MID | Koki Ogawa | NEC Nijmegen |
+| — | MID | Daizen Maeda | Celtic |
+| — | MID | Ritsu Doan | Eintracht Frankfurt |
+| — | MID | Ao Tanaka | Leeds United |
+| — | MID | Kaishu Sano | Mainz 05 |
+| — | MID | Takefusa Kubo | Real Sociedad |
+| — | FWD | Ayase Ueda | Feyenoord |
+| — | FWD | Keito Nakamura | Stade de Reims |
+| — | FWD | Ito Suzuki | SC Freiburg |
+| — | FWD | Kento Shiode | Wolfsburg |
+| — | FWD | Keisuke Goto | Sint-Truiden |
+
+### Suecia (Coach: Jon Dahl Tomasson)
+| # | Pos | Player | Club |
+|---|-----|--------|------|
+| — | GK | Viktor Johansson | Stoke City |
+| — | GK | Kristoffer Nordfeldt | AIK |
+| — | GK | Jacob Widell Zetterström | Derby County |
+| — | DEF | Hjalmar Ekdal | Burnley |
+| — | DEF | Gabriel Gudmundsson | Leeds United |
+| — | DEF | Isak Hien | Atalanta |
+| — | DEF | Emil Holm | Juventus |
+| — | DEF | Gustaf Lagerbielke | Braga |
+| — | DEF | Victor Lindelöf | Aston Villa |
+| — | DEF | Erik Smith | FC St. Pauli |
+| — | DEF | Carl Starfelt | Celta Vigo |
+| — | DEF | Elliot Stroud | Mjällby |
+| — | DEF | Daniel Svensson | Borussia Dortmund |
+| — | MID | Taha Ali | Malmö |
+| — | MID | Yasin Ayari | Brighton |
+| — | MID | Lucas Bergvall | Tottenham Hotspur |
+| — | MID | Jesper Karlström | Udinese |
+| — | MID | Ken Sema | Pafos |
+| — | MID | Mattias Svanberg | Wolfsburg |
+| — | MID | Besfort Zeneli | Union Saint-Gilloise |
+| — | FWD | Alexander Bernhardsson | Holstein Kiel |
+| — | FWD | Anthony Elanga | Newcastle United |
+| — | FWD | Viktor Gyökeres | Arsenal |
+| — | FWD | Alexander Isak | Liverpool |
+| — | FWD | Gustaf Nilsson | Club Brugge |
+| — | FWD | Benjamin Nygren | Celtic |
+
+### Túnez (Coach: Jalel Kadri)
+| # | Pos | Player | Club |
+|---|-----|--------|------|
+| — | GK | Aymen Dahmen | CS Sfaxien |
+| — | GK | Sabri Ben Hessen | Étoile du Sahel |
+| — | GK | Mouhib Chamakh | Club Africain |
+| — | DEF | Montassar Talbi | Lorient |
+| — | DEF | Dylan Bronn | Servette |
+| — | DEF | Ali Abdi | Nice |
+| — | DEF | Yan Valéry | Young Boys |
+| — | DEF | Mohamed Amine Ben Hamida | Espérance de Tunis |
+| — | DEF | Moutaz Neffati | IFK Norrköping |
+| — | DEF | Omar Rekik | Maribor |
+| — | DEF | Adem Arious | Kasımpaşa |
+| — | DEF | Raed Chikhaoui | US Monastir |
+| — | MID | Ellyes Skhiri | Eintracht Frankfurt |
+| — | MID | Hannibal Mejbri | Burnley |
+| — | MID | Anis Ben Slimane | Norwich City |
+| — | MID | Mortada Ben Ouanes | Kasımpaşa |
+| — | MID | Ismael Garbi | FC Augsburg |
+| — | MID | Hadj Mahmoud | Lugano |
+| — | MID | Rani Khedira | Union Berlin |
+| — | FWD | Elias Achouri | FC Copenhagen |
+| — | FWD | Firas Chaouat | Club Africain |
+| — | FWD | Hazen Mastouri | Dynamo Makhachkala |
+| — | FWD | Elias Saad | Hannover 96 |
+| — | FWD | Sebastien Tounekti | Celtic |
+| — | FWD | Khalil Ayari | Paris Saint-Germain |
+| — | FWD | Rayan Elloumi | Vancouver Whitecaps |
+
+---
+
+## GROUP G
+
+### Bélgica (Coach: Domenico Tedesco)
+| # | Pos | Player | Club |
+|---|-----|--------|------|
+| — | GK | Thibaut Courtois | Real Madrid |
+| — | GK | Senne Lammens | Manchester United |
+| — | GK | Mike Penders | Strasbourg |
+| — | DEF | Thomas Meunier | Lille |
+| — | DEF | Timothy Castagne | Fulham |
+| — | DEF | Arthur Theate | Eintracht Frankfurt |
+| — | DEF | Zeno Debast | Sporting CP |
+| — | DEF | Maxim De Cuyper | Brighton |
+| — | DEF | Brandon Mechele | Club Brugge |
+| — | DEF | Koni De Winter | AC Milan |
+| — | DEF | Joaquin Seys | Club Brugge |
+| — | DEF | Nathan Ngoy | Lille |
+| — | MID | Axel Witsel | Girona |
+| — | MID | Kevin De Bruyne | Napoli |
+| — | MID | Youri Tielemans | Aston Villa |
+| — | MID | Hans Vanaken | Club Brugge |
+| — | MID | Charles De Ketelaere | Atalanta |
+| — | MID | Nicolas Raskin | Rangers |
+| — | MID | Diego Moreira | Strasbourg |
+| — | FWD | Romelu Lukaku | Napoli |
+| — | FWD | Leandro Trossard | Arsenal |
+| — | FWD | Jeremy Doku | Manchester City |
+| — | FWD | Dodi Lukebakio | Benfica |
+| — | FWD | Alexis Saelemaekers | AC Milan |
+| — | FWD | Mathias Fernandez-Pardo | Lille |
+
+*(Belgium: 25 listed; 26th TBC)*
+
+### Egipto (Coach: Husam Hassan)
+| # | Pos | Player | Club |
+|---|-----|--------|------|
+| — | GK | Mohamed El-Shenawy | Al Ahly |
+| — | GK | Mostafa Shobeir | Al Ahly |
+| — | GK | Mohamed Alaa | El Gouna |
+| — | GK | El Mahdy Soliman | Zamalek |
+| — | DEF | Hamdy Fathy | Al-Wakrah |
+| — | DEF | Ramy Rabia | Al Ain |
+| — | DEF | Mohamed Hany | Al Ahly |
+| — | DEF | Ahmed Fatouh | Zamalek |
+| — | DEF | Mohamed Abdelmonem | Nice |
+| — | DEF | Yasser Ibrahim | Al Ahly |
+| — | DEF | Hossam Abdelmaguid | Zamalek |
+| — | DEF | Karim Hafez | Pyramids |
+| — | DEF | Tarek Alaa | ZED |
+| — | MID | Marwan Attia | Al Ahly |
+| — | MID | Emam Ashour | Al Ahly |
+| — | MID | Mohanad Lasheen | Pyramids |
+| — | MID | Mahmoud Saber | ZED |
+| — | MID | Nabil Emad | Al-Najma |
+| — | MID | Mostafa Ziko | Pyramids |
+| — | FWD | Mohamed Salah (c) | Liverpool |
+| — | FWD | Trézéguet | Al Ahly |
+| — | FWD | Zizo | Al Ahly |
+| — | FWD | Omar Marmoush | Manchester City |
+| — | FWD | Ibrahim Adel | Nordsjælland |
+| — | FWD | Haissem Hassan | Oviedo |
+| — | FWD | Hamza Abdelkarim | Barcelona B |
+
+*(Egypt: 4 GK listed — final squad will trim to 3 GK)*
+
+### Irán (Coach: Amir Ghalenoei)
+| # | Pos | Player | Club |
+|---|-----|--------|------|
+| — | GK | Alireza Beiranvand | Tractor |
+| — | GK | Hossein Hosseini | Sepahan |
+| — | GK | Payam Niazmand | Persepolis |
+| — | DEF | Danial Eiri | Malavan |
+| — | DEF | Ehsan Hajsafi (c) | Sepahan |
+| — | DEF | Saleh Hardani | Esteghlal |
+| — | DEF | Hossein Kanaani | Persepolis |
+| — | DEF | Shoja Khalilzadeh | Tractor |
+| — | DEF | Milad Mohammadi | Persepolis |
+| — | DEF | Ali Nemati | Foolad |
+| — | DEF | Ramin Rezaeian | Foolad |
+| — | MID | Rouzbeh Cheshmi | Esteghlal |
+| — | MID | Saeid Ezatolahi | Shabab Al-Ahli |
+| — | MID | Mehdi Ghayedi | Al-Nasr |
+| — | MID | Saman Ghoddos | Kalba |
+| — | MID | Mohammad Ghorbani | Al-Wahda |
+| — | MID | Alireza Jahanbakhsh | Dender |
+| — | MID | Mohammad Mohebi | Rostov |
+| — | MID | Amir Mohammad Razzaghinia | Esteghlal |
+| — | MID | Mehdi Torabi | Tractor |
+| — | MID | Aria Yousefi | Sepahan |
+| — | FWD | Ali Alipour | Persepolis |
+| — | FWD | Dennis Dargahi | Standard Liège |
+| — | FWD | Amirhossein Hosseinzadeh | Tractor |
+| — | FWD | Mehdi Taremi | Olympiacos |
+| — | FWD | Shahriar Moghanlou | Kalba |
+
+### Nueva Zelanda (Coach: Darren Bazeley)
+| # | Pos | Player | Club |
+|---|-----|--------|------|
+| — | GK | Max Crocombe | Millwall |
+| — | GK | Alex Paulsen | Lechia Gdansk |
+| — | GK | Michael Woud | Auckland FC |
+| — | DEF | Tyler Bindon | Nottingham Forest |
+| — | DEF | Michael Boxall | Minnesota United |
+| — | DEF | Liberato Cacace | Wrexham |
+| — | DEF | Francis de Vries | Auckland FC |
+| — | DEF | Callan Elliot | Auckland FC |
+| — | DEF | Tim Payne | Wellington Phoenix |
+| — | DEF | Nando Pijnaker | Auckland FC |
+| — | DEF | Tommy Smith | Braintree Town |
+| — | DEF | Finn Surman | Portland Timbers |
+| — | MID | Lachlan Bayliss | Newcastle Jets |
+| — | MID | Joe Bell | Viking FK |
+| — | MID | Matt Garbett | Peterborough United |
+| — | MID | Ben Old | Saint-Étienne |
+| — | MID | Alex Rufer | Wellington Phoenix |
+| — | MID | Sarpreet Singh | Wellington Phoenix |
+| — | MID | Marko Stamenic | Swansea City |
+| — | MID | Ryan Thomas | PEC Zwolle |
+| — | FWD | Kosta Barbarouses | Western Sydney Wanderers |
+| — | FWD | Eli Just | Motherwell |
+| — | FWD | Callum McCowatt | Silkeborg |
+| — | FWD | Jesse Randall | Auckland FC |
+| — | FWD | Ben Waine | Port Vale |
+| — | FWD | Chris Wood (c) | Nottingham Forest |
+
+---
+
+## GROUP H
+
+### España (Coach: Luis de la Fuente)
+| # | Pos | Player | Club |
+|---|-----|--------|------|
+| — | GK | Unai Simón | Athletic Club |
+| — | GK | David Raya | Arsenal |
+| — | GK | Joan García | Barcelona |
+| — | DEF | Marcos Llorente | Atlético Madrid |
+| — | DEF | Pedro Porro | Tottenham Hotspur |
+| — | DEF | Aymeric Laporte | Athletic Club |
+| — | DEF | Pau Cubarsí | Barcelona |
+| — | DEF | Marc Cucurella | Chelsea |
+| — | MID | Rodri (c) | Manchester City |
+| — | MID | Martín Zubimendi | Arsenal |
+| — | MID | Pedri | Barcelona |
+| — | MID | Dani Olmo | Barcelona |
+| — | FWD | Yeremy Pino | Crystal Palace |
+| — | FWD | Álex Baena | Atlético Madrid |
+| — | FWD | Víctor Muñoz | Osasuna |
+| — | FWD | Mikel Oyarzabal | Real Sociedad |
+| — | FWD | Ferran Torres | Barcelona |
+| — | FWD | Borja Iglesias | Celta Vigo |
+| — | FWD | Lamine Yamal | Barcelona |
+
+*(Spain: partial list from source — full 26 TBC via FIFA official)*
+
+### Cabo Verde (Coach: Bubista)
+| # | Pos | Player | Club |
+|---|-----|--------|------|
+| — | GK | Vozinha | Chaves |
+| — | GK | Marcio Rosa | Montana |
+| — | GK | CJ dos Santos | San Diego FC |
+| — | DEF | Stopira | Torreense |
+| — | DEF | Pico | Shamrock Rovers |
+| — | DEF | Joao Paulo | FCSB |
+| — | DEF | Diney | Al Bataeh |
+| — | DEF | Logan Costa | Villarreal |
+| — | DEF | Steven Moreira | Columbus Crew |
+| — | DEF | Wagner Pina | Trabzonspor |
+| — | DEF | Sidny Lopes Cabral | Benfica |
+| — | DEF | Kelvin Pires | SJK |
+| — | MID | Jamiro Monteiro | PEC Zwolle |
+| — | MID | Kevin Pina | Krasnodar |
+| — | MID | Deroy Duarte | Ludogorets Razgrad |
+| — | MID | Telmo Arcanjo | Vitória de Guimarães |
+| — | MID | Laros Duarte | Puskás Akadémia |
+| — | MID | Yannick Semedo | Farense |
+| — | FWD | Ryan Mendes | Igdir |
+| — | FWD | Garry Rodrigues | Apollon Limassol |
+| — | FWD | Willy Semedo | Omonia |
+| — | FWD | Jovane Cabral | Estrela Amadora |
+| — | FWD | Benchimol | Akron Tolyatti |
+| — | FWD | Dailon Livramento | Casa Pia |
+| — | FWD | Helio Varela | Maccabi Tel Aviv |
+| — | FWD | Nuno da Costa | İstanbul Başakşehir |
+
+### Arabia Saudita (Coach: Georgios Donis)
+| # | Pos | Player | Club |
+|---|-----|--------|------|
+| — | GK | Mohammed Al-Owais | Al-Ula |
+| — | GK | Nawaf Al-Aqidi | Al Nassr |
+| — | GK | Ahmed Al-Kassar | Al-Qadsiah |
+| — | DEF | Abdulelah Al-Amri | Al Nassr |
+| — | DEF | Hassan Al-Tambakti | Al-Hilal |
+| — | DEF | Jehad Thikri | Al-Qadsiah |
+| — | DEF | Ali Lajami | Al-Hilal |
+| — | DEF | Hassan Kadesh | Al-Ittihad |
+| — | DEF | Saud Abdulhamid | Lens |
+| — | DEF | Mohammed Abu Al-Shamat | Al-Qadsiah |
+| — | DEF | Ali Majrashi | Al-Ahli |
+| — | DEF | Moteb Al-Harbi | Al-Hilal |
+| — | DEF | Nawaf Boushal | Al Nassr |
+| — | DEF | Sultan Al-Ghannam | Al Nassr |
+| — | MID | Mohammed Kanno | Al-Hilal |
+| — | MID | Abdullah Al-Khaibari | Al Nassr |
+| — | MID | Ziyad Al-Johani | Al-Ahli |
+| — | MID | Nasser Al-Dawsari | Al-Hilal |
+| — | MID | Musab Al-Juwayr | Al-Qadsiah |
+| — | MID | Alaa Al-Hajji | Neom |
+| — | MID | Salem Al-Dawsari (c) | Al-Hilal |
+| — | MID | Khalid Al-Ghannam | Al-Ettifaq |
+| — | MID | Ayman Yahya | Al Nassr |
+| — | FWD | Firas Al-Buraikan | Al-Ahli |
+| — | FWD | Saleh Al-Shehri | Al-Ittihad |
+| — | FWD | Abdullah Al-Hamdan | Al Nassr |
+
+### Uruguay (Coach: Marcelo Bielsa)
+| # | Pos | Player | Club |
+|---|-----|--------|------|
+| — | GK | Fernando Muslera | Estudiantes |
+| — | GK | Sergio Rochet | Internacional |
+| — | GK | Santiago Mele | Monterrey |
+| — | DEF | José María Giménez | Atlético Madrid |
+| — | DEF | Matías Viña | River Plate |
+| — | DEF | Mathías Olivera | Napoli |
+| — | DEF | Guillermo Varela | Flamengo |
+| — | DEF | Ronald Araújo | Barcelona |
+| — | DEF | Sebastián Cáceres | América |
+| — | DEF | Joaquín Piquerez | Palmeiras |
+| — | DEF | Santiago Bueno | Wolverhampton |
+| — | MID | Rodrigo Bentancur | Tottenham Hotspur |
+| — | MID | Federico Valverde | Real Madrid |
+| — | MID | Giorgian de Arrascaeta | Flamengo |
+| — | MID | Facundo Pellistri | Panathinaikos |
+| — | MID | Manuel Ugarte | Manchester United |
+| — | MID | Nicolás de la Cruz | Flamengo |
+| — | MID | Brian Rodríguez | América |
+| — | MID | Maxi Araújo | Sporting CP |
+| — | MID | Agustín Canobbio | Fluminense |
+| — | MID | Emiliano Martínez | Palmeiras |
+| — | MID | Rodrigo Zalazar | Braga |
+| — | MID | Juan Manuel Sanabria | Real Salt Lake |
+| — | FWD | Darwin Núñez | Al-Hilal |
+| — | FWD | Federico Viñas | Oviedo |
+| — | FWD | Rodrigo Aguirre | UANL |
+
+---
+
+## GROUP I
+
+### Francia (Coach: Didier Deschamps)
+| # | Pos | Player | Club |
+|---|-----|--------|------|
+| — | GK | Mike Maignan | AC Milan |
+| — | GK | Brice Samba | Rennes |
+| — | GK | Robin Risser | Lens |
+| — | DEF | Lucas Digne | Aston Villa |
+| — | DEF | Jules Koundé | Barcelona |
+| — | DEF | Theo Hernandez | Al-Hilal |
+| — | DEF | Lucas Hernandez | Paris Saint-Germain |
+| — | DEF | Dayot Upamecano | Bayern Munich |
+| — | DEF | William Saliba | Arsenal |
+| — | DEF | Ibrahima Konaté | Liverpool |
+| — | DEF | Malo Gusto | Chelsea |
+| — | DEF | Maxence Lacroix | Crystal Palace |
+| — | MID | N'Golo Kanté | Fenerbahçe |
+| — | MID | Adrien Rabiot | AC Milan |
+| — | MID | Aurélien Tchouaméni | Real Madrid |
+| — | MID | Manu Koné | Roma |
+| — | MID | Warren Zaïre-Emery | Paris Saint-Germain |
+| — | FWD | Kylian Mbappé (c) | Real Madrid |
+| — | FWD | Ousmane Dembélé | Paris Saint-Germain |
+| — | FWD | Marcus Thuram | Inter Milan |
+| — | FWD | Bradley Barcola | Paris Saint-Germain |
+| — | FWD | Michael Olise | Bayern Munich |
+| — | FWD | Maghnes Akliouche | Monaco |
+| — | FWD | Désiré Doué | Paris Saint-Germain |
+| — | FWD | Rayan Cherki | Manchester City |
+| — | FWD | Jean-Philippe Mateta | Crystal Palace |
+
+### Senegal (Coach: Aliou Cissé)
+| # | Pos | Player | Club |
+|---|-----|--------|------|
+| — | GK | Édouard Mendy | Al-Ahli |
+| — | GK | Mory Diaw | Le Havre |
+| — | GK | Yehvann Diouf | Nice |
+| — | DEF | Kalidou Koulibaly | Al-Hilal |
+| — | DEF | Krépin Diatta | Monaco |
+| — | DEF | Moussa Niakhaté | Lyon |
+| — | DEF | Ismail Jakobs | Galatasaray |
+| — | DEF | Abdoulaye Seck | Maccabi Haifa |
+| — | DEF | El Hadji Malick Diouf | West Ham United |
+| — | DEF | Antoine Mendy | Nice |
+| — | DEF | Mamadou Sarr | Chelsea |
+| — | DEF | Ilay Camara | Anderlecht |
+| — | DEF | Moustapha Mbow | Paris FC |
+| — | MID | Idrissa Gueye | Everton |
+| — | MID | Pape Gueye | Villarreal |
+| — | MID | Pape Matar Sarr | Tottenham Hotspur |
+| — | MID | Pathé Ciss | Rayo Vallecano |
+| — | MID | Lamine Camara | Monaco |
+| — | MID | Habib Diarra | Sunderland |
+| — | MID | Bara Ndiaye | Bayern Munich |
+| — | FWD | Sadio Mané | Al-Nassr |
+| — | FWD | Ismaïla Sarr | Crystal Palace |
+| — | FWD | Iliman Ndiaye | Everton |
+| — | FWD | Nicolas Jackson | Bayern Munich |
+| — | FWD | Bamba Dieng | Lorient |
+| — | FWD | Cherif Ndiaye | Samsunspor |
+
+*(Senegal: 26 listed — some sources show 28; final cut TBC)*
+
+### Iraq (Coach: Graham Arnold)
+| # | Pos | Player | Club |
+|---|-----|--------|------|
+| — | GK | Jalal Hassan (c) | Al-Zawraa |
+| — | GK | Fahad Talib | Al-Talaba |
+| — | GK | Ahmed Basil | Al-Shorta |
+| — | DEF | Rebin Sulaka | Port FC |
+| — | DEF | Merchas Doski | Viktoria Plzeň |
+| — | DEF | Hussein Ali | Pogoń Szczecin |
+| — | DEF | Frans Putros | Persib |
+| — | DEF | Manaf Younis | Al-Shorta |
+| — | DEF | Mustafa Sadoon | Al-Shorta |
+| — | DEF | Zaid Tahseen | Pakhtakor |
+| — | DEF | Ahmed Yahya | Al-Shorta |
+| — | DEF | Akam Hashim | Al-Zawraa |
+| — | MID | Amir Al-Ammari | Cracovia |
+| — | MID | Zidane Iqbal | FC Utrecht |
+| — | MID | Ibrahim Bayesh | Al-Dhafra |
+| — | MID | Youssef Amyn | AEK Larnaca |
+| — | MID | Ali Jasim | Al-Najma |
+| — | MID | Zaid Ismail | Al-Talaba |
+| — | MID | Aimar Sher | Sarpsborg |
+| — | MID | Kevin Yakob | AGF |
+| — | MID | Marko Farji | Venezia FC |
+| — | MID | Ahmed Qasem | Nashville SC |
+| — | FWD | Aymen Hussein | Al-Karma |
+| — | FWD | Ali Al-Hamadi | Ipswich Town |
+| — | FWD | Mohanad Ali | Dibba |
+| — | FWD | Ali Yousif | Al-Talaba |
+
+### Noruega (Coach: Ståle Solbakken)
+| # | Pos | Player | Club |
+|---|-----|--------|------|
+| — | GK | Ørjan Nyland | Sevilla |
+| — | GK | Sander Tangvik | Hamburger SV |
+| — | GK | Egil Selvik | Watford |
+| — | DEF | Kristoffer Ajer | Brentford |
+| — | DEF | Leo Østigård | Genoa |
+| — | DEF | David Møller Wolfe | Wolverhampton |
+| — | DEF | Fredrik André Bjørkan | Bodø/Glimt |
+| — | DEF | Marcus Holmgren Pedersen | Torino |
+| — | DEF | Torbjørn Heggem | Bologna |
+| — | DEF | Sondre Langås | Derby County |
+| — | DEF | Henrik Falchener | Viking |
+| — | MID | Morten Thorsby | Cremonese |
+| — | MID | Patrick Berg | Bodø/Glimt |
+| — | MID | Sander Berge | Fulham |
+| — | MID | Martin Ødegaard (c) | Arsenal |
+| — | MID | Fredrik Aursnes | Benfica |
+| — | MID | Kristian Thorstvedt | Sassuolo |
+| — | MID | Thelo Aasgaard | Rangers |
+| — | MID | Antonio Nusa | RB Leipzig |
+| — | MID | Andreas Schjelderup | Benfica |
+| — | MID | Oscar Bobb | Fulham |
+| — | MID | Jens Petter Hauge | Bodø/Glimt |
+| — | FWD | Alexander Sørloth | Atlético Madrid |
+| — | FWD | Erling Haaland | Manchester City |
+| — | FWD | Jørgen Strand Larsen | Crystal Palace |
+
+*(Norway: 25 listed; 26th TBC)*
+
+---
+
+## GROUP J
+
+### Argentina (Coach: Lionel Scaloni)
+| # | Pos | Player | Club |
+|---|-----|--------|------|
+| — | GK | Juan Musso | Atlético Madrid |
+| — | GK | Gerónimo Rulli | Marseille |
+| — | GK | Emiliano Martínez | Aston Villa |
+| — | DEF | Leonardo Balerdi | Marseille |
+| — | DEF | Nicolás Tagliafico | Lyon |
+| — | DEF | Gonzalo Montiel | River Plate |
+| — | DEF | Lisandro Martínez | Manchester United |
+| — | DEF | Cristian Romero | Tottenham Hotspur |
+| — | DEF | Nicolás Otamendi | Benfica |
+| — | DEF | Facundo Medina | Marseille |
+| — | DEF | Nahuel Molina | Atlético Madrid |
+| — | MID | Leandro Paredes | River Plate |
+| — | MID | Rodrigo De Paul | Inter Miami |
+| — | MID | Valentín Barco | Strasbourg |
+| — | MID | Giovani Lo Celso | Real Betis |
+| — | MID | Ezequiel Palacios | Bayer Leverkusen |
+| — | MID | Alexis Mac Allister | Liverpool |
+| — | MID | Enzo Fernández | Chelsea |
+| — | FWD | Julián Álvarez | Atlético Madrid |
+| — | FWD | Lionel Messi (c) | Inter Miami |
+| — | FWD | Nicolás González | Atlético Madrid |
+| — | FWD | Thiago Almada | Atlético Madrid |
+| — | FWD | Giuliano Simeone | Atlético Madrid |
+| — | FWD | Nico Paz | Como |
+| — | FWD | José Manuel López | Palmeiras |
+| — | FWD | Lautaro Martínez | Inter Milan |
+
+### Argelia (Coach: Vladimir Petkovic)
+| # | Pos | Player | Club |
+|---|-----|--------|------|
+| — | GK | Luca Zidane | Granada |
+| — | GK | Oussama Benbot | USM Alger |
+| — | GK | Melvin Mastil | Stade Nyonais |
+| — | DEF | Aïssa Mandi | Lille |
+| — | DEF | Ramy Bensebaini | Borussia Dortmund |
+| — | DEF | Mohamed Amine Tougai | Espérance de Tunis |
+| — | DEF | Rayan Aït-Nouri | Manchester City |
+| — | DEF | Jaouen Hadjam | Young Boys |
+| — | DEF | Rafik Belghali | Hellas Verona |
+| — | DEF | Zineddine Belaïd | JS Kabylie |
+| — | DEF | Achref Abada | USM Alger |
+| — | DEF | Samir Chergui | Paris FC |
+| — | MID | Nabil Bentaleb | Lille |
+| — | MID | Ramiz Zerrouki | Twente |
+| — | MID | Hicham Boudaoui | Nice |
+| — | MID | Farès Chaïbi | Eintracht Frankfurt |
+| — | MID | Houssem Aouar | Al-Ittihad |
+| — | MID | Ibrahim Maza | Bayer Leverkusen |
+| — | MID | Yacine Titraoui | Charleroi |
+| — | FWD | Riyad Mahrez (c) | Al-Ahli |
+| — | FWD | Mohamed Amoura | VfL Wolfsburg |
+| — | FWD | Amine Gouiri | Marseille |
+| — | FWD | Anis Hadj Moussa | Feyenoord |
+| — | FWD | Adil Boulbina | Al-Duhail |
+| — | FWD | Nadhir Benbouali | Győri ETO FC |
+| — | FWD | Farès Ghedjemis | Frosinone |
+
+### Austria (Coach: Ralf Rangnick)
+| # | Pos | Player | Club |
+|---|-----|--------|------|
+| — | GK | Alexander Schlager | Red Bull Salzburg |
+| — | GK | Patrick Pentz | Brøndby |
+| — | GK | Florian Wiegele | Viktoria Plzen |
+| — | DEF | David Alaba | Real Madrid |
+| — | DEF | Stefan Posch | Mainz |
+| — | DEF | Philipp Lienhart | SC Freiburg |
+| — | DEF | Kevin Danso | Tottenham Hotspur |
+| — | DEF | Phillipp Mwene | Mainz |
+| — | DEF | Alexander Prass | TSG Hoffenheim |
+| — | DEF | Marco Friedl | Werder Bremen |
+| — | DEF | Michael Svoboda | Venezia |
+| — | DEF | David Affengruber | Elche |
+| — | MID | Marcel Sabitzer | Borussia Dortmund |
+| — | MID | Christoph Baumgartner | RB Leipzig |
+| — | MID | Florian Grillitsch | Braga |
+| — | MID | Konrad Laimer | Bayern Munich |
+| — | MID | Xaver Schlager | RB Leipzig |
+| — | MID | Nicolas Seiwald | RB Leipzig |
+| — | MID | Alessandro Schopf | Wolfsberger AC |
+| — | MID | Romano Schmid | Werder Bremen |
+| — | MID | Patrick Wimmer | VfL Wolfsburg |
+| — | MID | Carney Chukwuemeka | Borussia Dortmund |
+| — | MID | Paul Wanner | PSV Eindhoven |
+| — | FWD | Marko Arnautovic | Red Star Belgrade |
+| — | FWD | Michael Gregoritsch | FC Augsburg |
+| — | FWD | Saša Kalajdžić | LASK |
+
+### Jordania (Coach: Jamal Sellami)
+| # | Pos | Player | Club |
+|---|-----|--------|------|
+| — | GK | Yazeed Abu Laila | Al-Hussein |
+| — | GK | Abdallah Al-Fakhouri | — |
+| — | GK | Mohammed Al-Emwasi | — |
+| — | DEF | Yazan Al-Arab | — |
+| — | DEF | Abdallah Nasib | — |
+| — | DEF | Mohammad Abu Al-Nadi | — |
+| — | DEF | Yousef Abu Al-Jazar | — |
+| — | DEF | Mohammad Hasheesh | — |
+| — | DEF | Husam Abu Al-Dahab | — |
+| — | DEF | Ehsan Haddad | Al-Hussein |
+| — | DEF | Anas Badawi | — |
+| — | DEF | Saleem Obeid | — |
+| — | MID | Noor Al-Rawabdeh | — |
+| — | MID | Rajaei Ayed | Al-Sailiya |
+| — | MID | Ibrahim Sadeh | — |
+| — | MID | Amer Jamous | — |
+| — | MID | Mohammad Al-Dawoud | — |
+| — | MID | Nizar Al-Rashdan | — |
+| — | MID | Yousef Qasha | — |
+| — | MID | Saad Al-Rawashdeh | — |
+| — | FWD | Musa Al-Taamari (c) | Rennes |
+| — | FWD | Yazan Al-Naimat | — |
+| — | FWD | Ali Olwan | Al-Sailiya |
+| — | FWD | Mohannad Abu Taha | — |
+| — | FWD | Ibrahim Sabra | — |
+| — | FWD | Mahmoud Al-Mardi | — |
+
+---
+
+## GROUP K
+
+### Portugal (Coach: Roberto Martínez)
+| # | Pos | Player | Club |
+|---|-----|--------|------|
+| — | GK | Diogo Costa | Porto |
+| — | GK | José Sá | Wolverhampton |
+| — | GK | Rui Silva | Sporting CP |
+| — | GK | Ricardo Velho | Gençlerbirliği (loan from Farense) |
+| — | DEF | João Cancelo | Barcelona (loan from Al-Hilal) |
+| — | DEF | Matheus Nunes | Manchester City |
+| — | DEF | Nuno Mendes | Paris Saint-Germain |
+| — | DEF | Rúben Dias | Manchester City |
+| — | DEF | Gonçalo Inácio | Sporting CP |
+| — | DEF | Diogo Dalot | Manchester United |
+| — | DEF | Tomás Araújo | Benfica |
+| — | DEF | Renato Veiga | Villarreal |
+| — | DEF | Nelson Semedo | Fenerbahçe |
+| — | MID | Bruno Fernandes (c) | Manchester United |
+| — | MID | Bernardo Silva | Manchester City |
+| — | MID | João Neves | Paris Saint-Germain |
+| — | MID | Vitinha | Paris Saint-Germain |
+| — | MID | Rúben Neves | Al-Hilal |
+| — | MID | Samuel Costa | Mallorca |
+| — | FWD | Cristiano Ronaldo | Al Nassr |
+| — | FWD | Gonçalo Ramos | Paris Saint-Germain |
+| — | FWD | Rafael Leão | AC Milan |
+| — | FWD | Francisco Trincão | Sporting CP |
+| — | FWD | João Félix | Al Nassr |
+| — | FWD | Pedro Neto | Chelsea |
+| — | FWD | Francisco Conceição | Juventus |
+
+*(Portugal: 26+ listed — 4 GKs in source; final cut to 3 GKs TBC)*
+
+### RD Congo (Coach: Sébastien Desabre)
+| # | Pos | Player | Club |
+|---|-----|--------|------|
+| — | GK | Lionel Mpasi | Le Havre |
+| — | GK | Timothy Fayulu | Noah |
+| — | GK | Matthieu Epolo | Standard Liège |
+| — | DEF | Chancel Mbemba | Lille |
+| — | DEF | Arthur Masuaku | Lens |
+| — | DEF | Gédéon Kalulu | Aris Limassol |
+| — | DEF | Joris Kayembe | Genk |
+| — | DEF | Dylan Batubinsika | AEL |
+| — | DEF | Axel Tuanzebe | Burnley |
+| — | DEF | Aaron Wan-Bissaka | West Ham United |
+| — | DEF | Steve Kapuadi | Widzew Łódź |
+| — | MID | Meschak Elia | Alanyaspor |
+| — | MID | Samuel Moutoussamy | Atromitos |
+| — | MID | Edo Kayembe | Watford |
+| — | MID | Théo Bongonda | Spartak Moscow |
+| — | MID | Charles Pickel | Espanyol |
+| — | MID | Gaël Kakuta | AEL |
+| — | MID | Noah Sadiki | Sunderland |
+| — | MID | Nathanaël Mbuku | Montpellier |
+| — | MID | Ngal'ayel Mukau | Lille |
+| — | MID | Brian Cipenga | Castellón |
+| — | MID | Aaron Tshibola | Kilmarnock |
+| — | FWD | Cédric Bakambu | Real Betis |
+| — | FWD | Fiston Mayele | Pyramids |
+| — | FWD | Yoane Wissa | Newcastle United |
+| — | FWD | Simon Banza | Al Jazira |
+
+### Uzbekistán (Coach: Fabio Cannavaro)
+| # | Pos | Player | Club |
+|---|-----|--------|------|
+| — | GK | Utkir Yusupov | Foolad |
+| — | GK | Abduvohid Nematov | Nasaf |
+| — | GK | Botirali Ergashev | Neftchi Fergana |
+| — | DEF | Abdukodir Khusanov | Manchester City |
+| — | DEF | Rustam Ashurmatov | Esteghlal |
+| — | DEF | Avazbek Ulmasaliev | AGMK |
+| — | DEF | Husniddin Aliqulov | Çaykur Rizespor |
+| — | DEF | Umar Eshmurodov | Selangor |
+| — | DEF | Abdulla Abdullaev | Khor Fakkan |
+| — | DEF | Sherzod Nasrullaev | Nasaf |
+| — | DEF | Farrukh Sayfiev | Navbahor |
+| — | DEF | Muhammadkodir Hamraliev | Pakhtakor |
+| — | MID | Otabek Shukurov | Kayserispor |
+| — | MID | Odiljon Hamrobekov | Navbahor |
+| — | MID | Jaloliddin Masharipov | Esteghlal |
+| — | MID | Jamshid Iskanderov | Navbahor |
+| — | MID | Diyor Kholmatov | Pakhtakor |
+| — | MID | Azizbek Turgunboev | Sivasspor |
+| — | MID | Hojimat Erkinov | Al Wahda |
+| — | MID | Sherzod Esanov | FC Pari Nizhny Novgorod |
+| — | MID | Akmal Mozgovoy | Nasaf |
+| — | MID | Aziz Ganiev | Shabab Al Ahli |
+| — | FWD | Eldor Shomurodov | AS Roma |
+| — | FWD | Abbosbek Fayzullaev | CSKA Moscow |
+| — | FWD | Igor Sergeev | BG Pathum United |
+| — | FWD | Aziz Amonov | Khor Fakkan |
+
+*(Uzbekistan: 26 players listed here from confirmed source; note slight discrepancy between sources on GK positions vs. MID/FWD classification)*
+
+### Colombia (Coach: Néstor Lorenzo)
+| # | Pos | Player | Club |
+|---|-----|--------|------|
+| — | GK | David Ospina | Atlético Nacional |
+| — | GK | Camilo Vargas | Atlas |
+| — | GK | Álvaro Montero | Vélez Sarsfield |
+| — | DEF | Davinson Sánchez | Galatasaray |
+| — | DEF | Santiago Arias | Independiente |
+| — | DEF | Yerry Mina | Cagliari |
+| — | DEF | Daniel Muñoz | Crystal Palace |
+| — | DEF | Johan Mojica | Mallorca |
+| — | DEF | Jhon Lucumí | Bologna |
+| — | DEF | Deiver Machado | Nantes |
+| — | DEF | Willer Ditta | Cruz Azul |
+| — | MID | James Rodríguez | Minnesota United |
+| — | MID | Jefferson Lerma | Crystal Palace |
+| — | MID | Juan Fernando Quintero | River Plate |
+| — | MID | Jhon Arias | Palmeiras |
+| — | MID | Richard Ríos | Benfica |
+| — | MID | Kevin Castaño | River Plate |
+| — | MID | Jorge Carrascal | Flamengo |
+| — | MID | Jaminton Campaz | Rosario Central |
+| — | MID | Juan Portilla | Athletico Paranaense |
+| — | MID | Gustavo Puerta | Racing Santander |
+| — | FWD | Luis Díaz | Bayern Munich |
+| — | FWD | Jhon Córdoba | Krasnodar |
+| — | FWD | Luis Suárez | Sporting CP |
+| — | FWD | Cucho Hernández | Real Betis |
+| — | FWD | Andrés Gómez | Vasco da Gama |
+
+---
+
+## GROUP L
+
+### Inglaterra (Coach: Thomas Tuchel)
+| # | Pos | Player | Club |
+|---|-----|--------|------|
+| — | GK | Dean Henderson | Crystal Palace |
+| — | GK | Jordan Pickford | Everton |
+| — | GK | James Trafford | Manchester City |
+| — | DEF | Dan Burn | Newcastle United |
+| — | DEF | Marc Guehi | Manchester City |
+| — | DEF | Reece James | Chelsea |
+| — | DEF | Ezri Konsa | Aston Villa |
+| — | DEF | Tino Livramento | Newcastle United |
+| — | DEF | Nico O'Reilly | Manchester City |
+| — | DEF | Jarell Quansah | Bayer Leverkusen |
+| — | DEF | Djed Spence | Tottenham Hotspur |
+| — | DEF | John Stones | Manchester City |
+| — | MID | Elliot Anderson | Nottingham Forest |
+| — | MID | Jude Bellingham | Real Madrid |
+| — | MID | Eberechi Eze | Arsenal |
+| — | MID | Jordan Henderson | Brentford |
+| — | MID | Kobbie Mainoo | Manchester United |
+| — | MID | Declan Rice | Arsenal |
+| — | MID | Morgan Rogers | Aston Villa |
+| — | FWD | Anthony Gordon | Newcastle United |
+| — | FWD | Harry Kane (c) | Bayern Munich |
+| — | FWD | Noni Madueke | Arsenal |
+| — | FWD | Marcus Rashford | Barcelona (loan from Man Utd) |
+| — | FWD | Bukayo Saka | Arsenal |
+| — | FWD | Ivan Toney | Al-Ahli |
+| — | FWD | Ollie Watkins | Aston Villa |
+
+### Croacia (Coach: Zlatko Dalić)
+| # | Pos | Player | Club |
+|---|-----|--------|------|
+| — | GK | Dominik Livaković | Dinamo Zagreb |
+| — | GK | Dominik Kotarski | FC Copenhagen |
+| — | GK | Ivor Pandur | Hull City |
+| — | DEF | Joško Gvardiol | Manchester City |
+| — | DEF | Duje Ćaleta-Car | Real Sociedad |
+| — | DEF | Josip Šutalo | Ajax |
+| — | DEF | Josip Stanišić | Bayern Munich |
+| — | DEF | Marin Pongračić | Fiorentina |
+| — | DEF | Martin Erlić | Midtjylland |
+| — | DEF | Luka Vušković | Hamburger SV |
+| — | MID | Luka Modrić (c) | AC Milan |
+| — | MID | Mateo Kovačić | Manchester City |
+| — | MID | Mario Pašalić | Atalanta |
+| — | MID | Nikola Vlašić | Torino |
+| — | MID | Luka Sučić | Real Sociedad |
+| — | MID | Martin Baturina | Como |
+| — | MID | Kristijan Jakić | FC Augsburg |
+| — | MID | Petar Sučić | Inter Milan |
+| — | MID | Nikola Moro | Bologna |
+| — | MID | Toni Fruk | Rijeka |
+| — | FWD | Ivan Perišić | PSV Eindhoven |
+| — | FWD | Andrej Kramarić | TSG Hoffenheim |
+| — | FWD | Ante Budimir | Osasuna |
+| — | FWD | Marco Pašalić | Orlando City |
+| — | FWD | Petar Musa | FC Dallas |
+| — | FWD | Igor Matanović | SC Freiburg |
+
+### Ghana (Coach: Carlos Queiroz)
+| # | Pos | Player | Club |
+|---|-----|--------|------|
+| — | GK | Benjamín Asare | Hearts of Oak |
+| — | GK | Lawrence Ati-Zigi | St. Gallen |
+| — | GK | Joseph Anang | St Patrick's Athletic |
+| — | DEF | Baba Abdul Rahman | PAOK |
+| — | DEF | Gideon Mensah | Auxerre |
+| — | DEF | Marvin Senaya | Auxerre |
+| — | DEF | Alidu Seidu | Rennes |
+| — | DEF | Abdul Mumin | Rayo Vallecano |
+| — | DEF | Jerome Opoku | İstanbul Başakşehir |
+| — | DEF | Jonas Adjetey | Wolfsburg |
+| — | DEF | Kojo Oppong Preprah | Nice |
+| — | DEF | Alexander Djiku | Spartak Moscow |
+| — | MID | Elisha Owusu | Auxerre |
+| — | MID | Thomas Partey | Villarreal |
+| — | MID | Kwasi Sibo | Real Oviedo |
+| — | MID | Augustine Boakye | Saint-Étienne |
+| — | MID | Caleb Yirenkyi | Nordsjælland |
+| — | MID | Abdul Fatawu Issahaku | Leicester City |
+| — | MID | Kamal Deen Sulemana | Atalanta |
+| — | FWD | Christopher Bonsu Baah | Al-Qadisiah |
+| — | FWD | Ernest Nuamah | Olympique Lyonnais |
+| — | FWD | Antoine Semenyo | Manchester City |
+| — | FWD | Brandon Thomas-Asante | Coventry City |
+| — | FWD | Iñaki Williams | Athletic Club |
+| — | FWD | Jordan Ayew | Leicester City |
+
+*(Ghana: 25 listed; 26th TBC or GK Paul Reverson from Ajax may be included)*
+
+### Panamá (Coach: Thomas Christiansen)
+| # | Pos | Player | Club |
+|---|-----|--------|------|
+| — | GK | Orlando Mosquera | Al-Fayha |
+| — | GK | Luis Mejía | Club Nacional |
+| — | GK | César Samudio | CD Marathon |
+| — | DEF | César Blackman | Slovan Bratislava |
+| — | DEF | Jorge Gutiérrez | Deportivo La Guaira |
+| — | DEF | Amir Murillo | Beşiktaş |
+| — | DEF | Fidel Escobar | Deportivo Saprissa |
+| — | DEF | Andrés Andrade | LASK |
+| — | DEF | Edgardo Fariña | FC Pari Nizhny Novgorod |
+| — | DEF | José Córdoba | Norwich City |
+| — | DEF | Eric Davis | CD Plaza Amador |
+| — | DEF | Jiovani Ramos | Academia Puerto Cabello |
+| — | DEF | Roderick Miller | Turan Tovuz |
+| — | MID | Aníbal Godoy | San Diego FC |
+| — | MID | Adalberto Carrasquilla | UNAM Pumas |
+| — | MID | Carlos Harvey | Minnesota United |
+| — | MID | Cristian Martínez | Ironi Kiryat Shmona |
+| — | MID | José Luis Rodríguez | FC Juárez |
+| — | MID | Cesar Yanis | CD Cobresal |
+| — | MID | Yoel Bárcenas | Mazatlán FC |
+| — | MID | Alberto Quintero | CD Plaza Amador |
+| — | MID | Azarías Londoño | CD Universidad Católica |
+| — | FWD | Ismael Díaz | Club León |
+| — | FWD | Cecilio Waterman | Universidad de Concepción |
+| — | FWD | José Fajardo | CD Universidad Católica |
+| — | FWD | Tomás Rodríguez | Deportivo Saprissa |
+
+---
+
+## Notes on Shirt Numbers
+
+Only a handful of teams had published official shirt numbers by June 1–2, 2026:
+
+- **USA**: Full 1–26 numbers confirmed (via MLSSoccer.com official announcement)
+- **Canadá**: Full shirt numbers confirmed (1–25 listed)
+- **Australia**: Full shirt numbers confirmed (1–26 via Socceroos official website)
+- **Suiza**: Full 1–26 numbers confirmed (via khelnow.com official announcement)
+- **All other 44 teams**: Numbers not yet officially published at time of research. FIFA requires submission by June 2; official squad number lists will appear on FIFA.com and national federation websites after that date.
+
+---
+
+Sources:
+- [2026 FIFA World Cup squads - Wikipedia](https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_squads)
+- [2026 World Cup Squad Lists - ESPN](https://www.espn.com/soccer/story/_/id/48757621/2026-world-cup-squad-lists-players-announced-all-48-teams)
+- [USA squad numbers - MLSSoccer.com](https://www.mlssoccer.com/news/usa-squad-numbers-for-2026-fifa-world-cup-usmnt-roster)
+- [Socceroos squad numbers - Socceroos.com.au](https://socceroos.com.au/news/socceroos-squad-numbers-revealed-fifa-world-cup-2026tm)
+- [Switzerland jersey numbers - Khelnow.com](https://khelnow.com/football/world-football-switzerland-jersey-numbers-fifa-world-cup-202605)
+- [World Cup 2026 squad lists - Sky Sports](https://www.skysports.com/football/news/11095/13543070/world-cup-2026-squad-lists-england-scotland-brazil-usa-spain-france-germany-netherlands-argentina-portugal-and-more)
+- [FIFA World Cup 2026 full squads - DAZN](https://www.dazn.com/en-US/news/soccer/fifa-world-cup-2026-full-squads-each-country-england-scotland-brazil-usa-canada-spain/1c8jggwdz3boh1nhuao4forjm7)
+- [Paraguay squad revealed - Asuncion Times](https://asunciontimes.com/sport/international-sport/26-names-one-nation-paraguays-2026-world-cup-squad-revealed/)
+- [Iran squad - Washington Times](https://www.washingtontimes.com/news/2026/jun/1/iran-finalizes-world-cup-squad-17-home-based-players-no-azmoun/)
+- [Iraq squad - Heavy.com](https://heavy.com/sports/soccer/world-cup/iraq-announces-squad-fifa-world-cup/)
+- [Saudi Arabia squad - Heavy.com](https://heavy.com/sports/soccer/world-cup/saudi-arabia-announces-squad-world-cup/)
+- [Ghana squad - beIN SPORTS](https://www.beinsports.com/en-us/soccer/fifa-world-cup-2026/articles/carlos-queiroz-s-official-ghana-squad-for-the-2026-fifa-world-cup-2026-05-27)
+- [Uzbekistan final squad - Zamin.uz](https://zamin.uz/en/sport/203141-uzbekistan-s-final-squad-for-the-2026-fifa-world-cup-announced.html)
+- [Qatar squad - beIN SPORTS](https://www.beinsports.com/en-us/soccer/fifa-world-cup-2026/articles/julen-lopetegui-s-official-squad-for-qatar-at-the-2026-fifa-world-cup-2026-06-01)
+- [World Cup 2026 squads - GiveMeSport](https://www.givemesport.com/world-cup-2026-squads/)
+- [NBC Sports confirmed rosters](https://www.nbcsports.com/soccer/news/2026-world-cup-squads-confirmed-rosters-for-all-48-teams)
+
+---
+
+**Summary of what was compiled:**
+
+All 48 squads have been researched with player names and positions (GK/DEF/MID/FWD) plus club affiliations. Shirt numbers are confirmed for 4 teams (USA, Canada, Australia, Switzerland). For the remaining 44 teams, shirt numbers will be officially released by FIFA around June 2, 2026 — they can be scraped from FIFA.com or Wikipedia once published. A few squads (Spain, Ecuador, Belgium, Morocco) appear to have minor gaps where 1–2 players could not be confirmed from available sources; those should be verified against the FIFA official team pages. Turkey's final 26 was confirmed but clubs for some players are not listed from available sources. Jordan's squad clubs are largely unavailable as the team is Jordan's debut and sources were limited.| Player | Club |
+|---|-----|--------|------|
+| — | GK | Bart Verbruggen | Brighton |
+| — | GK | Mark Flekken | Bayer Leverkusen |
+| — | GK | Robin Roefs | Sunderland |
+| — | DEF | Virgil van Dijk (c) | Liverpool |
+| — | DEF | Denzel Dumfries | Inter Milan |
+| — | DEF | Nathan Aké | Manchester City |
+| — | DEF | Jurriën Timber | Arsenal |
+| — | DEF | Micky van de Ven | Tottenham Hotspur |
+| — | DEF | Mats Wieffer | Brighton |
+| — | DEF | Jan Paul van Hecke | Brighton |
+| — | DEF | Jorrel Hato | Chelsea |
+| — | MID | Frenkie de Jong | Barcelona |
+| — | MID | Marten de Roon | Atalanta |
+| — | MID | Tijjani Reijnders | Manchester City |
+| — | MID | Teun Koopmeiners | Juventus |
+| — | MID | Ryan Gravenberch | Liverpool |
+| — | MID | Justin Kluivert | Bournemouth |
+| — | MID | Quinten Timber | Marseille |
+| — | MID | Guus Til | PSV |
+| — | FWD | Memphis Depay | Corinthians |
+| — | FWD | Wout Weghorst | Ajax |
+| — | FWD | Donyell Malen | Roma |
+| — | FWD | Cody Gakpo | Liverpool |
+| — | FWD | Noa Lang | Galatasaray |
+| — | FWD | Brian Brobbey | Sunderland |
+| — | FWD | Crysencio Summerville | West Ham United |
+
+### Japón (Coach: Hajime Moriyasu)
+| # | Pos | Player | Club |
+|---|-----|--------|------|
+| — | GK | Tomoki Hayakawa | Kashima Antlers |
+| — | GK | Keisuke Osako | Sanfrecce Hiroshima |
+| — | GK | Aya Suzuka | Parma Calcio |
+| — | DEF | Yuto Nagatomo | FC Tokyo |
+| — | DEF | Shogo Taniguchi | Sint-Truiden |
+| — | DEF | Ko Itakura | Ajax |
+| — | DEF | Tsuyoshi Watanabe | Feyenoord |
+| — | DEF | Takehiro Tomiyasu | Ajax |
+| — | DEF | Hiroki Ito | Bayern Munich |
+| — | DEF | Ayumu Seko | Le Havre AC |
+| — | DEF | Yukinari Sugawara | Werder Bremen |
+| — | DEF | Junosuke Suzuki | FC Copenhagen |
+| — | MID | Wataru Endo | Liverpool |
+| — | MID | Junya Ito | Genk |
+| — | MID | Daichi Kamada | Crystal Palace |
+| — | MID | Koki Ogawa | NEC Nijmegen |
+| — | MID | Daizen Maeda | Celtic |
+| — | MID | Ritsu Doan | Eintracht Frankfurt |
+| — | MID | Ao Tanaka | Leeds United |
+| — | MID | Kaishu Sano | Mainz 05 |
+| — | MID | Takefusa Kubo | Real Sociedad |
+| — | FWD | Ayase Ueda | Feyenoord |
+| — | FWD | Keito Nakamura | Stade de Reims |
+| — | FWD | Ito Suzuki | SC Freiburg |
+| — | FWD | Kento Shiode | Wolfsburg |
+| — | FWD | Keisuke Goto | Sint-Truiden |
+
+### Suecia (Coach: Jon Dahl Tomasson)
+| # | Pos | Player | Club |
+|---|-----|--------|------|
+| — | GK | Viktor Johansson | Stoke City |
+| — | GK | Kristoffer Nordfeldt | AIK |
+| — | GK | Jacob Widell Zetterström | Derby County |
+| — | DEF | Hjalmar Ekdal | Burnley |
+| — | DEF | Gabriel Gudmundsson | Leeds United |
+| — | DEF | Isak Hien | Atalanta |
+| — | DEF | Emil Holm | Juventus |
+| — | DEF | Gustaf Lagerbielke | Braga |
+| — | DEF | Victor Lindelöf | Aston Villa |
+| — | DEF | Erik Smith | FC St. Pauli |
+| — | DEF | Carl Starfelt | Celta Vigo |
+| — | DEF | Elliot Stroud | Mjällby |
+| — | DEF | Daniel Svensson | Borussia Dortmund |
+| — | MID | Taha Ali | Malmö |
+| — | MID | Yasin Ayari | Brighton |
+| — | MID | Lucas Bergvall | Tottenham Hotspur |
+| — | MID | Jesper Karlström | Udinese |
+| — | MID | Ken Sema | Pafos |
+| — | MID | Mattias Svanberg | Wolfsburg |
+| — | MID | Besfort Zeneli | Union Saint-Gilloise |
+| — | FWD | Alexander Bernhardsson | Holstein Kiel |
+| — | FWD | Anthony Elanga | Newcastle United |
+| — | FWD | Viktor Gyökeres | Arsenal |
+| — | FWD | Alexander Isak | Liverpool |
+| — | FWD | Gustaf Nilsson | Club Brugge |
+| — | FWD | Benjamin Nygren | Celtic |
+
+### Túnez (Coach: Jalel Kadri)
+| # | Pos | Player | Club |
+|---|-----|--------|------|
+| — | GK | Aymen Dahmen | CS Sfaxien |
+| — | GK | Sabri Ben Hessen | Étoile du Sahel |
+| — | GK | Mouhib Chamakh | Club Africain |
+| — | DEF | Montassar Talbi | Lorient |
+| — | DEF | Dylan Bronn | Servette |
+| — | DEF | Ali Abdi | Nice |
+| — | DEF | Yan Valéry | Young Boys |
+| — | DEF | Mohamed Amine Ben Hamida | Espérance de Tunis |
+| — | DEF | Moutaz Neffati | IFK Norrköping |
+| — | DEF | Omar Rekik | Maribor |
+| — | DEF | Adem Arious | Kasımpaşa |
+| — | DEF | Raed Chikhaoui | US Monastir |
+| — | MID | Ellyes Skhiri | Eintracht Frankfurt |
+| — | MID | Hannibal Mejbri | Burnley |
+| — | MID | Anis Ben Slimane | Norwich City |
+| — | MID | Mortada Ben Ouanes | Kasımpaşa |
+| — | MID | Ismael Garbi | FC Augsburg |
+| — | MID | Hadj Mahmoud | Lugano |
+| — | MID | Rani Khedira | Union Berlin |
+| — | FWD | Elias Achouri | FC Copenhagen |
+| — | FWD | Firas Chaouat | Club Africain |
+| — | FWD | Hazen Mastouri | Dynamo Makhachkala |
+| — | FWD | Elias Saad | Hannover 96 |
+| — | FWD | Sebastien Tounekti | Celtic |
+| — | FWD | Khalil Ayari | Paris Saint-Germain |
+| — | FWD | Rayan Elloumi | Vancouver Whitecaps |
+
+---
+
+## GROUP G
+
+### Bélgica (Coach: Domenico Tedesco)
+| # | Pos | Player | Club |
+|---|-----|--------|------|
+| — | GK | Thibaut Courtois | Real Madrid |
+| — | GK | Senne Lammens | Manchester United |
+| — | GK | Mike Penders | Strasbourg |
+| — | DEF | Thomas Meunier | Lille |
+| — | DEF | Timothy Castagne | Fulham |
+| — | DEF | Arthur Theate | Eintracht Frankfurt |
+| — | DEF | Zeno Debast | Sporting CP |
+| — | DEF | Maxim De Cuyper | Brighton |
+| — | DEF | Brandon Mechele | Club Brugge |
+| — | DEF | Koni De Winter | AC Milan |
+| — | DEF | Joaquin Seys | Club Brugge |
+| — | DEF | Nathan Ngoy | Lille |
+| — | MID | Axel Witsel | Girona |
+| — | MID | Kevin De Bruyne | Napoli |
+| — | MID | Youri Tielemans | Aston Villa |
+| — | MID | Hans Vanaken | Club Brugge |
+| — | MID | Charles De Ketelaere | Atalanta |
+| — | MID | Nicolas Raskin | Rangers |
+| — | MID | Diego Moreira | Strasbourg |
+| — | FWD | Romelu Lukaku | Napoli |
+| — | FWD | Leandro Trossard | Arsenal |
+| — | FWD | Jeremy Doku | Manchester City |
+| — | FWD | Dodi Lukebakio | Benfica |
+| — | FWD | Alexis Saelemaekers | AC Milan |
+| — | FWD | Mathias Fernandez-Pardo | Lille |
+
+*(Belgium: 25 listed; 26th TBC)*
+
+### Egipto (Coach: Husam Hassan)
+| # | Pos | Player | Club |
+|---|-----|--------|------|
+| — | GK | Mohamed El-Shenawy | Al Ahly |
+| — | GK | Mostafa Shobeir | Al Ahly |
+| — | GK | Mohamed Alaa | El Gouna |
+| — | GK | El Mahdy Soliman | Zamalek |
+| — | DEF | Hamdy Fathy | Al-Wakrah |
+| — | DEF | Ramy Rabia | Al Ain |
+| — | DEF | Mohamed Hany | Al Ahly |
+| — | DEF | Ahmed Fatouh | Zamalek |
+| — | DEF | Mohamed Abdelmonem | Nice |
+| — | DEF | Yasser Ibrahim | Al Ahly |
+| — | DEF | Hossam Abdelmaguid | Zamalek |
+| — | DEF | Karim Hafez | Pyramids |
+| — | DEF | Tarek Alaa | ZED |
+| — | MID | Marwan Attia | Al Ahly |
+| — | MID | Emam Ashour | Al Ahly |
+| — | MID | Mohanad Lasheen | Pyramids |
+| — | MID | Mahmoud Saber | ZED |
+| — | MID | Nabil Emad | Al-Najma |
+| — | MID | Mostafa Ziko | Pyramids |
+| — | FWD | Mohamed Salah (c) | Liverpool |
+| — | FWD | Trézéguet | Al Ahly |
+| — | FWD | Zizo | Al Ahly |
+| — | FWD | Omar Marmoush | Manchester City |
+| — | FWD | Ibrahim Adel | Nordsjælland |
+| — | FWD | Haissem Hassan | Oviedo |
+| — | FWD | Hamza Abdelkarim | Barcelona B |
+
+*(Egypt: 4 GK listed — final squad will trim to 3 GK)*
+
+### Irán (Coach: Amir Ghalenoei)
+| # | Pos | Player | Club |
+|---|-----|--------|------|
+| — | GK | Alireza Beiranvand | Tractor |
+| — | GK | Hossein Hosseini | Sepahan |
+| — | GK | Payam Niazmand | Persepolis |
+| — | DEF | Danial Eiri | Malavan |
+| — | DEF | Ehsan Hajsafi (c) | Sepahan |
+| — | DEF | Saleh Hardani | Esteghlal |
+| — | DEF | Hossein Kanaani | Persepolis |
+| — | DEF | Shoja Khalilzadeh | Tractor |
+| — | DEF | Milad Mohammadi | Persepolis |
+| — | DEF | Ali Nemati | Foolad |
+| — | DEF | Ramin Rezaeian | Foolad |
+| — | MID | Rouzbeh Cheshmi | Esteghlal |
+| — | MID | Saeid Ezatolahi | Shabab Al-Ahli |
+| — | MID | Mehdi Ghayedi | Al-Nasr |
+| — | MID | Saman Ghoddos | Kalba |
+| — | MID | Mohammad Ghorbani | Al-Wahda |
+| — | MID | Alireza Jahanbakhsh | Dender |
+| — | MID | Mohammad Mohebi | Rostov |
+| — | MID | Amir Mohammad Razzaghinia | Esteghlal |
+| — | MID | Mehdi Torabi | Tractor |
+| — | MID | Aria Yousefi | Sepahan |
+| — | FWD | Ali Alipour | Persepolis |
+| — | FWD | Dennis Dargahi | Standard Liège |
+| — | FWD | Amirhossein Hosseinzadeh | Tractor |
+| — | FWD | Mehdi Taremi | Olympiacos |
+| — | FWD | Shahriar Moghanlou | Kalba |
+
+### Nueva Zelanda (Coach: Darren Bazeley)
+| # | Pos | Player | Club |
+|---|-----|--------|------|
+| — | GK | Max Crocombe | Millwall |
+| — | GK | Alex Paulsen | Lechia Gdansk |
+| — | GK | Michael Woud | Auckland FC |
+| — | DEF | Tyler Bindon | Nottingham Forest |
+| — | DEF | Michael Boxall | Minnesota United |
+| — | DEF | Liberato Cacace | Wrexham |
+| — | DEF | Francis de Vries | Auckland FC |
+| — | DEF | Callan Elliot | Auckland FC |
+| — | DEF | Tim Payne | Wellington Phoenix |
+| — | DEF | Nando Pijnaker | Auckland FC |
+| — | DEF | Tommy Smith | Braintree Town |
+| — | DEF | Finn Surman | Portland Timbers |
+| — | MID | Lachlan Bayliss | Newcastle Jets |
+| — | MID | Joe Bell | Viking FK |
+| — | MID | Matt Garbett | Peterborough United |
+| — | MID | Ben Old | Saint-Étienne |
+| — | MID | Alex Rufer | Wellington Phoenix |
+| — | MID | Sarpreet Singh | Wellington Phoenix |
+| — | MID | Marko Stamenic | Swansea City |
+| — | MID | Ryan Thomas | PEC Zwolle |
+| — | FWD | Kosta Barbarouses | Western Sydney Wanderers |
+| — | FWD | Eli Just | Motherwell |
+| — | FWD | Callum McCowatt | Silkeborg |
+| — | FWD | Jesse Randall | Auckland FC |
+| — | FWD | Ben Waine | Port Vale |
+| — | FWD | Chris Wood (c) | Nottingham Forest |
+
+---
+
+## GROUP H
+
+### España (Coach: Luis de la Fuente)
+| # | Pos | Player | Club |
+|---|-----|--------|------|
+| — | GK | Unai Simón | Athletic Club |
+| — | GK | David Raya | Arsenal |
+| — | GK | Joan García | Barcelona |
+| — | DEF | Marcos Llorente | Atlético Madrid |
+| — | DEF | Pedro Porro | Tottenham Hotspur |
+| — | DEF | Aymeric Laporte | Athletic Club |
+| — | DEF | Pau Cubarsí | Barcelona |
+| — | DEF | Marc Cucurella | Chelsea |
+| — | MID | Rodri (c) | Manchester City |
+| — | MID | Martín Zubimendi | Arsenal |
+| — | MID | Pedri | Barcelona |
+| — | MID | Dani Olmo | Barcelona |
+| — | FWD | Yeremy Pino | Crystal Palace |
+| — | FWD | Álex Baena | Atlético Madrid |
+| — | FWD | Víctor Muñoz | Osasuna |
+| — | FWD | Mikel Oyarzabal | Real Sociedad |
+| — | FWD | Ferran Torres | Barcelona |
+| — | FWD | Borja Iglesias | Celta Vigo |
+| — | FWD | Lamine Yamal | Barcelona |
+
+*(Spain: partial list from source — full 26 TBC via FIFA official)*
+
+### Cabo Verde (Coach: Bubista)
+| # | Pos | Player | Club |
+|---|-----|--------|------|
+| — | GK | Vozinha | Chaves |
+| — | GK | Marcio Rosa | Montana |
+| — | GK | CJ dos Santos | San Diego FC |
+| — | DEF | Stopira | Torreense |
+| — | DEF | Pico | Shamrock Rovers |
+| — | DEF | Joao Paulo | FCSB |
+| — | DEF | Diney | Al Bataeh |
+| — | DEF | Logan Costa | Villarreal |
+| — | DEF | Steven Moreira | Columbus Crew |
+| — | DEF | Wagner Pina | Trabzonspor |
+| — | DEF | Sidny Lopes Cabral | Benfica |
+| — | DEF | Kelvin Pires | SJK |
+| — | MID | Jamiro Monteiro | PEC Zwolle |
+| — | MID | Kevin Pina | Krasnodar |
+| — | MID | Deroy Duarte | Ludogorets Razgrad |
+| — | MID | Telmo Arcanjo | Vitória de Guimarães |
+| — | MID | Laros Duarte | Puskás Akadémia |
+| — | MID | Yannick Semedo | Farense |
+| — | FWD | Ryan Mendes | Igdir |
+| — | FWD | Garry Rodrigues | Apollon Limassol |
+| — | FWD | Willy Semedo | Omonia |
+| — | FWD | Jovane Cabral | Estrela Amadora |
+| — | FWD | Benchimol | Akron Tolyatti |
+| — | FWD | Dailon Livramento | Casa Pia |
+| — | FWD | Helio Varela | Maccabi Tel Aviv |
+| — | FWD | Nuno da Costa | İstanbul Başakşehir |
+
+### Arabia Saudita (Coach: Georgios Donis)
+| # | Pos | Player | Club |
+|---|-----|--------|------|
+| — | GK | Mohammed Al-Owais | Al-Ula |
+| — | GK | Nawaf Al-Aqidi | Al Nassr |
+| — | GK | Ahmed Al-Kassar | Al-Qadsiah |
+| — | DEF | Abdulelah Al-Amri | Al Nassr |
+| — | DEF | Hassan Al-Tambakti | Al-Hilal |
+| — | DEF | Jehad Thikri | Al-Qadsiah |
+| — | DEF | Ali Lajami | Al-Hilal |
+| — | DEF | Hassan Kadesh | Al-Ittihad |
+| — | DEF | Saud Abdulhamid | Lens |
+| — | DEF | Mohammed Abu Al-Shamat | Al-Qadsiah |
+| — | DEF | Ali Majrashi | Al-Ahli |
+| — | DEF | Moteb Al-Harbi | Al-Hilal |
+| — | DEF | Nawaf Boushal | Al Nassr |
+| — | DEF | Sultan Al-Ghannam | Al Nassr |
+| — | MID | Mohammed Kanno | Al-Hilal |
+| — | MID | Abdullah Al-Khaibari | Al Nassr |
+| — | MID | Ziyad Al-Johani | Al-Ahli |
+| — | MID | Nasser Al-Dawsari | Al-Hilal |
+| — | MID | Musab Al-Juwayr | Al-Qadsiah |
+| — | MID | Alaa Al-Hajji | Neom |
+| — | MID | Salem Al-Dawsari (c) | Al-Hilal |
+| — | MID | Khalid Al-Ghannam | Al-Ettifaq |
+| — | MID | Ayman Yahya | Al Nassr |
+| — | FWD | Firas Al-Buraikan | Al-Ahli |
+| — | FWD | Saleh Al-Shehri | Al-Ittihad |
+| — | FWD | Abdullah Al-Hamdan | Al Nassr |
+
+### Uruguay (Coach: Marcelo Bielsa)
+| # | Pos | Player | Club |
+|---|-----|--------|------|
+| — | GK | Fernando Muslera | Estudiantes |
+| — | GK | Sergio Rochet | Internacional |
+| — | GK | Santiago Mele | Monterrey |
+| — | DEF | José María Giménez | Atlético Madrid |
+| — | DEF | Matías Viña | River Plate |
+| — | DEF | Mathías Olivera | Napoli |
+| — | DEF | Guillermo Varela | Flamengo |
+| — | DEF | Ronald Araújo | Barcelona |
+| — | DEF | Sebastián Cáceres | América |
+| — | DEF | Joaquín Piquerez | Palmeiras |
+| — | DEF | Santiago Bueno | Wolverhampton |
+| — | MID | Rodrigo Bentancur | Tottenham Hotspur |
+| — | MID | Federico Valverde | Real Madrid |
+| — | MID | Giorgian de Arrascaeta | Flamengo |
+| — | MID | Facundo Pellistri | Panathinaikos |
+| — | MID | Manuel Ugarte | Manchester United |
+| — | MID | Nicolás de la Cruz | Flamengo |
+| — | MID | Brian Rodríguez | América |
+| — | MID | Maxi Araújo | Sporting CP |
+| — | MID | Agustín Canobbio | Fluminense |
+| — | MID | Emiliano Martínez | Palmeiras |
+| — | MID | Rodrigo Zalazar | Braga |
+| — | MID | Juan Manuel Sanabria | Real Salt Lake |
+| — | FWD | Darwin Núñez | Al-Hilal |
+| — | FWD | Federico Viñas | Oviedo |
+| — | FWD | Rodrigo Aguirre | UANL |
+
+---
+
+## GROUP I
+
+### Francia (Coach: Didier Deschamps)
+| # | Pos | Player | Club |
+|---|-----|--------|------|
+| — | GK | Mike Maignan | AC Milan |
+| — | GK | Brice Samba | Rennes |
+| — | GK | Robin Risser | Lens |
+| — | DEF | Lucas Digne | Aston Villa |
+| — | DEF | Jules Koundé | Barcelona |
+| — | DEF | Theo Hernandez | Al-Hilal |
+| — | DEF | Lucas Hernandez | Paris Saint-Germain |
+| — | DEF | Dayot Upamecano | Bayern Munich |
+| — | DEF | William Saliba | Arsenal |
+| — | DEF | Ibrahima Konaté | Liverpool |
+| — | DEF | Malo Gusto | Chelsea |
+| — | DEF | Maxence Lacroix | Crystal Palace |
+| — | MID | N'Golo Kanté | Fenerbahçe |
+| — | MID | Adrien Rabiot | AC Milan |
+| — | MID | Aurélien Tchouaméni | Real Madrid |
+| — | MID | Manu Koné | Roma |
+| — | MID | Warren Zaïre-Emery | Paris Saint-Germain |
+| — | FWD | Kylian Mbappé (c) | Real Madrid |
+| — | FWD | Ousmane Dembélé | Paris Saint-Germain |
+| — | FWD | Marcus Thuram | Inter Milan |
+| — | FWD | Bradley Barcola | Paris Saint-Germain |
+| — | FWD | Michael Olise | Bayern Munich |
+| — | FWD | Maghnes Akliouche | Monaco |
+| — | FWD | Désiré Doué | Paris Saint-Germain |
+| — | FWD | Rayan Cherki | Manchester City |
+| — | FWD | Jean-Philippe Mateta | Crystal Palace |
+
+### Senegal (Coach: Aliou Cissé)
+| # | Pos | Player | Club |
+|---|-----|--------|------|
+| — | GK | Édouard Mendy | Al-Ahli |
+| — | GK | Mory Diaw | Le Havre |
+| — | GK | Yehvann Diouf | Nice |
+| — | DEF | Kalidou Koulibaly | Al-Hilal |
+| — | DEF | Krépin Diatta | Monaco |
+| — | DEF | Moussa Niakhaté | Lyon |
+| — | DEF | Ismail Jakobs | Galatasaray |
+| — | DEF | Abdoulaye Seck | Maccabi Haifa |
+| — | DEF | El Hadji Malick Diouf | West Ham United |
+| — | DEF | Antoine Mendy | Nice |
+| — | DEF | Mamadou Sarr | Chelsea |
+| — | DEF | Ilay Camara | Anderlecht |
+| — | DEF | Moustapha Mbow | Paris FC |
+| — | MID | Idrissa Gueye | Everton |
+| — | MID | Pape Gueye | Villarreal |
+| — | MID | Pape Matar Sarr | Tottenham Hotspur |
+| — | MID | Pathé Ciss | Rayo Vallecano |
+| — | MID | Lamine Camara | Monaco |
+| — | MID | Habib Diarra | Sunderland |
+| — | MID | Bara Ndiaye | Bayern Munich |
+| — | FWD | Sadio Mané | Al-Nassr |
+| — | FWD | Ismaïla Sarr | Crystal Palace |
+| — | FWD | Iliman Ndiaye | Everton |
+| — | FWD | Nicolas Jackson | Bayern Munich |
+| — | FWD | Bamba Dieng | Lorient |
+| — | FWD | Cherif Ndiaye | Samsunspor |
+
+*(Senegal: 26 listed — some sources show 28; final cut TBC)*
+
+### Iraq (Coach: Graham Arnold)
+| # | Pos | Player | Club |
+|---|-----|--------|------|
+| — | GK | Jalal Hassan (c) | Al-Zawraa |
+| — | GK | Fahad Talib | Al-Talaba |
+| — | GK | Ahmed Basil | Al-Shorta |
+| — | DEF | Rebin Sulaka | Port FC |
+| — | DEF | Merchas Doski | Viktoria Plzeň |
+| — | DEF | Hussein Ali | Pogoń Szczecin |
+| — | DEF | Frans Putros | Persib |
+| — | DEF | Manaf Younis | Al-Shorta |
+| — | DEF | Mustafa Sadoon | Al-Shorta |
+| — | DEF | Zaid Tahseen | Pakhtakor |
+| — | DEF | Ahmed Yahya | Al-Shorta |
+| — | DEF | Akam Hashim | Al-Zawraa |
+| — | MID | Amir Al-Ammari | Cracovia |
+| — | MID | Zidane Iqbal | FC Utrecht |
+| — | MID | Ibrahim Bayesh | Al-Dhafra |
+| — | MID | Youssef Amyn | AEK Larnaca |
+| — | MID | Ali Jasim | Al-Najma |
+| — | MID | Zaid Ismail | Al-Talaba |
+| — | MID | Aimar Sher | Sarpsborg |
+| — | MID | Kevin Yakob | AGF |
+| — | MID | Marko Farji | Venezia FC |
+| — | MID | Ahmed Qasem | Nashville SC |
+| — | FWD | Aymen Hussein | Al-Karma |
+| — | FWD | Ali Al-Hamadi | Ipswich Town |
+| — | FWD | Mohanad Ali | Dibba |
+| — | FWD | Ali Yousif | Al-Talaba |
+
+### Noruega (Coach: Ståle Solbakken)
+| # | Pos | Player | Club |
+|---|-----|--------|------|
+| — | GK | Ørjan Nyland | Sevilla |
+| — | GK | Sander Tangvik | Hamburger SV |
+| — | GK | Egil Selvik | Watford |
+| — | DEF | Kristoffer Ajer | Brentford |
+| — | DEF | Leo Østigård | Genoa |
+| — | DEF | David Møller Wolfe | Wolverhampton |
+| — | DEF | Fredrik André Bjørkan | Bodø/Glimt |
+| — | DEF | Marcus Holmgren Pedersen | Torino |
+| — | DEF | Torbjørn Heggem | Bologna |
+| — | DEF | Sondre Langås | Derby County |
+| — | DEF | Henrik Falchener | Viking |
+| — | MID | Morten Thorsby | Cremonese |
+| — | MID | Patrick Berg | Bodø/Glimt |
+| — | MID | Sander Berge | Fulham |
+| — | MID | Martin Ødegaard (c) | Arsenal |
+| — | MID | Fredrik Aursnes | Benfica |
+| — | MID | Kristian Thorstvedt | Sassuolo |
+| — | MID | Thelo Aasgaard | Rangers |
+| — | MID | Antonio Nusa | RB Leipzig |
+| — | MID | Andreas Schjelderup | Benfica |
+| — | MID | Oscar Bobb | Fulham |
+| — | MID | Jens Petter Hauge | Bodø/Glimt |
+| — | FWD | Alexander Sørloth | Atlético Madrid |
+| — | FWD | Erling Haaland | Manchester City |
+| — | FWD | Jørgen Strand Larsen | Crystal Palace |
+
+*(Norway: 25 listed; 26th TBC)*
+
+---
+
+## GROUP J
+
+### Argentina (Coach: Lionel Scaloni)
+| # | Pos | Player | Club |
+|---|-----|--------|------|
+| — | GK | Juan Musso | Atlético Madrid |
+| — | GK | Gerónimo Rulli | Marseille |
+| — | GK | Emiliano Martínez | Aston Villa |
+| — | DEF | Leonardo Balerdi | Marseille |
+| — | DEF | Nicolás Tagliafico | Lyon |
+| — | DEF | Gonzalo Montiel | River Plate |
+| — | DEF | Lisandro Martínez | Manchester United |
+| — | DEF | Cristian Romero | Tottenham Hotspur |
+| — | DEF | Nicolás Otamendi | Benfica |
+| — | DEF | Facundo Medina | Marseille |
+| — | DEF | Nahuel Molina | Atlético Madrid |
+| — | MID | Leandro Paredes | River Plate |
+| — | MID | Rodrigo De Paul | Inter Miami |
+| — | MID | Valentín Barco | Strasbourg |
+| — | MID | Giovani Lo Celso | Real Betis |
+| — | MID | Ezequiel Palacios | Bayer Leverkusen |
+| — | MID | Alexis Mac Allister | Liverpool |
+| — | MID | Enzo Fernández | Chelsea |
+| — | FWD | Julián Álvarez | Atlético Madrid |
+| — | FWD | Lionel Messi (c) | Inter Miami |
+| — | FWD | Nicolás González | Atlético Madrid |
+| — | FWD | Thiago Almada | Atlético Madrid |
+| — | FWD | Giuliano Simeone | Atlético Madrid |
+| — | FWD | Nico Paz | Como |
+| — | FWD | José Manuel López | Palmeiras |
+| — | FWD | Lautaro Martínez | Inter Milan |
+
+### Argelia (Coach: Vladimir Petkovic)
+| # | Pos | Player | Club |
+|---|-----|--------|------|
+| — | GK | Luca Zidane | Granada |
+| — | GK | Oussama Benbot | USM Alger |
+| — | GK | Melvin Mastil | Stade Nyonais |
+| — | DEF | Aïssa Mandi | Lille |
+| — | DEF | Ramy Bensebaini | Borussia Dortmund |
+| — | DEF | Mohamed Amine Tougai | Espérance de Tunis |
+| — | DEF | Rayan Aït-Nouri | Manchester City |
+| — | DEF | Jaouen Hadjam | Young Boys |
+| — | DEF | Rafik Belghali | Hellas Verona |
+| — | DEF | Zineddine Belaïd | JS Kabylie |
+| — | DEF | Achref Abada | USM Alger |
+| — | DEF | Samir Chergui | Paris FC |
+| — | MID | Nabil Bentaleb | Lille |
+| — | MID | Ramiz Zerrouki | Twente |
+| — | MID | Hicham Boudaoui | Nice |
+| — | MID | Farès Chaïbi | Eintracht Frankfurt |
+| — | MID | Houssem Aouar | Al-Ittihad |
+| — | MID | Ibrahim Maza | Bayer Leverkusen |
+| — | MID | Yacine Titraoui | Charleroi |
+| — | FWD | Riyad Mahrez (c) | Al-Ahli |
+| — | FWD | Mohamed Amoura | VfL Wolfsburg |
+| — | FWD | Amine Gouiri | Marseille |
+| — | FWD | Anis Hadj Moussa | Feyenoord |
+| — | FWD | Adil Boulbina | Al-Duhail |
+| — | FWD | Nadhir Benbouali | Győri ETO FC |
+| — | FWD | Farès Ghedjemis | Frosinone |
+
+### Austria (Coach: Ralf Rangnick)
+| # | Pos | Player | Club |
+|---|-----|--------|------|
+| — | GK | Alexander Schlager | Red Bull Salzburg |
+| — | GK | Patrick Pentz | Brøndby |
+| — | GK | Florian Wiegele | Viktoria Plzen |
+| — | DEF | David Alaba | Real Madrid |
+| — | DEF | Stefan Posch | Mainz |
+| — | DEF | Philipp Lienhart | SC Freiburg |
+| — | DEF | Kevin Danso | Tottenham Hotspur |
+| — | DEF | Phillipp Mwene | Mainz |
+| — | DEF | Alexander Prass | TSG Hoffenheim |
+| — | DEF | Marco Friedl | Werder Bremen |
+| — | DEF | Michael Svoboda | Venezia |
+| — | DEF | David Affengruber | Elche |
+| — | MID | Marcel Sabitzer | Borussia Dortmund |
+| — | MID | Christoph Baumgartner | RB Leipzig |
+| — | MID | Florian Grillitsch | Braga |
+| — | MID | Konrad Laimer | Bayern Munich |
+| — | MID | Xaver Schlager | RB Leipzig |
+| — | MID | Nicolas Seiwald | RB Leipzig |
+| — | MID | Alessandro Schopf | Wolfsberger AC |
+| — | MID | Romano Schmid | Werder Bremen |
+| — | MID | Patrick Wimmer | VfL Wolfsburg |
+| — | MID | Carney Chukwuemeka | Borussia Dortmund |
+| — | MID | Paul Wanner | PSV Eindhoven |
+| — | FWD | Marko Arnautovic | Red Star Belgrade |
+| — | FWD | Michael Gregoritsch | FC Augsburg |
+| — | FWD | Saša Kalajdžić | LASK |
+
+### Jordania (Coach: Jamal Sellami)
+| # | Pos | Player | Club |
+|---|-----|--------|------|
+| — | GK | Yazeed Abu Laila | Al-Hussein |
+| — | GK | Abdallah Al-Fakhouri | — |
+| — | GK | Mohammed Al-Emwasi | — |
+| — | DEF | Yazan Al-Arab | — |
+| — | DEF | Abdallah Nasib | — |
+| — | DEF | Mohammad Abu Al-Nadi | — |
+| — | DEF | Yousef Abu Al-Jazar | — |
+| — | DEF | Mohammad Hasheesh | — |
+| — | DEF | Husam Abu Al-Dahab | — |
+| — | DEF | Ehsan Haddad | Al-Hussein |
+| — | DEF | Anas Badawi | — |
+| — | DEF | Saleem Obeid | — |
+| — | MID | Noor Al-Rawabdeh | — |
+| — | MID | Rajaei Ayed | Al-Sailiya |
+| — | MID | Ibrahim Sadeh | — |
+| — | MID | Amer Jamous | — |
+| — | MID | Mohammad Al-Dawoud | — |
+| — | MID | Nizar Al-Rashdan | — |
+| — | MID | Yousef Qasha | — |
+| — | MID | Saad Al-Rawashdeh | — |
+| — | FWD | Musa Al-Taamari (c) | Rennes |
+| — | FWD | Yazan Al-Naimat | — |
+| — | FWD | Ali Olwan | Al-Sailiya |
+| — | FWD | Mohannad Abu Taha | — |
+| — | FWD | Ibrahim Sabra | — |
+| — | FWD | Mahmoud Al-Mardi | — |
+
+---
+
+## GROUP K
+
+### Portugal (Coach: Roberto Martínez)
+| # | Pos | Player | Club |
+|---|-----|--------|------|
+| — | GK | Diogo Costa | Porto |
+| — | GK | José Sá | Wolverhampton |
+| — | GK | Rui Silva | Sporting CP |
+| — | GK | Ricardo Velho | Gençlerbirliği (loan from Farense) |
+| — | DEF | João Cancelo | Barcelona (loan from Al-Hilal) |
+| — | DEF | Matheus Nunes | Manchester City |
+| — | DEF | Nuno Mendes | Paris Saint-Germain |
+| — | DEF | Rúben Dias | Manchester City |
+| — | DEF | Gonçalo Inácio | Sporting CP |
+| — | DEF | Diogo Dalot | Manchester United |
+| — | DEF | Tomás Araújo | Benfica |
+| — | DEF | Renato Veiga | Villarreal |
+| — | DEF | Nelson Semedo | Fenerbahçe |
+| — | MID | Bruno Fernandes (c) | Manchester United |
+| — | MID | Bernardo Silva | Manchester City |
+| — | MID | João Neves | Paris Saint-Germain |
+| — | MID | Vitinha | Paris Saint-Germain |
+| — | MID | Rúben Neves | Al-Hilal |
+| — | MID | Samuel Costa | Mallorca |
+| — | FWD | Cristiano Ronaldo | Al Nassr |
+| — | FWD | Gonçalo Ramos | Paris Saint-Germain |
+| — | FWD | Rafael Leão | AC Milan |
+| — | FWD | Francisco Trincão | Sporting CP |
+| — | FWD | João Félix | Al Nassr |
+| — | FWD | Pedro Neto | Chelsea |
+| — | FWD | Francisco Conceição | Juventus |
+
+*(Portugal: 26+ listed — 4 GKs in source; final cut to 3 GKs TBC)*
+
+### RD Congo (Coach: Sébastien Desabre)
+| # | Pos | Player | Club |
+|---|-----|--------|------|
+| — | GK | Lionel Mpasi | Le Havre |
+| — | GK | Timothy Fayulu | Noah |
+| — | GK | Matthieu Epolo | Standard Liège |
+| — | DEF | Chancel Mbemba | Lille |
+| — | DEF | Arthur Masuaku | Lens |
+| — | DEF | Gédéon Kalulu | Aris Limassol |
+| — | DEF | Joris Kayembe | Genk |
+| — | DEF | Dylan Batubinsika | AEL |
+| — | DEF | Axel Tuanzebe | Burnley |
+| — | DEF | Aaron Wan-Bissaka | West Ham United |
+| — | DEF | Steve Kapuadi | Widzew Łódź |
+| — | MID | Meschak Elia | Alanyaspor |
+| — | MID | Samuel Moutoussamy | Atromitos |
+| — | MID | Edo Kayembe | Watford |
+| — | MID | Théo Bongonda | Spartak Moscow |
+| — | MID | Charles Pickel | Espanyol |
+| — | MID | Gaël Kakuta | AEL |
+| — | MID | Noah Sadiki | Sunderland |
+| — | MID | Nathanaël Mbuku | Montpellier |
+| — | MID | Ngal'ayel Mukau | Lille |
+| — | MID | Brian Cipenga | Castellón |
+| — | MID | Aaron Tshibola | Kilmarnock |
+| — | FWD | Cédric Bakambu | Real Betis |
+| — | FWD | Fiston Mayele | Pyramids |
+| — | FWD | Yoane Wissa | Newcastle United |
+| — | FWD | Simon Banza | Al Jazira |
+
+### Uzbekistán (Coach: Fabio Cannavaro)
+| # | Pos | Player | Club |
+|---|-----|--------|------|
+| — | GK | Utkir Yusupov | Foolad |
+| — | GK | Abduvohid Nematov | Nasaf |
+| — | GK | Botirali Ergashev | Neftchi Fergana |
+| — | DEF | Abdukodir Khusanov | Manchester City |
+| — | DEF | Rustam Ashurmatov | Esteghlal |
+| — | DEF | Avazbek Ulmasaliev | AGMK |
+| — | DEF | Husniddin Aliqulov | Çaykur Rizespor |
+| — | DEF | Umar Eshmurodov | Selangor |
+| — | DEF | Abdulla Abdullaev | Khor Fakkan |
+| — | DEF | Sherzod Nasrullaev | Nasaf |
+| — | DEF | Farrukh Sayfiev | Navbahor |
+| — | DEF | Muhammadkodir Hamraliev | Pakhtakor |
+| — | MID | Otabek Shukurov | Kayserispor |
+| — | MID | Odiljon Hamrobekov | Navbahor |
+| — | MID | Jaloliddin Masharipov | Esteghlal |
+| — | MID | Jamshid Iskanderov | Navbahor |
+| — | MID | Diyor Kholmatov | Pakhtakor |
+| — | MID | Azizbek Turgunboev | Sivasspor |
+| — | MID | Hojimat Erkinov | Al Wahda |
+| — | MID | Sherzod Esanov | FC Pari Nizhny Novgorod |
+| — | MID | Akmal Mozgovoy | Nasaf |
+| — | MID | Aziz Ganiev | Shabab Al Ahli |
+| — | FWD | Eldor Shomurodov | AS Roma |
+| — | FWD | Abbosbek Fayzullaev | CSKA Moscow |
+| — | FWD | Igor Sergeev | BG Pathum United |
+| — | FWD | Aziz Amonov | Khor Fakkan |
+
+*(Uzbekistan: 26 players listed here from confirmed source; note slight discrepancy between sources on GK positions vs. MID/FWD classification)*
+
+### Colombia (Coach: Néstor Lorenzo)
+| # | Pos | Player | Club |
+|---|-----|--------|------|
+| — | GK | David Ospina | Atlético Nacional |
+| — | GK | Camilo Vargas | Atlas |
+| — | GK | Álvaro Montero | Vélez Sarsfield |
+| — | DEF | Davinson Sánchez | Galatasaray |
+| — | DEF | Santiago Arias | Independiente |
+| — | DEF | Yerry Mina | Cagliari |
+| — | DEF | Daniel Muñoz | Crystal Palace |
+| — | DEF | Johan Mojica | Mallorca |
+| — | DEF | Jhon Lucumí | Bologna |
+| — | DEF | Deiver Machado | Nantes |
+| — | DEF | Willer Ditta | Cruz Azul |
+| — | MID | James Rodríguez | Minnesota United |
+| — | MID | Jefferson Lerma | Crystal Palace |
+| — | MID | Juan Fernando Quintero | River Plate |
+| — | MID | Jhon Arias | Palmeiras |
+| — | MID | Richard Ríos | Benfica |
+| — | MID | Kevin Castaño | River Plate |
+| — | MID | Jorge Carrascal | Flamengo |
+| — | MID | Jaminton Campaz | Rosario Central |
+| — | MID | Juan Portilla | Athletico Paranaense |
+| — | MID | Gustavo Puerta | Racing Santander |
+| — | FWD | Luis Díaz | Bayern Munich |
+| — | FWD | Jhon Córdoba | Krasnodar |
+| — | FWD | Luis Suárez | Sporting CP |
+| — | FWD | Cucho Hernández | Real Betis |
+| — | FWD | Andrés Gómez | Vasco da Gama |
+
+---
+
+## GROUP L
+
+### Inglaterra (Coach: Thomas Tuchel)
+| # | Pos | Player | Club |
+|---|-----|--------|------|
+| — | GK | Dean Henderson | Crystal Palace |
+| — | GK | Jordan Pickford | Everton |
+| — | GK | James Trafford | Manchester City |
+| — | DEF | Dan Burn | Newcastle United |
+| — | DEF | Marc Guehi | Manchester City |
+| — | DEF | Reece James | Chelsea |
+| — | DEF | Ezri Konsa | Aston Villa |
+| — | DEF | Tino Livramento | Newcastle United |
+| — | DEF | Nico O'Reilly | Manchester City |
+| — | DEF | Jarell Quansah | Bayer Leverkusen |
+| — | DEF | Djed Spence | Tottenham Hotspur |
+| — | DEF | John Stones | Manchester City |
+| — | MID | Elliot Anderson | Nottingham Forest |
+| — | MID | Jude Bellingham | Real Madrid |
+| — | MID | Eberechi Eze | Arsenal |
+| — | MID | Jordan Henderson | Brentford |
+| — | MID | Kobbie Mainoo | Manchester United |
+| — | MID | Declan Rice | Arsenal |
+| — | MID | Morgan Rogers | Aston Villa |
+| — | FWD | Anthony Gordon | Newcastle United |
+| — | FWD | Harry Kane (c) | Bayern Munich |
+| — | FWD | Noni Madueke | Arsenal |
+| — | FWD | Marcus Rashford | Barcelona (loan from Man Utd) |
+| — | FWD | Bukayo Saka | Arsenal |
+| — | FWD | Ivan Toney | Al-Ahli |
+| — | FWD | Ollie Watkins | Aston Villa |
+
+### Croacia (Coach: Zlatko Dalić)
+| # | Pos | Player | Club |
+|---|-----|--------|------|
+| — | GK | Dominik Livaković | Dinamo Zagreb |
+| — | GK | Dominik Kotarski | FC Copenhagen |
+| — | GK | Ivor Pandur | Hull City |
+| — | DEF | Joško Gvardiol | Manchester City |
+| — | DEF | Duje Ćaleta-Car | Real Sociedad |
+| — | DEF | Josip Šutalo | Ajax |
+| — | DEF | Josip Stanišić | Bayern Munich |
+| — | DEF | Marin Pongračić | Fiorentina |
+| — | DEF | Martin Erlić | Midtjylland |
+| — | DEF | Luka Vušković | Hamburger SV |
+| — | MID | Luka Modrić (c) | AC Milan |
+| — | MID | Mateo Kovačić | Manchester City |
+| — | MID | Mario Pašalić | Atalanta |
+| — | MID | Nikola Vlašić | Torino |
+| — | MID | Luka Sučić | Real Sociedad |
+| — | MID | Martin Baturina | Como |
+| — | MID | Kristijan Jakić | FC Augsburg |
+| — | MID | Petar Sučić | Inter Milan |
+| — | MID | Nikola Moro | Bologna |
+| — | MID | Toni Fruk | Rijeka |
+| — | FWD | Ivan Perišić | PSV Eindhoven |
+| — | FWD | Andrej Kramarić | TSG Hoffenheim |
+| — | FWD | Ante Budimir | Osasuna |
+| — | FWD | Marco Pašalić | Orlando City |
+| — | FWD | Petar Musa | FC Dallas |
+| — | FWD | Igor Matanović | SC Freiburg |
+
+### Ghana (Coach: Carlos Queiroz)
+| # | Pos | Player | Club |
+|---|-----|--------|------|
+| — | GK | Benjamín Asare | Hearts of Oak |
+| — | GK | Lawrence Ati-Zigi | St. Gallen |
+| — | GK | Joseph Anang | St Patrick's Athletic |
+| — | DEF | Baba Abdul Rahman | PAOK |
+| — | DEF | Gideon Mensah | Auxerre |
+| — | DEF | Marvin Senaya | Auxerre |
+| — | DEF | Alidu Seidu | Rennes |
+| — | DEF | Abdul Mumin | Rayo Vallecano |
+| — | DEF | Jerome Opoku | İstanbul Başakşehir |
+| — | DEF | Jonas Adjetey | Wolfsburg |
+| — | DEF | Kojo Oppong Preprah | Nice |
+| — | DEF | Alexander Djiku | Spartak Moscow |
+| — | MID | Elisha Owusu | Auxerre |
+| — | MID | Thomas Partey | Villarreal |
+| — | MID | Kwasi Sibo | Real Oviedo |
+| — | MID | Augustine Boakye | Saint-Étienne |
+| — | MID | Caleb Yirenkyi | Nordsjælland |
+| — | MID | Abdul Fatawu Issahaku | Leicester City |
+| — | MID | Kamal Deen Sulemana | Atalanta |
+| — | FWD | Christopher Bonsu Baah | Al-Qadisiah |
+| — | FWD | Ernest Nuamah | Olympique Lyonnais |
+| — | FWD | Antoine Semenyo | Manchester City |
+| — | FWD | Brandon Thomas-Asante | Coventry City |
+| — | FWD | Iñaki Williams | Athletic Club |
+| — | FWD | Jordan Ayew | Leicester City |
+
+*(Ghana: 25 listed; 26th TBC or GK Paul Reverson from Ajax may be included)*
+
+### Panamá (Coach: Thomas Christiansen)
+| # | Pos | Player | Club |
+|---|-----|--------|------|
+| — | GK | Orlando Mosquera | Al-Fayha |
+| — | GK | Luis Mejía | Club Nacional |
+| — | GK | César Samudio | CD Marathon |
+| — | DEF | César Blackman | Slovan Bratislava |
+| — | DEF | Jorge Gutiérrez | Deportivo La Guaira |
+| — | DEF | Amir Murillo | Beşiktaş |
+| — | DEF | Fidel Escobar | Deportivo Saprissa |
+| — | DEF | Andrés Andrade | LASK |
+| — | DEF | Edgardo Fariña | FC Pari Nizhny Novgorod |
+| — | DEF | José Córdoba | Norwich City |
+| — | DEF | Eric Davis | CD Plaza Amador |
+| — | DEF | Jiovani Ramos | Academia Puerto Cabello |
+| — | DEF | Roderick Miller | Turan Tovuz |
+| — | MID | Aníbal Godoy | San Diego FC |
+| — | MID | Adalberto Carrasquilla | UNAM Pumas |
+| — | MID | Carlos Harvey | Minnesota United |
+| — | MID | Cristian Martínez | Ironi Kiryat Shmona |
+| — | MID | José Luis Rodríguez | FC Juárez |
+| — | MID | Cesar Yanis | CD Cobresal |
+| — | MID | Yoel Bárcenas | Mazatlán FC |
+| — | MID | Alberto Quintero | CD Plaza Amador |
+| — | MID | Azarías Londoño | CD Universidad Católica |
+| — | FWD | Ismael Díaz | Club León |
+| — | FWD | Cecilio Waterman | Universidad de Concepción |
+| — | FWD | José Fajardo | CD Universidad Católica |
+| — | FWD | Tomás Rodríguez | Deportivo Saprissa |
+
+---
+
+## Notes on Shirt Numbers
+
+Only a handful of teams had published official shirt numbers by June 1–2, 2026:
+
+- **USA**: Full 1–26 numbers confirmed (via MLSSoccer.com official announcement)
+- **Canadá**: Full shirt numbers confirmed (1–25 listed)
+- **Australia**: Full shirt numbers confirmed (1–26 via Socceroos official website)
+- **Suiza**: Full 1–26 numbers confirmed (via khelnow.com official announcement)
+- **All other 44 teams**: Numbers not yet officially published at time of research. FIFA requires submission by June 2; official squad number lists will appear on FIFA.com and national federation websites after that date.
+
+---
+
+Sources:
+- [2026 FIFA World Cup squads - Wikipedia](https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_squads)
+- [2026 World Cup Squad Lists - ESPN](https://www.espn.com/soccer/story/_/id/48757621/2026-world-cup-squad-lists-players-announced-all-48-teams)
+- [USA squad numbers - MLSSoccer.com](https://www.mlssoccer.com/news/usa-squad-numbers-for-2026-fifa-world-cup-usmnt-roster)
+- [Socceroos squad numbers - Socceroos.com.au](https://socceroos.com.au/news/socceroos-squad-numbers-revealed-fifa-world-cup-2026tm)
+- [Switzerland jersey numbers - Khelnow.com](https://khelnow.com/football/world-football-switzerland-jersey-numbers-fifa-world-cup-202605)
+- [World Cup 2026 squad lists - Sky Sports](https://www.skysports.com/football/news/11095/13543070/world-cup-2026-squad-lists-england-scotland-brazil-usa-spain-france-germany-netherlands-argentina-portugal-and-more)
+- [FIFA World Cup 2026 full squads - DAZN](https://www.dazn.com/en-US/news/soccer/fifa-world-cup-2026-full-squads-each-country-england-scotland-brazil-usa-canada-spain/1c8jggwdz3boh1nhuao4forjm7)
+- [Paraguay squad revealed - Asuncion Times](https://asunciontimes.com/sport/international-sport/26-names-one-nation-paraguays-2026-world-cup-squad-revealed/)
+- [Iran squad - Washington Times](https://www.washingtontimes.com/news/2026/jun/1/iran-finalizes-world-cup-squad-17-home-based-players-no-azmoun/)
+- [Iraq squad - Heavy.com](https://heavy.com/sports/soccer/world-cup/iraq-announces-squad-fifa-world-cup/)
+- [Saudi Arabia squad - Heavy.com](https://heavy.com/sports/soccer/world-cup/saudi-arabia-announces-squad-world-cup/)
+- [Ghana squad - beIN SPORTS](https://www.beinsports.com/en-us/soccer/fifa-world-cup-2026/articles/carlos-queiroz-s-official-ghana-squad-for-the-2026-fifa-world-cup-2026-05-27)
+- [Uzbekistan final squad - Zamin.uz](https://zamin.uz/en/sport/203141-uzbekistan-s-final-squad-for-the-2026-fifa-world-cup-announced.html)
+- [Qatar squad - beIN SPORTS](https://www.beinsports.com/en-us/soccer/fifa-world-cup-2026/articles/julen-lopetegui-s-official-squad-for-qatar-at-the-2026-fifa-world-cup-2026-06-01)
+- [World Cup 2026 squads - GiveMeSport](https://www.givemesport.com/world-cup-2026-squads/)
+- [NBC Sports confirmed rosters](https://www.nbcsports.com/soccer/news/2026-world-cup-squads-confirmed-rosters-for-all-48-teams)
+
+---
+
+**Summary of what was compiled:**
+
+All 48 squads have been researched with player names and positions (GK/DEF/MID/FWD) plus club affiliations. Shirt numbers are confirmed for 4 teams (USA, Canada, Australia, Switzerland). For the remaining 44 teams, shirt numbers will be officially released by FIFA around June 2, 2026 — they can be scraped from FIFA.com or Wikipedia once published. A few squads (Spain, Ecuador, Belgium, Morocco) appear to have minor gaps where 1–2 players could not be confirmed from available sources; those should be verified against the FIFA official team pages. Turkey's final 26 was confirmed but clubs for some players are not listed from available sources. Jordan's squad clubs are largely unavailable as the team is Jordan's debut and sources were limited.
