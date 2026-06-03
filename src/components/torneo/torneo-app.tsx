@@ -463,7 +463,7 @@ export function TorneoApp({ torneoId, torneoName, gameType, isOwner = true, embe
                       value={cfg[key as keyof typeof cfg]}
                       onChange={e => setCfg(prev => ({ ...prev, [key]: e.target.value }))}
                       disabled={locked}
-                      className="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-sm text-foreground focus:border-primary focus:ring-1 focus:ring-primary/30 outline-none disabled:opacity-40"
+                      className="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-sm focus:border-primary focus:ring-1 focus:ring-primary/30 outline-none disabled:opacity-40" style={{ colorScheme: 'dark' }}
                     />
                   </div>
                 ))}
@@ -809,7 +809,8 @@ function PartidoPanel({ m, state, scores, bets, isOwner, onSelectMatch, onSetSco
           <select
             value={m.id}
             onChange={e => onSelectMatch(e.target.value)}
-            className="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-sm text-foreground outline-none focus:border-primary"
+            className="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-sm outline-none focus:border-primary"
+            style={{ colorScheme: 'dark' }}
           >
             {pending.length > 0 && <optgroup label="⏳ Pendientes">
               {pending.map(x => <option key={x.id} value={x.id}>{state.players.find(p=>p.id===x.p1)?.name ?? '?'} vs {state.players.find(p=>p.id===x.p2)?.name ?? '?'}{x.ph==='knockout'?' 🏆':''}</option>)}
@@ -918,6 +919,7 @@ function PartidoPanel({ m, state, scores, bets, isOwner, onSelectMatch, onSetSco
                             value={bval.pred}
                             onChange={e => onSetBets(prev => ({ ...prev, [bk]: { ...bval, pred: e.target.value } }))}
                             className="bg-white/5 border border-white/10 rounded-lg px-2 py-1.5 text-xs focus:border-primary outline-none min-w-[110px]"
+                            style={{ colorScheme: 'dark' }}
                           >
                             <option value={m.p1 ?? ''}>🏅 {p1?.name}</option>
                             {m.ph === 'group' && <option value="draw">🤝 Empate</option>}
@@ -979,6 +981,7 @@ function PartidoPanel({ m, state, scores, bets, isOwner, onSelectMatch, onSetSco
                     value={sc.pen}
                     onChange={e => onSetScores(prev => ({ ...prev, [m.id]: { ...sc, pen: e.target.value } }))}
                     className="bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-sm w-full focus:border-primary outline-none"
+                    style={{ colorScheme: 'dark' }}
                   >
                     <option value="">— No hubo penales —</option>
                     <option value={m.p1 ?? ''}>{p1?.name} ganó en penales</option>
@@ -1202,7 +1205,8 @@ function MemberRow({ member, existing, players, teamsByLeague, locked, isMe, onA
           <select
             value={teamSel}
             onChange={e => setTeamSel(e.target.value)}
-            className="bg-white/5 border border-white/10 rounded-lg px-2 py-1.5 text-xs text-foreground focus:border-primary outline-none min-w-[160px]"
+            className="bg-white/5 border border-white/10 rounded-lg px-2 py-1.5 text-xs focus:border-primary outline-none min-w-[160px]"
+            style={{ colorScheme: 'dark' }}
           >
             <option value="">— Elige tu club —</option>
             {Object.entries(teamsByLeague).map(([league, teams]) => (
