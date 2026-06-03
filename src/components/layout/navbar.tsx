@@ -1,11 +1,11 @@
 'use client'
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
+import { usePathname, useRouter } from 'next/navigation'
 import { Trophy, LayoutDashboard, Users, Star, Target, Shield, Menu, X, LogOut, User, BookOpen, Swords } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { LinkButton } from '@/components/ui/link-button'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
-import { DropdownMenu, DropdownMenuContent, DropdownMenuTrigger } from '@/components/ui/dropdown-menu'
+import { DropdownMenu, DropdownMenuContent, DropdownMenuTrigger, DropdownMenuItem, DropdownMenuSeparator } from '@/components/ui/dropdown-menu'
 import { useAuth } from '@/hooks/use-auth'
 import { cn } from '@/lib/utils'
 import { useState, useEffect } from 'react'
@@ -21,6 +21,7 @@ const navLinks = [
 
 export function Navbar() {
   const pathname = usePathname()
+  const router = useRouter()
   const { user, profile, signOut } = useAuth()
   const [mobileOpen, setMobileOpen] = useState(false)
   const [mounted, setMounted] = useState(false)
@@ -74,24 +75,31 @@ export function Navbar() {
                   </Avatar>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align="end" className="w-52 p-1">
+                  {/* Info del perfil */}
                   <div className="px-2 py-1.5 mb-1">
-                    <p className="text-sm font-medium">{profile?.full_name || profile?.username}</p>
-                    <p className="text-xs text-muted-foreground">@{profile?.username}</p>
+                    <p className="text-sm font-medium">{profile?.full_name || profile?.username || 'Usuario'}</p>
+                    {profile?.username
+                      ? <p className="text-xs text-muted-foreground">@{profile.username}</p>
+                      : <p className="text-xs text-muted-foreground italic">Sin username — <Link href="/dashboard/perfil" className="underline">configurar</Link></p>
+                    }
                   </div>
-                  <Link href="/dashboard/perfil" className="flex items-center gap-2 px-2 py-1.5 text-sm rounded hover:bg-muted">
+                  <DropdownMenuSeparator />
+                  <DropdownMenuItem onClick={() => router.push('/dashboard/perfil')} className="flex items-center gap-2 cursor-pointer">
                     <User className="h-4 w-4" /> Mi perfil
-                  </Link>
-                  <Link href="/admin" className="flex items-center gap-2 px-2 py-1.5 text-sm rounded hover:bg-muted">
+                  </DropdownMenuItem>
+                  <DropdownMenuItem onClick={() => router.push('/admin')} className="flex items-center gap-2 cursor-pointer">
                     <Shield className="h-4 w-4" /> Panel admin
-                  </Link>
-                  <Link href="/como-jugar" className="flex items-center gap-2 px-2 py-1.5 text-sm rounded hover:bg-muted">
+                  </DropdownMenuItem>
+                  <DropdownMenuItem onClick={() => router.push('/como-jugar')} className="flex items-center gap-2 cursor-pointer">
                     <BookOpen className="h-4 w-4" /> Cómo jugar
-                  </Link>
-                  <div className="border-t border-border mt-1 pt-1">
-                    <button onClick={signOut} className="flex items-center gap-2 px-2 py-1.5 text-sm rounded hover:bg-muted w-full text-destructive">
-                      <LogOut className="h-4 w-4" /> Cerrar sesión
-                    </button>
-                  </div>
+                  </DropdownMenuItem>
+                  <DropdownMenuSeparator />
+                  <DropdownMenuItem
+                    onClick={signOut}
+                    className="flex items-center gap-2 text-destructive focus:text-destructive cursor-pointer"
+                  >
+                    <LogOut className="h-4 w-4" /> Cerrar sesión
+                  </DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
             ) : (
