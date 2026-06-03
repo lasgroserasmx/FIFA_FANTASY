@@ -1,5 +1,5 @@
 import { AppLayout } from '@/components/layout/app-layout'
-import { TorneoDetailPage } from '@/components/torneo/torneo-detail'
+import { ApuestaDetail } from '@/components/torneo/apuesta-detail'
 
 interface Props {
   params: { id: string }
@@ -8,7 +8,7 @@ interface Props {
 export default function TorneoIdPage({ params }: Props) {
   return (
     <AppLayout>
-      <TorneoDetailPage torneoId={params.id} />
+      <ApuestaDetail apuestaId={params.id} />
     </AppLayout>
   )
 }
