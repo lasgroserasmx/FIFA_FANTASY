@@ -7,7 +7,13 @@ import { LinkButton } from '@/components/ui/link-button'
 import { StatCard } from '@/components/shared/stat-card'
 import { MatchCard } from '@/components/shared/match-card'
 import type { Profile, LeagueMember, Match } from '@/types'
-import { PointsChart } from './points-chart'
+import dynamic from 'next/dynamic'
+
+// Recharts usa window/ResizeObserver — deshabilitar SSR para evitar hydration error #418
+const PointsChart = dynamic(() => import('./points-chart').then(m => ({ default: m.PointsChart })), {
+  ssr: false,
+  loading: () => <div className="h-full min-h-[280px] rounded-xl bg-muted/30 animate-pulse" />,
+})
 
 const modeLabel: Record<string, string> = {
   fantasy: 'Fantasy', prediction: 'Quiniela', both: 'Fantasy + Quiniela',
