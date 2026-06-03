@@ -48,6 +48,28 @@ export function TorneoApp({ torneoId, torneoName, gameType, isOwner = true, embe
   const [memberSelections, setMemberSelections] = useState<PlayerSelection[]>([])
   const saveTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
 
+  // Auto-apply member selections to torneo state whenever they change
+  useEffect(() => {
+    if (!isOwner || memberSelections.length === 0) return
+    update(prev => {
+      let players = [...prev.players]
+      let changed = false
+      memberSelections.forEach(sel => {
+        const idx = players.findIndex(p => p.id === sel.user_id)
+        if (idx >= 0) {
+          if (players[idx].team !== sel.club) {
+            players[idx] = { ...players[idx], team: sel.club, name: sel.player_name }
+            changed = true
+          }
+        } else {
+          players = [...players, { id: sel.user_id, name: sel.player_name, team: sel.club }]
+          changed = true
+        }
+      })
+      return changed ? { ...prev, players } : prev
+    })
+  }, [memberSelections, isOwner])
+
   // Load state + member selections from Supabase on mount
   useEffect(() => {
     Promise.all([
@@ -651,34 +673,6 @@ export function TorneoApp({ torneoId, torneoName, gameType, isOwner = true, embe
                 </>
               )}
 
-              {/* Admin: aplicar selecciones de miembros al estado del torneo */}
-              {!locked && isOwner && leagueMembers && memberSelections.length > 0 && (
-                <div className="rounded-lg border border-blue-500/20 bg-blue-500/5 p-3 flex items-center justify-between gap-3 flex-wrap">
-                  <p className="text-xs text-blue-400">
-                    💡 {memberSelections.length} miembro{memberSelections.length > 1 ? 's han' : ' ha'} seleccionado su club.
-                  </p>
-                  <button
-                    onClick={() => {
-                      update(prev => {
-                        let players = [...prev.players]
-                        memberSelections.forEach(sel => {
-                          const idx = players.findIndex(p => p.id === sel.user_id)
-                          if (idx >= 0) {
-                            players[idx] = { ...players[idx], team: sel.club }
-                          } else {
-                            players = [...players, { id: sel.user_id, name: sel.player_name, team: sel.club }]
-                          }
-                        })
-                        return { ...prev, players }
-                      })
-                      showToast('✅ Selecciones aplicadas')
-                    }}
-                    className="text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-lg bg-blue-500 text-white hover:bg-blue-400 transition-colors"
-                  >
-                    ✅ Aplicar selecciones
-                  </button>
-                </div>
-              )}
 
               {!locked && S.players.length >= 2 && (
                 <>
@@ -1296,7 +1290,11 @@ function MemberRow({ member, existing, players, teamsByLeague, locked, isMe, onA
         <div className="flex items-center gap-2 flex-wrap">
           <select
             value={teamSel}
-            onChange={e => setTeamSel(e.target.value)}
+            onChange={e => {
+              const team = e.target.value
+              setTeamSel(team)
+              if (team) onAdd(name, team)
+            }}
             className="bg-white/5 border border-white/10 rounded-lg px-2 py-1.5 text-xs focus:border-primary outline-none min-w-[160px]"
             style={{ colorScheme: 'dark' }}
           >
@@ -1309,13 +1307,8 @@ function MemberRow({ member, existing, players, teamsByLeague, locked, isMe, onA
               </optgroup>
             ))}
           </select>
-          <button
-            onClick={() => { if (teamSel) onAdd(name, teamSel) }}
-            className="px-3 py-1.5 rounded-lg bg-primary text-black text-[10px] font-bold uppercase tracking-widest hover:bg-primary/90 transition-colors"
-          >
-            {existing ? '✏️ Cambiar' : '+ Confirmar'}
-          </button>
-          {existing && (
+          {teamSel && <span className="text-[10px] text-primary font-bold">✓</span>}
+          {existing && isMe && (
             <button onClick={onRemove} className="px-2 py-1.5 rounded-lg bg-white/5 border border-white/10 text-red-400 text-[10px] hover:bg-red-500/10 transition-colors">✕</button>
           )}
         </div>
@@ -1357,7 +1350,11 @@ function MemberSetupBanner({ member, myName, existing, players, teamsByLeague, o
       <div className="flex items-center gap-2 flex-wrap">
         <select
           value={teamSel}
-          onChange={e => setTeamSel(e.target.value)}
+          onChange={e => {
+            const team = e.target.value
+            setTeamSel(team)
+            if (team) onAdd(myName, team)
+          }}
           className="flex-1 min-w-[180px] bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-sm focus:border-primary outline-none"
           style={{ colorScheme: 'dark' }}
         >
@@ -1370,13 +1367,7 @@ function MemberSetupBanner({ member, myName, existing, players, teamsByLeague, o
             </optgroup>
           ))}
         </select>
-        <button
-          onClick={() => { if (teamSel) onAdd(myName, teamSel) }}
-          disabled={!teamSel}
-          className="px-4 py-2 rounded-lg bg-primary text-black text-xs font-bold uppercase tracking-widest hover:bg-primary/90 transition-colors disabled:opacity-40"
-        >
-          {existing ? '✏️ Cambiar club' : '✅ Confirmar club'}
-        </button>
+        {teamSel && <span className="text-sm text-primary font-bold">✓ Guardado</span>}
       </div>
     </div>
   )
