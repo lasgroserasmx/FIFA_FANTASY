@@ -1,10 +1,10 @@
-import { ApuestaList } from '@/components/torneo/apuesta-list'
 import { AppLayout } from '@/components/layout/app-layout'
+import { TorneoStandalone } from '@/components/torneo/torneo-standalone'
 
 export default function TorneoPage() {
   return (
     <AppLayout>
-      <ApuestaList />
+      <TorneoStandalone />
     </AppLayout>
   )
 }

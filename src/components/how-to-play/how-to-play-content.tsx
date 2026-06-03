@@ -400,6 +400,119 @@ function LigasSeccion() {
   )
 }
 
+// ─── Sección: Torneo ──────────────────────────────────────────────────────────
+function TorneoSeccion() {
+  return (
+    <div className="space-y-6">
+      <div className="rounded-2xl bg-gradient-to-br from-yellow-500/10 via-primary/5 to-transparent border border-yellow-500/20 p-6">
+        <div className="flex items-center gap-3 mb-3">
+          <div className="h-10 w-10 rounded-xl bg-yellow-500/20 flex items-center justify-center">
+            <Trophy className="h-5 w-5 text-yellow-400" />
+          </div>
+          <h2 className="text-xl font-bold">🏆 Módulo Torneo</h2>
+        </div>
+        <p className="text-muted-foreground leading-relaxed">
+          El módulo Torneo es un gestor de brackets eliminatorios integrado en tus ligas.
+          El organizador agrega jugadores, genera los grupos y el bracket automáticamente, registra marcadores
+          y cada partido tiene su propia <strong className="text-foreground">Quiniela de apuestas</strong> entre los participantes.
+        </p>
+      </div>
+
+      <div className="grid md:grid-cols-2 gap-4">
+        {/* Fases */}
+        <Card>
+          <CardHeader><CardTitle className="text-base flex items-center gap-2"><Zap className="h-4 w-4 text-primary" /> Fases del torneo</CardTitle></CardHeader>
+          <CardContent className="space-y-3">
+            {[
+              { fase: '1. Setup', desc: 'El organizador agrega jugadores (nombre + equipo del juego), configura la economía y las reglas de La Quiniela.' },
+              { fase: '2. Fase de Grupos', desc: 'Todos contra todos dentro de cada grupo. Los 2 mejores de cada grupo avanzan a la eliminatoria.' },
+              { fase: '3. Eliminatoria', desc: 'Bracket eliminatorio directo generado automáticamente. En caso de empate se pueden registrar penales.' },
+              { fase: '4. Campeón', desc: 'El ganador de la final es coronado campeón con todos los premios calculados automáticamente.' },
+            ].map(({ fase, desc }) => (
+              <div key={fase} className="flex gap-3">
+                <CheckCircle className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                <div>
+                  <p className="font-semibold text-sm">{fase}</p>
+                  <p className="text-xs text-muted-foreground">{desc}</p>
+                </div>
+              </div>
+            ))}
+          </CardContent>
+        </Card>
+
+        {/* La Quiniela */}
+        <Card>
+          <CardHeader><CardTitle className="text-base flex items-center gap-2"><Award className="h-4 w-4 text-yellow-400" /> La Quiniela por partido</CardTitle></CardHeader>
+          <CardContent className="space-y-3">
+            <p className="text-xs text-muted-foreground">Antes de cada partido, los <strong>espectadores</strong> (quienes no juegan ese partido) pueden apostar.</p>
+            {[
+              { label: 'Bote total', desc: 'Suma de todas las apuestas del partido.' },
+              { label: '% al ganador', desc: 'Un % del bote va al jugador que ganó el partido (bonus por ganar).' },
+              { label: 'Pool de adivinadores', desc: 'El resto se reparte entre quienes acertaron el resultado, proporcional a lo apostado.' },
+              { label: 'Apuesta máx.', desc: 'Configurada por el organizador. En grupos puedes apostar empate; en eliminatoria solo al ganador.' },
+            ].map(({ label, desc }) => (
+              <div key={label} className="flex gap-3">
+                <ChevronRight className="h-4 w-4 text-yellow-400 mt-0.5 flex-shrink-0" />
+                <div>
+                  <p className="font-semibold text-sm text-yellow-400">{label}</p>
+                  <p className="text-xs text-muted-foreground">{desc}</p>
+                </div>
+              </div>
+            ))}
+          </CardContent>
+        </Card>
+
+        {/* Finanzas */}
+        <Card>
+          <CardHeader><CardTitle className="text-base flex items-center gap-2"><TrendingUp className="h-4 w-4 text-emerald-400" /> Panel de Finanzas</CardTitle></CardHeader>
+          <CardContent className="space-y-2 text-sm text-muted-foreground">
+            <p>El módulo lleva la cuenta de cada jugador en tiempo real:</p>
+            <ul className="space-y-1.5 text-xs">
+              <li>💸 <strong className="text-foreground">Inscripción:</strong> cuota de entrada al torneo.</li>
+              <li>🎲 <strong className="text-foreground">Apostado:</strong> total apostado en La Quiniela.</li>
+              <li>🏆 <strong className="text-foreground">Ganado Q.:</strong> ganancias acumuladas en quiniela.</li>
+              <li>🥇 <strong className="text-foreground">Bonus:</strong> % recibido por ganar partidos.</li>
+              <li>🎖️ <strong className="text-foreground">Premio:</strong> pozo del torneo para 1° y 2° lugar.</li>
+              <li>💰 <strong className="text-foreground">Neto:</strong> balance final de cada participante.</li>
+            </ul>
+          </CardContent>
+        </Card>
+
+        {/* Cómo crear */}
+        <Card>
+          <CardHeader><CardTitle className="text-base flex items-center gap-2"><Users className="h-4 w-4 text-blue-400" /> ¿Cómo empezar?</CardTitle></CardHeader>
+          <CardContent className="space-y-2 text-sm">
+            {[
+              'Ve a Ligas → Crear Liga.',
+              'Marca la actividad "🏆 Torneo" (puedes combinar con Fantasy y Predicciones).',
+              'Elige el tipo: EA Sports FC 26 o FIFA 2026.',
+              'Comparte el código de invitación con tus amigos.',
+              'Dentro de la liga, entra a la pestaña "🏆 Torneo".',
+              'Como organizador: agrega jugadores, inicia el torneo y registra resultados.',
+              'Los demás pueden ver el bracket y apostar en La Quiniela.',
+            ].map((step, i) => (
+              <div key={i} className="flex gap-2">
+                <span className="font-black text-primary text-xs w-4 flex-shrink-0">{i + 1}.</span>
+                <p className="text-xs text-muted-foreground">{step}</p>
+              </div>
+            ))}
+          </CardContent>
+        </Card>
+      </div>
+
+      <Card className="border-yellow-500/20 bg-yellow-500/5">
+        <CardContent className="p-4 flex gap-3">
+          <Info className="h-4 w-4 text-yellow-400 mt-0.5 flex-shrink-0" />
+          <div className="text-sm text-muted-foreground">
+            <strong className="text-foreground">Tip:</strong> el organizador es el único que puede editar jugadores, iniciar fases y registrar marcadores.
+            Los demás miembros de la liga ven el bracket en tiempo real y pueden apostar antes de cada partido.
+          </div>
+        </CardContent>
+      </Card>
+    </div>
+  )
+}
+
 // ─── Sección: Preguntas frecuentes ────────────────────────────────────────────
 function FaqSeccion() {
   const faqs = [
@@ -490,11 +603,12 @@ export function HowToPlayContent() {
 
       {/* Pestañas */}
       <Tabs defaultValue="que-es">
-        <TabsList className="grid w-full grid-cols-2 sm:grid-cols-5 h-auto gap-1 p-1">
+        <TabsList className="grid w-full grid-cols-3 sm:grid-cols-6 h-auto gap-1 p-1">
           <TabsTrigger value="que-es" className="text-xs">¿Qué es?</TabsTrigger>
           <TabsTrigger value="fantasy" className="text-xs">Fantasy</TabsTrigger>
           <TabsTrigger value="predicciones" className="text-xs">Quiniela</TabsTrigger>
           <TabsTrigger value="ligas" className="text-xs">Ligas</TabsTrigger>
+          <TabsTrigger value="torneo" className="text-xs">Torneo</TabsTrigger>
           <TabsTrigger value="faq" className="text-xs">FAQ</TabsTrigger>
         </TabsList>
 
@@ -502,6 +616,7 @@ export function HowToPlayContent() {
         <TabsContent value="fantasy" className="mt-6"><FantasySeccion /></TabsContent>
         <TabsContent value="predicciones" className="mt-6"><PrediccionesSeccion /></TabsContent>
         <TabsContent value="ligas" className="mt-6"><LigasSeccion /></TabsContent>
+        <TabsContent value="torneo" className="mt-6"><TorneoSeccion /></TabsContent>
         <TabsContent value="faq" className="mt-6"><FaqSeccion /></TabsContent>
       </Tabs>
 

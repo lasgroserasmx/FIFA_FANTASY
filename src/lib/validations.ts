@@ -13,13 +13,14 @@ export const registerSchema = z.object({
 })
 
 export const createLeagueSchema = z.object({
-  name: z.string().min(3, 'League name must be at least 3 characters').max(50),
+  name: z.string().min(3, 'El nombre debe tener mínimo 3 caracteres').max(50),
   description: z.string().max(200).optional(),
-  mode: z.enum(['fantasy', 'prediction', 'both']),
+  mode: z.enum(['fantasy', 'prediction', 'both', 'torneo', 'all']),
   max_members: z.number().min(2).max(100),
   entry_fee: z.number().min(0).max(10000),
   budget: z.number().min(50).max(200),
   squad_size: z.number().min(11).max(25),
+  tournament_type: z.string().optional(),
 })
 
 export const joinLeagueSchema = z.object({

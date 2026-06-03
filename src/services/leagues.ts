@@ -1,5 +1,6 @@
 import { createClient } from '@/lib/supabase/client'
 import type { League, LeagueMember, CreateLeagueInput } from '@/types'
+import { createTorneo } from './torneo'
 
 export async function getLeagues(): Promise<League[]> {
   const supabase = createClient()
@@ -45,9 +46,23 @@ export async function createLeague(input: CreateLeagueInput): Promise<League> {
   const { data: { user } } = await supabase.auth.getUser()
   if (!user) throw new Error('Not authenticated')
 
+  // Si incluye torneo, crear el bracket manager automáticamente
+  let torneoId: string | null = null
+  const hasTorneo = input.mode === 'torneo' || input.mode === 'all'
+  if (hasTorneo && input.tournament_type) {
+    const torneo = await createTorneo(input.name, input.tournament_type)
+    torneoId = torneo.id
+  }
+
+  const { tournament_type, ...rest } = input
   const { data, error } = await supabase
     .from('leagues')
-    .insert({ ...input, admin_id: user.id })
+    .insert({
+      ...rest,
+      admin_id: user.id,
+      tournament_type: tournament_type ?? null,
+      torneo_id: torneoId,
+    })
     .select()
     .single()
 

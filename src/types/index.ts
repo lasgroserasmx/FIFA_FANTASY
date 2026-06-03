@@ -3,7 +3,7 @@ export type Json = string | number | boolean | null | { [key: string]: Json } | 
 export type PlayerPosition = 'GK' | 'DEF' | 'MID' | 'FWD'
 export type MatchStatus = 'scheduled' | 'live' | 'finished' | 'postponed'
 export type MatchStage = 'group' | 'round_of_16' | 'quarter_final' | 'semi_final' | 'final'
-export type LeagueMode = 'fantasy' | 'prediction' | 'both'
+export type LeagueMode = 'fantasy' | 'prediction' | 'both' | 'torneo' | 'all'
 export type LeagueStatus = 'draft' | 'active' | 'locked' | 'finished'
 export type MemberRole = 'admin' | 'member'
 export type TransactionType = 'entry_fee' | 'prize' | 'refund'
@@ -86,6 +86,8 @@ export interface League {
   name: string
   description: string | null
   mode: LeagueMode
+  tournament_type: string | null
+  torneo_id: string | null
   status: LeagueStatus
   invite_code: string
   admin_id: string | null
@@ -217,6 +219,7 @@ export interface CreateLeagueInput {
   entry_fee: number
   budget: number
   squad_size: number
+  tournament_type?: string
 }
 
 export interface UpdateLeagueInput extends Partial<CreateLeagueInput> {

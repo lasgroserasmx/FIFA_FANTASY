@@ -9,15 +9,14 @@ import { Badge } from '@/components/ui/badge'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { Avatar, AvatarFallback } from '@/components/ui/avatar'
 import { useLeaveLeague } from '@/hooks/use-leagues'
+import { TorneoApp } from '@/components/torneo/torneo-app'
 import { toast } from 'sonner'
 import type { League, LeagueMember, Profile } from '@/types'
 import { formatCurrency } from '@/utils/format'
+import { GAME_TYPES } from '@/lib/torneo-data'
 
 const statusLabel: Record<string, string> = {
   draft: 'Borrador', active: 'Activa', locked: 'Bloqueada', finished: 'Finalizada',
-}
-const modeLabel: Record<string, string> = {
-  fantasy: 'Fantasy', prediction: 'Quiniela', both: 'Fantasy + Quiniela',
 }
 const statusColors: Record<string, string> = {
   draft: 'bg-yellow-500/20 text-yellow-400',
@@ -38,6 +37,16 @@ export function LeagueDetailClient({ league, members, currentUserId, isMember, i
   const router = useRouter()
   const { mutateAsync: leaveLeague, isPending } = useLeaveLeague()
 
+  // Determine which activities this league has
+  const hasFantasy = ['fantasy', 'both', 'all'].includes(league.mode)
+  const hasPrediction = ['prediction', 'both', 'all'].includes(league.mode)
+  const hasTorneo = ['torneo', 'all'].includes(league.mode) && !!league.torneo_id
+
+  const gt = GAME_TYPES.find(g => g.id === league.tournament_type)
+
+  // Default tab
+  const defaultTab = hasTorneo ? 'torneo' : hasFantasy ? 'fantasy' : 'clasificacion'
+
   async function handleLeave() {
     if (!confirm('¿Seguro que quieres salir de esta liga?')) return
     await leaveLeague(league.id)
@@ -49,6 +58,14 @@ export function LeagueDetailClient({ league, members, currentUserId, isMember, i
     toast.success('¡Código copiado!')
   }
 
+  // Tabs to show
+  const tabs = [
+    { id: 'clasificacion', label: '🏅 Clasificación', always: true },
+    { id: 'torneo', label: '🏆 Torneo', show: hasTorneo },
+    { id: 'fantasy', label: '⭐ Fantasy', show: hasFantasy },
+    { id: 'predicciones', label: '🎯 Predicciones', show: hasPrediction },
+  ].filter(t => t.always || t.show)
+
   return (
     <div className="space-y-6">
       {/* Cabecera */}
@@ -57,12 +74,19 @@ export function LeagueDetailClient({ league, members, currentUserId, isMember, i
           <ArrowLeft className="h-4 w-4" />
         </Link>
         <div className="flex-1 min-w-0">
-          <div className="flex items-center gap-3 flex-wrap">
+          <div className="flex items-center gap-2 flex-wrap">
+            {gt && <span className="text-xl">{gt.emoji}</span>}
             <h1 className="text-2xl font-bold truncate">{league.name}</h1>
             <Badge variant="outline" className={statusColors[league.status]}>{statusLabel[league.status]}</Badge>
-            <Badge variant="outline">{modeLabel[league.mode]}</Badge>
+            {gt && <Badge variant="outline" className="text-muted-foreground">{gt.label}</Badge>}
           </div>
           {league.description && <p className="text-muted-foreground text-sm mt-1">{league.description}</p>}
+          {/* Activity chips */}
+          <div className="flex gap-1.5 mt-2 flex-wrap">
+            {hasTorneo && <span className="text-[10px] font-bold uppercase tracking-widest px-2 py-0.5 rounded-full bg-primary/15 text-primary">🏆 Torneo</span>}
+            {hasFantasy && <span className="text-[10px] font-bold uppercase tracking-widest px-2 py-0.5 rounded-full bg-yellow-500/15 text-yellow-400">⭐ Fantasy</span>}
+            {hasPrediction && <span className="text-[10px] font-bold uppercase tracking-widest px-2 py-0.5 rounded-full bg-blue-500/15 text-blue-400">🎯 Predicciones</span>}
+          </div>
         </div>
         <div className="flex gap-2 flex-shrink-0">
           {isAdmin && (
@@ -112,67 +136,90 @@ export function LeagueDetailClient({ league, members, currentUserId, isMember, i
       )}
 
       {/* Pestañas */}
-      <Tabs defaultValue="clasificacion">
-        <TabsList className="grid w-full grid-cols-3">
-          <TabsTrigger value="clasificacion">Clasificación</TabsTrigger>
-          <TabsTrigger value="fantasy" disabled={league.mode === 'prediction'}>Fantasy</TabsTrigger>
-          <TabsTrigger value="predicciones" disabled={league.mode === 'fantasy'}>Quiniela</TabsTrigger>
+      <Tabs defaultValue={defaultTab}>
+        <TabsList className={`grid w-full grid-cols-${tabs.length}`}>
+          {tabs.map(t => (
+            <TabsTrigger key={t.id} value={t.id}>{t.label}</TabsTrigger>
+          ))}
         </TabsList>
 
+        {/* Clasificación */}
         <TabsContent value="clasificacion" className="mt-4">
           <Card>
             <CardHeader><CardTitle className="text-base">Clasificación de la liga</CardTitle></CardHeader>
             <CardContent className="p-0">
-              <div className="divide-y divide-border">
-                {members.map((member, idx) => {
-                  const isMe = member.user_id === currentUserId
-                  const name = member.profile?.full_name || member.profile?.username || '?'
-                  const initials = name.split(' ').map((n: string) => n[0]).join('').toUpperCase().slice(0, 2)
-                  const total = member.total_fantasy_points + member.total_prediction_points
-                  return (
-                    <div key={member.id} className={`flex items-center gap-3 px-4 py-3 ${isMe ? 'bg-primary/5' : ''}`}>
-                      <span className={`w-6 text-center font-black text-sm ${idx === 0 ? 'text-yellow-400' : idx === 1 ? 'text-slate-400' : idx === 2 ? 'text-amber-600' : 'text-muted-foreground'}`}>
-                        {idx + 1}
-                      </span>
-                      <Avatar className="h-8 w-8">
-                        <AvatarFallback className="text-xs font-bold bg-primary/10 text-primary">{initials}</AvatarFallback>
-                      </Avatar>
-                      <div className="flex-1 min-w-0">
-                        <p className="font-medium text-sm truncate">
-                          {name}{isMe && <span className="ml-2 text-xs text-primary font-normal">(Tú)</span>}
-                        </p>
-                        <p className="text-xs text-muted-foreground">@{member.profile?.username}</p>
-                      </div>
-                      <div className="text-right">
-                        <p className="font-bold text-sm">{total} pts</p>
-                        <div className="flex gap-2 text-xs text-muted-foreground justify-end">
-                          <span title="Fantasy"><Star className="inline h-3 w-3" /> {member.total_fantasy_points}</span>
-                          <span title="Quiniela"><Target className="inline h-3 w-3" /> {member.total_prediction_points}</span>
+              {members.length === 0 ? (
+                <div className="p-8 text-center text-muted-foreground text-sm">Aún no hay miembros. ¡Comparte el código!</div>
+              ) : (
+                <div className="divide-y divide-border">
+                  {members.map((member, idx) => {
+                    const isMe = member.user_id === currentUserId
+                    const name = member.profile?.full_name || member.profile?.username || '?'
+                    const initials = name.split(' ').map((n: string) => n[0]).join('').toUpperCase().slice(0, 2)
+                    const total = member.total_fantasy_points + member.total_prediction_points
+                    return (
+                      <div key={member.id} className={`flex items-center gap-3 px-4 py-3 ${isMe ? 'bg-primary/5' : ''}`}>
+                        <span className={`w-6 text-center font-black text-sm ${idx === 0 ? 'text-yellow-400' : idx === 1 ? 'text-slate-400' : idx === 2 ? 'text-amber-600' : 'text-muted-foreground'}`}>
+                          {idx + 1}
+                        </span>
+                        <Avatar className="h-8 w-8">
+                          <AvatarFallback className="text-xs font-bold bg-primary/10 text-primary">{initials}</AvatarFallback>
+                        </Avatar>
+                        <div className="flex-1 min-w-0">
+                          <p className="font-medium text-sm truncate">
+                            {name}{isMe && <span className="ml-2 text-xs text-primary font-normal">(Tú)</span>}
+                          </p>
+                          <p className="text-xs text-muted-foreground">@{member.profile?.username}</p>
+                        </div>
+                        <div className="text-right">
+                          <p className="font-bold text-sm">{total} pts</p>
+                          <div className="flex gap-2 text-xs text-muted-foreground justify-end">
+                            {hasFantasy && <span title="Fantasy"><Star className="inline h-3 w-3" /> {member.total_fantasy_points}</span>}
+                            {hasPrediction && <span title="Quiniela"><Target className="inline h-3 w-3" /> {member.total_prediction_points}</span>}
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  )
-                })}
-              </div>
+                    )
+                  })}
+                </div>
+              )}
             </CardContent>
           </Card>
         </TabsContent>
 
-        <TabsContent value="fantasy" className="mt-4">
-          <div className="text-center py-10">
-            <Star className="h-12 w-12 text-muted-foreground mx-auto mb-3" />
-            <p className="text-muted-foreground mb-4">Gestiona tu equipo Fantasy para esta liga</p>
-            <LinkButton href={`/fantasy/${league.id}`}>Ir a mi equipo Fantasy</LinkButton>
-          </div>
-        </TabsContent>
+        {/* Torneo (bracket manager) */}
+        {hasTorneo && league.torneo_id && (
+          <TabsContent value="torneo" className="mt-0 -mx-4 sm:-mx-6">
+            <TorneoApp
+              torneoId={league.torneo_id}
+              torneoName={league.name}
+              gameType={league.tournament_type ?? 'fc26'}
+              isOwner={isAdmin}
+            />
+          </TabsContent>
+        )}
 
-        <TabsContent value="predicciones" className="mt-4">
-          <div className="text-center py-10">
-            <Target className="h-12 w-12 text-muted-foreground mx-auto mb-3" />
-            <p className="text-muted-foreground mb-4">Envía tus predicciones de partidos</p>
-            <LinkButton href={`/predicciones/${league.id}`}>Ir a Quiniela</LinkButton>
-          </div>
-        </TabsContent>
+        {/* Fantasy */}
+        {hasFantasy && (
+          <TabsContent value="fantasy" className="mt-4">
+            <div className="text-center py-10">
+              <Star className="h-12 w-12 text-muted-foreground mx-auto mb-3" />
+              <p className="text-muted-foreground mb-4">Gestiona tu equipo Fantasy para esta liga</p>
+              <LinkButton href={`/fantasy/${league.id}`}>Ir a mi equipo Fantasy</LinkButton>
+            </div>
+          </TabsContent>
+        )}
+
+        {/* Predicciones */}
+        {hasPrediction && (
+          <TabsContent value="predicciones" className="mt-4">
+            <div className="text-center py-10">
+              <Target className="h-12 w-12 text-muted-foreground mx-auto mb-3" />
+              <p className="text-muted-foreground mb-4">Envía tus predicciones de partidos</p>
+              <LinkButton href={`/predicciones/${league.id}`}>Ir a Quiniela</LinkButton>
+            </div>
+          </TabsContent>
+        )}
       </Tabs>
     </div>
   )
