@@ -127,4 +127,14 @@
   html {
     @apply font-sans;
   }
+  select {
+    color-scheme: dark;
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+  }
+  option,
+  optgroup {
+    background-color: #1a1f2e;
+    color: #e2e8f0;
+  }
 }
