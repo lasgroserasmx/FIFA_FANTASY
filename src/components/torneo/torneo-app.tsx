@@ -32,9 +32,10 @@ interface Props {
   torneoName: string
   gameType: string
   isOwner?: boolean
+  embedded?: boolean  // true cuando está dentro de una pestaña de liga
 }
 
-export function TorneoApp({ torneoId, torneoName, gameType, isOwner = true }: Props) {
+export function TorneoApp({ torneoId, torneoName, gameType, isOwner = true, embedded = false }: Props) {
   const [S, setS] = useState<TorneoState>(INIT_STATE)
   const [tab, setTab] = useState<'setup' | 'grupos' | 'partido' | 'bracket' | 'finanzas'>('setup')
   const [toast, setToast] = useState<string | null>(null)
@@ -394,9 +395,9 @@ export function TorneoApp({ torneoId, torneoName, gameType, isOwner = true }: Pr
 
   // ── Render ────────────────────────────────────────────────────────────────────
   return (
-    <div className="min-h-screen -mt-6 -mx-4">
+    <div className={embedded ? 'w-full' : 'min-h-screen -mt-6 -mx-4'}>
       {/* Sub-header */}
-      <div className="sticky top-16 z-40 bg-background/95 backdrop-blur border-b border-border/40">
+      <div className={`${embedded ? 'sticky top-0' : 'sticky top-16'} z-40 bg-background/95 backdrop-blur border-b border-border/40`}>
         <div className="flex items-center justify-between px-4 h-10 gap-3">
           <div className="flex items-center gap-2">
             <span className="font-black tracking-widest text-primary text-sm uppercase">⚔️ {torneoName}</span>

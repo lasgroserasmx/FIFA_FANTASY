@@ -189,12 +189,13 @@ export function LeagueDetailClient({ league, members, currentUserId, isMember, i
 
         {/* Torneo (bracket manager) */}
         {hasTorneo && league.torneo_id && (
-          <TabsContent value="torneo" className="mt-0 -mx-4 sm:-mx-6">
+          <TabsContent value="torneo" className="mt-4">
             <TorneoApp
               torneoId={league.torneo_id}
               torneoName={league.name}
               gameType={league.tournament_type ?? 'fc26'}
               isOwner={isAdmin}
+              embedded
             />
           </TabsContent>
         )}
