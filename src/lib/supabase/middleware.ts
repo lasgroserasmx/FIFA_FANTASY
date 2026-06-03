@@ -25,10 +25,10 @@ export async function updateSession(request: NextRequest) {
 
   const { data: { user } } = await supabase.auth.getUser()
 
-  const publicPaths = ['/auth', '/_next', '/favicon', '/api/auth']
-  const isPublic = publicPaths.some(p => request.nextUrl.pathname.startsWith(p))
+  const protectedPaths = ['/dashboard', '/ligas', '/fantasy', '/predicciones', '/admin', '/torneo', '/como-jugar']
+  const isProtected = protectedPaths.some(p => request.nextUrl.pathname.startsWith(p))
 
-  if (!user && !isPublic) {
+  if (!user && isProtected) {
     const url = request.nextUrl.clone()
     url.pathname = '/auth/login'
     return NextResponse.redirect(url)
