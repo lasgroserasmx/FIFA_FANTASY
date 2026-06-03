@@ -33,7 +33,7 @@ export function TorneoPageClient() {
             return (
               <Link
                 key={league.id}
-                href={`/ligas/${league.id}`}
+                href={`/torneo/liga/${league.id}`}
                 className="flex items-center gap-4 rounded-xl border border-border/60 bg-card p-4 hover:border-primary/40 hover:bg-primary/3 transition-all group"
               >
                 <div className="text-3xl">{gt?.emoji ?? '🏆'}</div>
