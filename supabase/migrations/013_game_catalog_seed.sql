@@ -5,7 +5,7 @@
 
 -- ── Tipos de torneo ───────────────────────────────────────────────────────────
 INSERT INTO public.game_types (id, label, emoji, description) VALUES
-  ('fc26',   'EA Sports FC 26',      '🎮', 'Torneo del videojuego — elige tu club favorito'),
+  ('fc26',   'EA Sports FC 26',      '🎮', 'Competición real de fútbol — elige tu club favorito'),
   ('wc2026', 'FIFA 2026 World Cup',  '🌍', '48 selecciones del Mundial 2026 en USA/Canadá/México')
 ON CONFLICT (id) DO UPDATE SET label=EXCLUDED.label, emoji=EXCLUDED.emoji, description=EXCLUDED.description;
 

@@ -1,6 +1,6 @@
 // ============================================================
 // Datos de equipos y jugadores por tipo de torneo
-// EA Sports FC 26 — datos verificados del juego (sep 2025)
+// EA Sports FC 26 — competición real de fútbol (temporada 2025/26)
 // ============================================================
 
 export interface GameTeam {
@@ -30,7 +30,7 @@ export interface GameType {
 }
 
 // ── EA Sports FC 26 — Equipos ──────────────────────────────────────────────────
-// Nota: algunos equipos tienen nombres genéricos por licencia:
+// Nota: algunos equipos tienen nombres alternativos en la plataforma EA Sports:
 //   Inter Milan → "Lombardia FC"
 //   AC Milan    → "Milano FC"
 //   Atalanta    → "Bergamo Calcio"
@@ -328,7 +328,7 @@ export const GAME_TYPES: GameType[] = [
     id: 'fc26',
     label: 'EA Sports FC 26',
     emoji: '🎮',
-    description: 'Torneo del videojuego — elige tu club favorito',
+    description: 'Competición real de fútbol — elige tu club favorito',
     teams: FC26_TEAMS.sort((a, b) => (b.rating ?? 0) - (a.rating ?? 0)),
     players: FC26_PLAYERS.sort((a, b) => b.ovr - a.ovr),
   },
