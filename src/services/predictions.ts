@@ -69,7 +69,7 @@ export async function getLeaderboard(leagueId: string) {
     .from('league_members')
     .select('*, profile:profiles(*)')
     .eq('league_id', leagueId)
-    .order('total_prediction_points', { ascending: false })
+    .order('total_fantasy_points', { ascending: false })
 
   if (error) throw error
   return data ?? []
