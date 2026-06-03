@@ -496,70 +496,25 @@ export function TorneoApp({ torneoId, torneoName, gameType, isOwner = true, embe
                   <p className="text-xs text-muted-foreground">
                     Los participantes son los miembros de la liga. {isOwner ? 'Asigna el club a cada uno para agregarlo al torneo.' : 'El organizador asigna los clubes.'}
                   </p>
-                  {leagueMembers.map(member => {
-                    const name = member.profile?.full_name || member.profile?.username || member.user_id.slice(0, 8)
-                    const existing = S.players.find(p => p.id === member.user_id)
-                    const [teamSel, setTeamSel] = useState(existing?.team ?? '')
-
-                    function handleAddMember() {
-                      if (!teamSel) { showToast('⚠️ Selecciona un club'); return }
-                      update(prev => {
-                        const alreadyIn = prev.players.find(p => p.id === member.user_id)
-                        if (alreadyIn) {
-                          // actualizar club
-                          return { ...prev, players: prev.players.map(p => p.id === member.user_id ? { ...p, team: teamSel } : p) }
-                        }
-                        return { ...prev, players: [...prev.players, { id: member.user_id, name, team: teamSel }] }
-                      })
-                      showToast(`✅ ${name} agregado`)
-                    }
-
-                    function handleRemoveMember() {
-                      update(prev => ({ ...prev, players: prev.players.filter(p => p.id !== member.user_id) }))
-                    }
-
-                    return (
-                      <div key={member.user_id} className="flex items-center gap-3 p-3 rounded-lg bg-white/3 border border-white/7 flex-wrap">
-                        <div className="flex items-center gap-2 flex-1 min-w-[120px]">
-                          <Avatar pid={existing?.id ?? null} players={S.players.length ? S.players : [{ id: member.user_id, name, team: '' }]} size={28} />
-                          <div>
-                            <div className="text-sm font-semibold">{name}</div>
-                            {existing && <div className="text-[10px] text-primary">{existing.team} ✓</div>}
-                          </div>
-                        </div>
-                        {!locked && (
-                          <div className="flex items-center gap-2 flex-wrap">
-                            <select
-                              value={teamSel}
-                              onChange={e => setTeamSel(e.target.value)}
-                              className="bg-white/5 border border-white/10 rounded-lg px-2 py-1.5 text-xs text-foreground focus:border-primary outline-none min-w-[160px]"
-                            >
-                              <option value="">— Club —</option>
-                              {Object.entries(teamsByLeague).map(([league, teams]) => (
-                                <optgroup key={league} label={league}>
-                                  {teams.map(t => (
-                                    <option key={t.name} value={t.name}>{t.name}</option>
-                                  ))}
-                                </optgroup>
-                              ))}
-                            </select>
-                            <button onClick={handleAddMember} className="px-3 py-1.5 rounded-lg bg-primary text-black text-[10px] font-bold uppercase tracking-widest hover:bg-primary/90 transition-colors">
-                              {existing ? '✏️ Actualizar' : '+ Agregar'}
-                            </button>
-                            {existing && (
-                              <button onClick={handleRemoveMember} className="px-2 py-1.5 rounded-lg bg-white/5 border border-white/10 text-red-400 text-[10px] hover:bg-red-500/10 transition-colors">✕</button>
-                            )}
-                          </div>
-                        )}
-                        {locked && existing && (
-                          <span className="text-xs text-muted-foreground">{existing.team}</span>
-                        )}
-                        {locked && !existing && (
-                          <span className="text-xs text-muted-foreground italic">Sin club asignado</span>
-                        )}
-                      </div>
-                    )
-                  })}
+                  {leagueMembers.map(member => (
+                    <MemberRow
+                      key={member.user_id}
+                      member={member}
+                      existing={S.players.find(p => p.id === member.user_id)}
+                      players={S.players}
+                      teamsByLeague={teamsByLeague}
+                      locked={locked}
+                      onAdd={(name, team) => {
+                        update(prev => {
+                          const alreadyIn = prev.players.find(p => p.id === member.user_id)
+                          if (alreadyIn) return { ...prev, players: prev.players.map(p => p.id === member.user_id ? { ...p, team } : p) }
+                          return { ...prev, players: [...prev.players, { id: member.user_id, name, team }] }
+                        })
+                        showToast(`✅ ${name} agregado`)
+                      }}
+                      onRemove={() => update(prev => ({ ...prev, players: prev.players.filter(p => p.id !== member.user_id) }))}
+                    />
+                  ))}
                 </div>
               ) : (
                 /* Modo standalone: formulario libre */
@@ -1200,6 +1155,60 @@ function FinanzasPanel({ state, finances, totalPot, quinielaPot }: {
           </div>
         </div>
       )}
+    </div>
+  )
+}
+
+// ── MemberRow — componente separado para respetar Rules of Hooks ───────────────
+function MemberRow({ member, existing, players, teamsByLeague, locked, onAdd, onRemove }: {
+  member: LeagueMember & { profile: Profile | null }
+  existing: TorneoPlayer | undefined
+  players: TorneoPlayer[]
+  teamsByLeague: Record<string, { name: string; rating?: number }[]>
+  locked: boolean
+  onAdd: (name: string, team: string) => void
+  onRemove: () => void
+}) {
+  const name = member.profile?.full_name || member.profile?.username || member.user_id.slice(0, 8)
+  const [teamSel, setTeamSel] = useState(existing?.team ?? '')
+
+  return (
+    <div className="flex items-center gap-3 p-3 rounded-lg bg-white/3 border border-white/7 flex-wrap">
+      <div className="flex items-center gap-2 flex-1 min-w-[120px]">
+        <Avatar pid={existing?.id ?? null} players={players.length ? players : [{ id: member.user_id, name, team: '' }]} size={28} />
+        <div>
+          <div className="text-sm font-semibold">{name}</div>
+          {existing && <div className="text-[10px] text-primary">{existing.team} ✓</div>}
+        </div>
+      </div>
+      {!locked && (
+        <div className="flex items-center gap-2 flex-wrap">
+          <select
+            value={teamSel}
+            onChange={e => setTeamSel(e.target.value)}
+            className="bg-white/5 border border-white/10 rounded-lg px-2 py-1.5 text-xs text-foreground focus:border-primary outline-none min-w-[160px]"
+          >
+            <option value="">— Club —</option>
+            {Object.entries(teamsByLeague).map(([league, teams]) => (
+              <optgroup key={league} label={league}>
+                {teams.map(t => (
+                  <option key={t.name} value={t.name}>{t.name}</option>
+                ))}
+              </optgroup>
+            ))}
+          </select>
+          <button
+            onClick={() => { if (teamSel) onAdd(name, teamSel) }}
+            className="px-3 py-1.5 rounded-lg bg-primary text-black text-[10px] font-bold uppercase tracking-widest hover:bg-primary/90 transition-colors"
+          >
+            {existing ? '✏️ Actualizar' : '+ Agregar'}
+          </button>
+          {existing && (
+            <button onClick={onRemove} className="px-2 py-1.5 rounded-lg bg-white/5 border border-white/10 text-red-400 text-[10px] hover:bg-red-500/10 transition-colors">✕</button>
+          )}
+        </div>
+      )}
+      {locked && <span className="text-xs text-muted-foreground">{existing ? existing.team : <em>Sin club</em>}</span>}
     </div>
   )
 }

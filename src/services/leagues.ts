@@ -40,14 +40,13 @@ export async function getLeagueMembers(leagueId: string): Promise<LeagueMember[]
 
   if (!error) return (data ?? []) as LeagueMember[]
 
-  // Fallback: sin join (FK no configurada aún)
-  const { data: plain, error: err2 } = await supabase
+  // Fallback: sin join (FK no configurada aún en Supabase)
+  const { data: plain } = await supabase
     .from('league_members')
-    .select('*')
+    .select('user_id, role, league_id')
     .eq('league_id', leagueId)
 
-  if (err2) throw err2
-  return (plain ?? []).map(m => ({ ...m, profile: null })) as LeagueMember[]
+  return (plain ?? []).map(m => ({ ...m, profile: null, total_fantasy_points: 0, total_prediction_points: 0 })) as LeagueMember[]
 }
 
 export async function createLeague(input: CreateLeagueInput): Promise<League> {
