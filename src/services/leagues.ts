@@ -32,13 +32,30 @@ export async function getLeague(id: string): Promise<League | null> {
 export async function getLeagueMembers(leagueId: string): Promise<LeagueMember[]> {
   const supabase = createClient()
 
-  const { data, error } = await supabase
+  // 1. Traer miembros
+  const { data: members, error } = await supabase
     .from('league_members')
     .select('user_id, role, league_id')
     .eq('league_id', leagueId)
 
   if (error) throw error
-  return (data ?? []).map(m => ({ ...m, profile: null, total_fantasy_points: 0, total_prediction_points: 0 })) as LeagueMember[]
+  if (!members || members.length === 0) return []
+
+  // 2. Traer perfiles por los user_ids
+  const userIds = members.map(m => m.user_id)
+  const { data: profiles } = await supabase
+    .from('profiles')
+    .select('id, username, full_name, avatar_url')
+    .in('id', userIds)
+
+  const profileMap = Object.fromEntries((profiles ?? []).map(p => [p.id, p]))
+
+  return members.map(m => ({
+    ...m,
+    total_fantasy_points: 0,
+    total_prediction_points: 0,
+    profile: profileMap[m.user_id] ?? null,
+  })) as LeagueMember[]
 }
 
 export async function createLeague(input: CreateLeagueInput): Promise<League> {
