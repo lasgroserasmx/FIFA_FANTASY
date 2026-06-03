@@ -1,7 +1,7 @@
 'use client'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { Trophy, LayoutDashboard, Users, Star, Target, Shield, Menu, X, LogOut, User, BookOpen } from 'lucide-react'
+import { Trophy, LayoutDashboard, Users, Star, Target, Shield, Menu, X, LogOut, User, BookOpen, Swords } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { LinkButton } from '@/components/ui/link-button'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
@@ -16,6 +16,7 @@ const navLinks = [
   { href: '/fantasy', label: 'Fantasy', icon: Star },
   { href: '/predicciones', label: 'Predicciones', icon: Target },
   { href: '/como-jugar', label: 'Cómo jugar', icon: BookOpen },
+  { href: '/torneo', label: 'Torneo FC', icon: Swords },
 ]
 
 export function Navbar() {
