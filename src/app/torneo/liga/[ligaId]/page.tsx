@@ -2,13 +2,14 @@ import { AppLayout } from '@/components/layout/app-layout'
 import { TorneoLigaPage } from '@/components/torneo/torneo-liga-page'
 
 interface Props {
-  params: { ligaId: string }
+  params: Promise<{ ligaId: string }>
 }
 
-export default function TorneoLigaRoute({ params }: Props) {
+export default async function TorneoLigaRoute({ params }: Props) {
+  const { ligaId } = await params
   return (
     <AppLayout>
-      <TorneoLigaPage ligaId={params.ligaId} />
+      <TorneoLigaPage ligaId={ligaId} />
     </AppLayout>
   )
 }
