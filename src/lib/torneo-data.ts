@@ -1,13 +1,23 @@
 // ============================================================
-// Datos de equipos por tipo de torneo
-// Agrega nuevos torneos aquí a medida que los necesites
+// Datos de equipos y jugadores por tipo de torneo
+// EA Sports FC 26 — datos verificados del juego (sep 2025)
 // ============================================================
 
 export interface GameTeam {
+  name: string        // Nombre exacto del equipo en el juego
+  league: string      // Liga
+  country: string     // Emoji bandera
+  stars?: number      // Estrellas del equipo (sistema del juego 1-5)
+  rating?: number     // Rating numérico de referencia
+}
+
+export interface GamePlayer {
   name: string
+  team: string        // Debe coincidir con GameTeam.name
+  position: 'GK' | 'DEF' | 'MID' | 'FWD'
+  ovr: number         // Rating overall en el juego
+  price: number       // Precio Fantasy (millones £, estimado)
   league: string
-  country: string
-  rating?: number
 }
 
 export interface GameType {
@@ -16,234 +26,300 @@ export interface GameType {
   emoji: string
   description: string
   teams: GameTeam[]
+  players?: GamePlayer[]
 }
 
-// ── EA Sports FC 26 — Top clubs ────────────────────────────────────────────────
+// ── EA Sports FC 26 — Equipos ──────────────────────────────────────────────────
+// Nota: algunos equipos tienen nombres genéricos por licencia:
+//   Inter Milan → "Lombardia FC"
+//   AC Milan    → "Milano FC"
+//   Atalanta    → "Bergamo Calcio"
+
 const FC26_TEAMS: GameTeam[] = [
-  // ⚽ Premier League
-  { name: 'Manchester City',    league: 'Premier League', country: '🏴󠁧󠁢󠁥󠁮󠁧󠁿', rating: 93 },
-  { name: 'Arsenal',            league: 'Premier League', country: '🏴󠁧󠁢󠁥󠁮󠁧󠁿', rating: 88 },
-  { name: 'Liverpool',          league: 'Premier League', country: '🏴󠁧󠁢󠁥󠁮󠁧󠁿', rating: 88 },
-  { name: 'Chelsea',            league: 'Premier League', country: '🏴󠁧󠁢󠁥󠁮󠁧󠁿', rating: 84 },
-  { name: 'Manchester United',  league: 'Premier League', country: '🏴󠁧󠁢󠁥󠁮󠁧󠁿', rating: 82 },
-  { name: 'Newcastle United',   league: 'Premier League', country: '🏴󠁧󠁢󠁥󠁮󠁧󠁿', rating: 82 },
-  { name: 'Tottenham Hotspur',  league: 'Premier League', country: '🏴󠁧󠁢󠁥󠁮󠁧󠁿', rating: 81 },
-  { name: 'Aston Villa',        league: 'Premier League', country: '🏴󠁧󠁢󠁥󠁮󠁧󠁿', rating: 81 },
-  { name: 'Brighton',           league: 'Premier League', country: '🏴󠁧󠁢󠁥󠁮󠁧󠁿', rating: 79 },
-  { name: 'West Ham United',    league: 'Premier League', country: '🏴󠁧󠁢󠁥󠁮󠁧󠁿', rating: 78 },
-  { name: 'Brentford',          league: 'Premier League', country: '🏴󠁧󠁢󠁥󠁮󠁧󠁿', rating: 77 },
-  { name: 'Fulham',             league: 'Premier League', country: '🏴󠁧󠁢󠁥󠁮󠁧󠁿', rating: 77 },
-  { name: 'Crystal Palace',     league: 'Premier League', country: '🏴󠁧󠁢󠁥󠁮󠁧󠁿', rating: 76 },
-  { name: 'Everton',            league: 'Premier League', country: '🏴󠁧󠁢󠁥󠁮󠁧󠁿', rating: 75 },
-  { name: 'Nottingham Forest',  league: 'Premier League', country: '🏴󠁧󠁢󠁥󠁮󠁧󠁿', rating: 75 },
-  { name: 'Wolves',             league: 'Premier League', country: '🏴󠁧󠁢󠁥󠁮󠁧󠁿', rating: 74 },
-  { name: 'Leicester City',     league: 'Premier League', country: '🏴󠁧󠁢󠁥󠁮󠁧󠁿', rating: 74 },
-  { name: 'Bournemouth',        league: 'Premier League', country: '🏴󠁧󠁢󠁥󠁮󠁧󠁿', rating: 74 },
+  // 🏴󠁧󠁢󠁥󠁮󠁧󠁿 Premier League
+  { name: 'Liverpool FC',          league: 'Premier League', country: '🏴󠁧󠁢󠁥󠁮󠁧󠁿', stars: 5,   rating: 91 },
+  { name: 'Manchester City',       league: 'Premier League', country: '🏴󠁧󠁢󠁥󠁮󠁧󠁿', stars: 5,   rating: 90 },
+  { name: 'Arsenal FC',            league: 'Premier League', country: '🏴󠁧󠁢󠁥󠁮󠁧󠁿', stars: 5,   rating: 89 },
+  { name: 'Chelsea FC',            league: 'Premier League', country: '🏴󠁧󠁢󠁥󠁮󠁧󠁿', stars: 4.5, rating: 87 },
+  { name: 'Newcastle United',      league: 'Premier League', country: '🏴󠁧󠁢󠁥󠁮󠁧󠁿', stars: 4.5, rating: 86 },
+  { name: 'Aston Villa',           league: 'Premier League', country: '🏴󠁧󠁢󠁥󠁮󠁧󠁿', stars: 4.5, rating: 85 },
+  { name: 'Manchester United',     league: 'Premier League', country: '🏴󠁧󠁢󠁥󠁮󠁧󠁿', stars: 4.5, rating: 85 },
+  { name: 'Tottenham Hotspur',     league: 'Premier League', country: '🏴󠁧󠁢󠁥󠁮󠁧󠁿', stars: 4.5, rating: 84 },
+  { name: 'Brighton',              league: 'Premier League', country: '🏴󠁧󠁢󠁥󠁮󠁧󠁿', stars: 4,   rating: 80 },
+  { name: 'Fulham FC',             league: 'Premier League', country: '🏴󠁧󠁢󠁥󠁮󠁧󠁿', stars: 4,   rating: 78 },
+  { name: 'West Ham United',       league: 'Premier League', country: '🏴󠁧󠁢󠁥󠁮󠁧󠁿', stars: 4,   rating: 78 },
+  { name: 'Brentford',             league: 'Premier League', country: '🏴󠁧󠁢󠁥󠁮󠁧󠁿', stars: 3.5, rating: 77 },
+  { name: 'Crystal Palace',        league: 'Premier League', country: '🏴󠁧󠁢󠁥󠁮󠁧󠁿', stars: 3.5, rating: 76 },
+  { name: 'Everton',               league: 'Premier League', country: '🏴󠁧󠁢󠁥󠁮󠁧󠁿', stars: 3.5, rating: 75 },
+  { name: 'Nottingham Forest',     league: 'Premier League', country: '🏴󠁧󠁢󠁥󠁮󠁧󠁿', stars: 3.5, rating: 75 },
+  { name: 'Wolves',                league: 'Premier League', country: '🏴󠁧󠁢󠁥󠁮󠁧󠁿', stars: 3.5, rating: 74 },
+  { name: 'Bournemouth',           league: 'Premier League', country: '🏴󠁧󠁢󠁥󠁮󠁧󠁿', stars: 3.5, rating: 74 },
+  { name: 'Leicester City',        league: 'Premier League', country: '🏴󠁧󠁢󠁥󠁮󠁧󠁿', stars: 3.5, rating: 74 },
 
   // 🇪🇸 La Liga
-  { name: 'Real Madrid',        league: 'La Liga', country: '🇪🇸', rating: 99 },
-  { name: 'Barcelona',          league: 'La Liga', country: '🇪🇸', rating: 86 },
-  { name: 'Atlético de Madrid', league: 'La Liga', country: '🇪🇸', rating: 84 },
-  { name: 'Athletic Club',      league: 'La Liga', country: '🇪🇸', rating: 80 },
-  { name: 'Real Sociedad',      league: 'La Liga', country: '🇪🇸', rating: 80 },
-  { name: 'Villarreal',         league: 'La Liga', country: '🇪🇸', rating: 79 },
-  { name: 'Real Betis',         league: 'La Liga', country: '🇪🇸', rating: 78 },
-  { name: 'Sevilla',            league: 'La Liga', country: '🇪🇸', rating: 78 },
-  { name: 'Girona',             league: 'La Liga', country: '🇪🇸', rating: 76 },
-  { name: 'Valencia',           league: 'La Liga', country: '🇪🇸', rating: 75 },
-  { name: 'Osasuna',            league: 'La Liga', country: '🇪🇸', rating: 74 },
-  { name: 'Rayo Vallecano',     league: 'La Liga', country: '🇪🇸', rating: 73 },
-  { name: 'Celta Vigo',         league: 'La Liga', country: '🇪🇸', rating: 73 },
-  { name: 'Getafe',             league: 'La Liga', country: '🇪🇸', rating: 72 },
-  { name: 'Mallorca',           league: 'La Liga', country: '🇪🇸', rating: 72 },
+  { name: 'Real Madrid CF',        league: 'La Liga', country: '🇪🇸', stars: 5,   rating: 91 },
+  { name: 'FC Barcelona',          league: 'La Liga', country: '🇪🇸', stars: 5,   rating: 89 },
+  { name: 'Atlético de Madrid',    league: 'La Liga', country: '🇪🇸', stars: 4.5, rating: 87 },
+  { name: 'Athletic Club',         league: 'La Liga', country: '🇪🇸', stars: 4,   rating: 82 },
+  { name: 'Real Sociedad',         league: 'La Liga', country: '🇪🇸', stars: 4,   rating: 80 },
+  { name: 'Villarreal CF',         league: 'La Liga', country: '🇪🇸', stars: 4,   rating: 79 },
+  { name: 'Real Betis',            league: 'La Liga', country: '🇪🇸', stars: 3.5, rating: 78 },
+  { name: 'Sevilla FC',            league: 'La Liga', country: '🇪🇸', stars: 3.5, rating: 77 },
+  { name: 'Girona FC',             league: 'La Liga', country: '🇪🇸', stars: 3.5, rating: 76 },
+  { name: 'Valencia CF',           league: 'La Liga', country: '🇪🇸', stars: 3.5, rating: 75 },
+  { name: 'Rayo Vallecano',        league: 'La Liga', country: '🇪🇸', stars: 3,   rating: 73 },
+  { name: 'Celta Vigo',            league: 'La Liga', country: '🇪🇸', stars: 3,   rating: 73 },
+  { name: 'Getafe CF',             league: 'La Liga', country: '🇪🇸', stars: 3,   rating: 72 },
+  { name: 'Osasuna',               league: 'La Liga', country: '🇪🇸', stars: 3,   rating: 72 },
+  { name: 'RCD Mallorca',          league: 'La Liga', country: '🇪🇸', stars: 3,   rating: 71 },
 
   // 🇩🇪 Bundesliga
-  { name: 'Bayern Munich',      league: 'Bundesliga', country: '🇩🇪', rating: 90 },
-  { name: 'Bayer Leverkusen',   league: 'Bundesliga', country: '🇩🇪', rating: 84 },
-  { name: 'Borussia Dortmund',  league: 'Bundesliga', country: '🇩🇪', rating: 82 },
-  { name: 'RB Leipzig',         league: 'Bundesliga', country: '🇩🇪', rating: 82 },
-  { name: 'Eintracht Frankfurt',league: 'Bundesliga', country: '🇩🇪', rating: 79 },
-  { name: 'VfB Stuttgart',      league: 'Bundesliga', country: '🇩🇪', rating: 78 },
-  { name: 'Wolfsburg',          league: 'Bundesliga', country: '🇩🇪', rating: 76 },
-  { name: 'SC Freiburg',        league: 'Bundesliga', country: '🇩🇪', rating: 75 },
-  { name: 'Hoffenheim',         league: 'Bundesliga', country: '🇩🇪', rating: 74 },
-  { name: 'Werder Bremen',      league: 'Bundesliga', country: '🇩🇪', rating: 74 },
-  { name: 'Borussia M\'gladbach',league: 'Bundesliga', country: '🇩🇪', rating: 73 },
-  { name: 'Augsburg',           league: 'Bundesliga', country: '🇩🇪', rating: 72 },
+  { name: 'FC Bayern München',     league: 'Bundesliga', country: '🇩🇪', stars: 5,   rating: 90 },
+  { name: 'Borussia Dortmund',     league: 'Bundesliga', country: '🇩🇪', stars: 4.5, rating: 86 },
+  { name: 'Bayer 04 Leverkusen',   league: 'Bundesliga', country: '🇩🇪', stars: 4.5, rating: 85 },
+  { name: 'RB Leipzig',            league: 'Bundesliga', country: '🇩🇪', stars: 4,   rating: 83 },
+  { name: 'Borussia M\'gladbach',  league: 'Bundesliga', country: '🇩🇪', stars: 4,   rating: 79 },
+  { name: 'Eintracht Frankfurt',   league: 'Bundesliga', country: '🇩🇪', stars: 3.5, rating: 78 },
+  { name: 'VfB Stuttgart',         league: 'Bundesliga', country: '🇩🇪', stars: 3.5, rating: 78 },
+  { name: 'SC Freiburg',           league: 'Bundesliga', country: '🇩🇪', stars: 3.5, rating: 77 },
+  { name: 'Hoffenheim',            league: 'Bundesliga', country: '🇩🇪', stars: 3,   rating: 75 },
+  { name: 'Union Berlin',          league: 'Bundesliga', country: '🇩🇪', stars: 3,   rating: 74 },
 
-  // 🇮🇹 Serie A
-  { name: 'Inter Milan',        league: 'Serie A', country: '🇮🇹', rating: 85 },
-  { name: 'Napoli',             league: 'Serie A', country: '🇮🇹', rating: 84 },
-  { name: 'AC Milan',           league: 'Serie A', country: '🇮🇹', rating: 83 },
-  { name: 'Juventus',           league: 'Serie A', country: '🇮🇹', rating: 83 },
-  { name: 'Atalanta',           league: 'Serie A', country: '🇮🇹', rating: 82 },
-  { name: 'AS Roma',            league: 'Serie A', country: '🇮🇹', rating: 80 },
-  { name: 'Lazio',              league: 'Serie A', country: '🇮🇹', rating: 79 },
-  { name: 'Fiorentina',         league: 'Serie A', country: '🇮🇹', rating: 78 },
-  { name: 'Bologna',            league: 'Serie A', country: '🇮🇹', rating: 76 },
-  { name: 'Torino',             league: 'Serie A', country: '🇮🇹', rating: 74 },
-  { name: 'Udinese',            league: 'Serie A', country: '🇮🇹', rating: 73 },
-  { name: 'Genoa',              league: 'Serie A', country: '🇮🇹', rating: 72 },
-  { name: 'Monza',              league: 'Serie A', country: '🇮🇹', rating: 72 },
-  { name: 'Cagliari',           league: 'Serie A', country: '🇮🇹', rating: 71 },
+  // 🇮🇹 Serie A (nombres del juego por licencia)
+  { name: 'SSC Napoli',            league: 'Serie A', country: '🇮🇹', stars: 4.5, rating: 88 },
+  { name: 'Lombardia FC',          league: 'Serie A', country: '🇮🇹', stars: 4.5, rating: 87 }, // Inter Milan
+  { name: 'Milano FC',             league: 'Serie A', country: '🇮🇹', stars: 4.5, rating: 86 }, // AC Milan
+  { name: 'Juventus FC',           league: 'Serie A', country: '🇮🇹', stars: 4,   rating: 84 },
+  { name: 'AS Roma',               league: 'Serie A', country: '🇮🇹', stars: 4,   rating: 83 },
+  { name: 'Lazio',                 league: 'Serie A', country: '🇮🇹', stars: 4,   rating: 82 },
+  { name: 'Fiorentina',            league: 'Serie A', country: '🇮🇹', stars: 3.5, rating: 80 },
+  { name: 'Bergamo Calcio',        league: 'Serie A', country: '🇮🇹', stars: 4,   rating: 83 }, // Atalanta
+  { name: 'Torino FC',             league: 'Serie A', country: '🇮🇹', stars: 3.5, rating: 78 },
+  { name: 'Bologna FC',            league: 'Serie A', country: '🇮🇹', stars: 3.5, rating: 78 },
 
   // 🇫🇷 Ligue 1
-  { name: 'PSG',                league: 'Ligue 1', country: '🇫🇷', rating: 87 },
-  { name: 'Monaco',             league: 'Ligue 1', country: '🇫🇷', rating: 82 },
-  { name: 'Lyon',               league: 'Ligue 1', country: '🇫🇷', rating: 80 },
-  { name: 'Marseille',          league: 'Ligue 1', country: '🇫🇷', rating: 79 },
-  { name: 'Lille',              league: 'Ligue 1', country: '🇫🇷', rating: 78 },
-  { name: 'Nice',               league: 'Ligue 1', country: '🇫🇷', rating: 77 },
-  { name: 'Lens',               league: 'Ligue 1', country: '🇫🇷', rating: 76 },
-  { name: 'Rennes',             league: 'Ligue 1', country: '🇫🇷', rating: 75 },
-  { name: 'Brest',              league: 'Ligue 1', country: '🇫🇷', rating: 74 },
-  { name: 'Reims',              league: 'Ligue 1', country: '🇫🇷', rating: 72 },
-  { name: 'Nantes',             league: 'Ligue 1', country: '🇫🇷', rating: 71 },
+  { name: 'Paris Saint-Germain',   league: 'Ligue 1', country: '🇫🇷', stars: 5,   rating: 90 },
+  { name: 'Olympique de Marseille',league: 'Ligue 1', country: '🇫🇷', stars: 4,   rating: 82 },
+  { name: 'AS Monaco',             league: 'Ligue 1', country: '🇲🇨', stars: 4,   rating: 81 },
+  { name: 'Olympique Lyonnais',    league: 'Ligue 1', country: '🇫🇷', stars: 4,   rating: 80 },
+  { name: 'OGC Nice',              league: 'Ligue 1', country: '🇫🇷', stars: 3.5, rating: 78 },
+  { name: 'Stade Rennais FC',      league: 'Ligue 1', country: '🇫🇷', stars: 3.5, rating: 76 },
+  { name: 'LOSC Lille',            league: 'Ligue 1', country: '🇫🇷', stars: 3.5, rating: 76 },
 
   // 🇵🇹 Primeira Liga
-  { name: 'Benfica',            league: 'Primeira Liga', country: '🇵🇹', rating: 82 },
-  { name: 'Porto',              league: 'Primeira Liga', country: '🇵🇹', rating: 81 },
-  { name: 'Sporting CP',        league: 'Primeira Liga', country: '🇵🇹', rating: 80 },
-  { name: 'Braga',              league: 'Primeira Liga', country: '🇵🇹', rating: 75 },
-  { name: 'Vitória SC',         league: 'Primeira Liga', country: '🇵🇹', rating: 71 },
+  { name: 'SL Benfica',            league: 'Primeira Liga', country: '🇵🇹', stars: 4.5, rating: 84 },
+  { name: 'FC Porto',              league: 'Primeira Liga', country: '🇵🇹', stars: 4.5, rating: 83 },
+  { name: 'Sporting CP',           league: 'Primeira Liga', country: '🇵🇹', stars: 4.5, rating: 83 },
 
   // 🇳🇱 Eredivisie
-  { name: 'Ajax',               league: 'Eredivisie', country: '🇳🇱', rating: 80 },
-  { name: 'PSV',                league: 'Eredivisie', country: '🇳🇱', rating: 82 },
-  { name: 'Feyenoord',          league: 'Eredivisie', country: '🇳🇱', rating: 80 },
-  { name: 'AZ Alkmaar',         league: 'Eredivisie', country: '🇳🇱', rating: 76 },
-  { name: 'FC Twente',          league: 'Eredivisie', country: '🇳🇱', rating: 74 },
+  { name: 'Ajax',                  league: 'Eredivisie', country: '🇳🇱', stars: 4,   rating: 82 },
+  { name: 'PSV Eindhoven',         league: 'Eredivisie', country: '🇳🇱', stars: 4,   rating: 82 },
+  { name: 'Feyenoord',             league: 'Eredivisie', country: '🇳🇱', stars: 4,   rating: 81 },
 
-  // 🇧🇪 Pro League
-  { name: 'Club Brugge',        league: 'Pro League', country: '🇧🇪', rating: 78 },
-  { name: 'Anderlecht',         league: 'Pro League', country: '🇧🇪', rating: 76 },
-  { name: 'Genk',               league: 'Pro League', country: '🇧🇪', rating: 74 },
-  { name: 'Standard Liège',     league: 'Pro League', country: '🇧🇪', rating: 72 },
-
-  // 🏴󠁧󠁢󠁳󠁣󠁴󠁿 Scottish Premiership
-  { name: 'Celtic',             league: 'Scottish Prem.', country: '🏴󠁧󠁢󠁳󠁣󠁴󠁿', rating: 78 },
-  { name: 'Rangers',            league: 'Scottish Prem.', country: '🏴󠁧󠁢󠁳󠁣󠁴󠁿', rating: 76 },
-
-  // 🇹🇷 Süper Lig
-  { name: 'Galatasaray',        league: 'Süper Lig', country: '🇹🇷', rating: 80 },
-  { name: 'Fenerbahçe',         league: 'Süper Lig', country: '🇹🇷', rating: 79 },
-  { name: 'Beşiktaş',          league: 'Süper Lig', country: '🇹🇷', rating: 75 },
-  { name: 'Trabzonspor',        league: 'Süper Lig', country: '🇹🇷', rating: 73 },
-
-  // 🇷🇺 / 🇺🇦 Europa del Este
-  { name: 'Shakhtar Donetsk',   league: 'Premier League UA', country: '🇺🇦', rating: 76 },
-  { name: 'Dinamo Zagreb',      league: 'HNL', country: '🇭🇷', rating: 75 },
-  { name: 'Red Bull Salzburg',  league: 'Bundesliga AT', country: '🇦🇹', rating: 78 },
-  { name: 'Sturm Graz',         league: 'Bundesliga AT', country: '🇦🇹', rating: 72 },
-
-  // 🇲🇽 Liga MX
-  { name: 'Club América',       league: 'Liga MX', country: '🇲🇽', rating: 76 },
-  { name: 'Chivas',             league: 'Liga MX', country: '🇲🇽', rating: 74 },
-  { name: 'Cruz Azul',          league: 'Liga MX', country: '🇲🇽', rating: 74 },
-  { name: 'Pumas UNAM',         league: 'Liga MX', country: '🇲🇽', rating: 72 },
-  { name: 'Tigres UANL',        league: 'Liga MX', country: '🇲🇽', rating: 75 },
-  { name: 'Monterrey',          league: 'Liga MX', country: '🇲🇽', rating: 75 },
-  { name: 'Santos Laguna',      league: 'Liga MX', country: '🇲🇽', rating: 72 },
-  { name: 'León',               league: 'Liga MX', country: '🇲🇽', rating: 71 },
-  { name: 'Pachuca',            league: 'Liga MX', country: '🇲🇽', rating: 73 },
-  { name: 'Toluca',             league: 'Liga MX', country: '🇲🇽', rating: 72 },
-  { name: 'Atlas',              league: 'Liga MX', country: '🇲🇽', rating: 71 },
-  { name: 'Necaxa',             league: 'Liga MX', country: '🇲🇽', rating: 70 },
+  // 🇲🇽 Liga MX (regresó en FC 26)
+  { name: 'Club América',          league: 'Liga MX', country: '🇲🇽', stars: 4,   rating: 79 },
+  { name: 'Guadalajara (Chivas)',  league: 'Liga MX', country: '🇲🇽', stars: 4,   rating: 78 },
+  { name: 'Cruz Azul',             league: 'Liga MX', country: '🇲🇽', stars: 4,   rating: 78 },
+  { name: 'CF Monterrey',          league: 'Liga MX', country: '🇲🇽', stars: 4,   rating: 78 },
+  { name: 'Tigres UANL',           league: 'Liga MX', country: '🇲🇽', stars: 4,   rating: 77 },
+  { name: 'Pumas UNAM',            league: 'Liga MX', country: '🇲🇽', stars: 3.5, rating: 74 },
+  { name: 'Atlas FC',              league: 'Liga MX', country: '🇲🇽', stars: 3.5, rating: 73 },
+  { name: 'Santos Laguna',         league: 'Liga MX', country: '🇲🇽', stars: 3.5, rating: 72 },
+  { name: 'Club Necaxa',           league: 'Liga MX', country: '🇲🇽', stars: 3,   rating: 70 },
+  { name: 'Toluca FC',             league: 'Liga MX', country: '🇲🇽', stars: 3,   rating: 71 },
 
   // 🇺🇸 MLS
-  { name: 'LA Galaxy',          league: 'MLS', country: '🇺🇸', rating: 74 },
-  { name: 'LAFC',               league: 'MLS', country: '🇺🇸', rating: 75 },
-  { name: 'Inter Miami',        league: 'MLS', country: '🇺🇸', rating: 76 },
-  { name: 'NYC FC',             league: 'MLS', country: '🇺🇸', rating: 74 },
-  { name: 'Atlanta United',     league: 'MLS', country: '🇺🇸', rating: 73 },
-  { name: 'Seattle Sounders',   league: 'MLS', country: '🇺🇸', rating: 73 },
-  { name: 'Portland Timbers',   league: 'MLS', country: '🇺🇸', rating: 72 },
-  { name: 'CF Montréal',        league: 'MLS', country: '🇨🇦', rating: 71 },
-  { name: 'Toronto FC',         league: 'MLS', country: '🇨🇦', rating: 70 },
-  { name: 'Columbus Crew',      league: 'MLS', country: '🇺🇸', rating: 72 },
+  { name: 'Inter Miami CF',        league: 'MLS', country: '🇺🇸', stars: 4,   rating: 79 },
+  { name: 'LA Galaxy',             league: 'MLS', country: '🇺🇸', stars: 3.5, rating: 76 },
+  { name: 'LAFC',                  league: 'MLS', country: '🇺🇸', stars: 3.5, rating: 76 },
+  { name: 'Seattle Sounders',      league: 'MLS', country: '🇺🇸', stars: 3.5, rating: 75 },
+  { name: 'San Diego FC',          league: 'MLS', country: '🇺🇸', stars: 3.5, rating: 74 },
+  { name: 'New England Revolution',league: 'MLS', country: '🇺🇸', stars: 3,   rating: 73 },
 
-  // 🇧🇷 Brasileirão
-  { name: 'Flamengo',           league: 'Brasileirão', country: '🇧🇷', rating: 80 },
-  { name: 'Palmeiras',          league: 'Brasileirão', country: '🇧🇷', rating: 79 },
-  { name: 'São Paulo',          league: 'Brasileirão', country: '🇧🇷', rating: 76 },
-  { name: 'Corinthians',        league: 'Brasileirão', country: '🇧🇷', rating: 75 },
-  { name: 'Grêmio',             league: 'Brasileirão', country: '🇧🇷', rating: 74 },
-  { name: 'Internacional',      league: 'Brasileirão', country: '🇧🇷', rating: 74 },
-  { name: 'Atlético Mineiro',   league: 'Brasileirão', country: '🇧🇷', rating: 76 },
-  { name: 'Fluminense',         league: 'Brasileirão', country: '🇧🇷', rating: 75 },
-  { name: 'Botafogo',           league: 'Brasileirão', country: '🇧🇷', rating: 73 },
-  { name: 'Vasco da Gama',      league: 'Brasileirão', country: '🇧🇷', rating: 72 },
+  // 🇧🇷 Série A Brasil
+  { name: 'Flamengo',              league: 'Brasileirão', country: '🇧🇷', stars: 4,   rating: 79 },
+  { name: 'Palmeiras',             league: 'Brasileirão', country: '🇧🇷', stars: 4,   rating: 79 },
+  { name: 'Fluminense',            league: 'Brasileirão', country: '🇧🇷', stars: 3.5, rating: 76 },
+  { name: 'Athletico Paranaense',  league: 'Brasileirão', country: '🇧🇷', stars: 3.5, rating: 75 },
+  { name: 'Atlético Mineiro',      league: 'Brasileirão', country: '🇧🇷', stars: 3.5, rating: 76 },
 
-  // 🇦🇷 Liga Profesional
-  { name: 'River Plate',        league: 'Liga Prof. ARG', country: '🇦🇷', rating: 78 },
-  { name: 'Boca Juniors',       league: 'Liga Prof. ARG', country: '🇦🇷', rating: 77 },
-  { name: 'Racing Club',        league: 'Liga Prof. ARG', country: '🇦🇷', rating: 73 },
-  { name: 'Independiente',      league: 'Liga Prof. ARG', country: '🇦🇷', rating: 71 },
-  { name: 'San Lorenzo',        league: 'Liga Prof. ARG', country: '🇦🇷', rating: 71 },
+  // 🇸🇦 Saudi Pro League
+  { name: 'Al-Hilal',              league: 'Saudi Pro League', country: '🇸🇦', stars: 4,   rating: 81 },
+  { name: 'Al-Nassr',              league: 'Saudi Pro League', country: '🇸🇦', stars: 4,   rating: 79 },
+  { name: 'Al-Ittihad',            league: 'Saudi Pro League', country: '🇸🇦', stars: 3.5, rating: 77 },
+  { name: 'Al-Ahli',              league: 'Saudi Pro League', country: '🇸🇦', stars: 3.5, rating: 76 },
 ]
 
-// ── FIFA 2026 World Cup — selecciones nacionales ───────────────────────────────
+// ── EA Sports FC 26 — Jugadores destacados ─────────────────────────────────────
+// OVR = Rating overall en el juego. Price = precio estimado Fantasy (£m)
+export const FC26_PLAYERS: GamePlayer[] = [
+  // ─── GLOBAL TOP ───────────────────────────────────────────────────────────────
+  { name: 'Mohamed Salah',         team: 'Liverpool FC',          position: 'FWD', ovr: 91, price: 15.0, league: 'Premier League' },
+  { name: 'Kylian Mbappé',         team: 'Real Madrid CF',        position: 'FWD', ovr: 91, price: 15.0, league: 'La Liga' },
+  { name: 'Ousmane Dembélé',       team: 'Paris Saint-Germain',   position: 'FWD', ovr: 90, price: 14.0, league: 'Ligue 1' },
+  { name: 'Rodri',                 team: 'Manchester City',       position: 'MID', ovr: 90, price: 13.0, league: 'Premier League' },
+  { name: 'Virgil van Dijk',       team: 'Liverpool FC',          position: 'DEF', ovr: 90, price: 13.0, league: 'Premier League' },
+  { name: 'Jude Bellingham',       team: 'Real Madrid CF',        position: 'MID', ovr: 90, price: 14.0, league: 'La Liga' },
+  { name: 'Erling Haaland',        team: 'Manchester City',       position: 'FWD', ovr: 90, price: 14.5, league: 'Premier League' },
+
+  // ─── PREMIER LEAGUE ───────────────────────────────────────────────────────────
+  { name: 'Florian Wirtz',         team: 'Liverpool FC',          position: 'MID', ovr: 89, price: 13.5, league: 'Premier League' },
+  { name: 'Alisson',               team: 'Liverpool FC',          position: 'GK',  ovr: 89, price: 12.0, league: 'Premier League' },
+  { name: 'Alexander Isak',        team: 'Newcastle United',      position: 'FWD', ovr: 88, price: 12.0, league: 'Premier League' },
+  { name: 'Bukayo Saka',           team: 'Arsenal FC',            position: 'FWD', ovr: 88, price: 12.0, league: 'Premier League' },
+  { name: 'Gabriel Magalhães',     team: 'Arsenal FC',            position: 'DEF', ovr: 88, price: 10.0, league: 'Premier League' },
+  { name: 'Viktor Gyokeres',       team: 'Arsenal FC',            position: 'FWD', ovr: 87, price: 11.0, league: 'Premier League' },
+  { name: 'Declan Rice',           team: 'Arsenal FC',            position: 'MID', ovr: 87, price: 11.0, league: 'Premier League' },
+  { name: 'Martin Odegaard',       team: 'Arsenal FC',            position: 'MID', ovr: 87, price: 11.5, league: 'Premier League' },
+  { name: 'William Saliba',        team: 'Arsenal FC',            position: 'DEF', ovr: 87, price: 10.0, league: 'Premier League' },
+  { name: 'David Raya',            team: 'Arsenal FC',            position: 'GK',  ovr: 87, price: 10.0, league: 'Premier League' },
+  { name: 'Cole Palmer',           team: 'Chelsea FC',            position: 'MID', ovr: 87, price: 11.5, league: 'Premier League' },
+  { name: 'Moises Caicedo',        team: 'Chelsea FC',            position: 'MID', ovr: 87, price: 10.0, league: 'Premier League' },
+  { name: 'Alexis Mac Allister',   team: 'Liverpool FC',          position: 'MID', ovr: 87, price: 10.5, league: 'Premier League' },
+  { name: 'Bruno Fernandes',       team: 'Manchester United',     position: 'MID', ovr: 87, price: 11.0, league: 'Premier League' },
+  { name: 'Trent Alexander-Arnold',team: 'Real Madrid CF',        position: 'DEF', ovr: 86, price: 10.0, league: 'La Liga' },
+  { name: 'Raúl Jiménez',          team: 'Fulham FC',             position: 'FWD', ovr: 77, price: 7.0,  league: 'Premier League' },
+
+  // ─── LA LIGA ──────────────────────────────────────────────────────────────────
+  { name: 'Raphinha',              team: 'FC Barcelona',          position: 'FWD', ovr: 89, price: 13.0, league: 'La Liga' },
+  { name: 'Lamine Yamal',          team: 'FC Barcelona',          position: 'FWD', ovr: 89, price: 13.0, league: 'La Liga' },
+  { name: 'Pedri',                 team: 'FC Barcelona',          position: 'MID', ovr: 89, price: 12.5, league: 'La Liga' },
+  { name: 'Federico Valverde',     team: 'Real Madrid CF',        position: 'MID', ovr: 89, price: 12.0, league: 'La Liga' },
+  { name: 'Vinícius Jr.',          team: 'Real Madrid CF',        position: 'FWD', ovr: 89, price: 13.0, league: 'La Liga' },
+  { name: 'Thibaut Courtois',      team: 'Real Madrid CF',        position: 'GK',  ovr: 89, price: 11.5, league: 'La Liga' },
+  { name: 'Robert Lewandowski',    team: 'FC Barcelona',          position: 'FWD', ovr: 88, price: 11.0, league: 'La Liga' },
+  { name: 'Jan Oblak',             team: 'Atlético de Madrid',    position: 'GK',  ovr: 88, price: 11.0, league: 'La Liga' },
+  { name: 'Frenkie de Jong',       team: 'FC Barcelona',          position: 'MID', ovr: 87, price: 10.5, league: 'La Liga' },
+  { name: 'Jules Koundé',          team: 'FC Barcelona',          position: 'DEF', ovr: 87, price: 10.0, league: 'La Liga' },
+  { name: 'Julián Álvarez',        team: 'Atlético de Madrid',    position: 'FWD', ovr: 87, price: 11.0, league: 'La Liga' },
+  { name: 'Antonio Rüdiger',       team: 'Real Madrid CF',        position: 'DEF', ovr: 86, price: 9.5,  league: 'La Liga' },
+  { name: 'Nico Williams',         team: 'Athletic Club',         position: 'FWD', ovr: 86, price: 10.0, league: 'La Liga' },
+  { name: 'Marc-André ter Stegen', team: 'FC Barcelona',          position: 'GK',  ovr: 86, price: 10.0, league: 'La Liga' },
+  { name: 'Antoine Griezmann',     team: 'Atlético de Madrid',    position: 'FWD', ovr: 85, price: 9.5,  league: 'La Liga' },
+
+  // ─── BUNDESLIGA ───────────────────────────────────────────────────────────────
+  { name: 'Joshua Kimmich',        team: 'FC Bayern München',     position: 'MID', ovr: 89, price: 11.5, league: 'Bundesliga' },
+  { name: 'Harry Kane',            team: 'FC Bayern München',     position: 'FWD', ovr: 89, price: 13.0, league: 'Bundesliga' },
+  { name: 'Jamal Musiala',         team: 'FC Bayern München',     position: 'MID', ovr: 88, price: 12.0, league: 'Bundesliga' },
+  { name: 'Serhou Guirassy',       team: 'Borussia Dortmund',     position: 'FWD', ovr: 87, price: 10.0, league: 'Bundesliga' },
+  { name: 'Jonathan Tah',          team: 'FC Bayern München',     position: 'DEF', ovr: 87, price: 9.0,  league: 'Bundesliga' },
+  { name: 'Michael Olise',         team: 'FC Bayern München',     position: 'FWD', ovr: 86, price: 10.0, league: 'Bundesliga' },
+  { name: 'Gregor Kobel',          team: 'Borussia Dortmund',     position: 'GK',  ovr: 86, price: 9.5,  league: 'Bundesliga' },
+  { name: 'Luis Díaz',             team: 'FC Bayern München',     position: 'FWD', ovr: 85, price: 9.5,  league: 'Bundesliga' },
+  { name: 'Nico Schlotterbeck',    team: 'Borussia Dortmund',     position: 'DEF', ovr: 85, price: 8.5,  league: 'Bundesliga' },
+  { name: 'Patrik Schick',         team: 'Bayer 04 Leverkusen',   position: 'FWD', ovr: 85, price: 9.0,  league: 'Bundesliga' },
+  { name: 'Alphonso Davies',       team: 'FC Bayern München',     position: 'DEF', ovr: 84, price: 8.5,  league: 'Bundesliga' },
+  { name: 'Grimaldo',              team: 'Bayer 04 Leverkusen',   position: 'DEF', ovr: 84, price: 8.5,  league: 'Bundesliga' },
+  { name: 'Manuel Neuer',          team: 'FC Bayern München',     position: 'GK',  ovr: 84, price: 8.0,  league: 'Bundesliga' },
+  { name: 'Julian Brandt',         team: 'Borussia Dortmund',     position: 'MID', ovr: 83, price: 8.0,  league: 'Bundesliga' },
+
+  // ─── SERIE A ──────────────────────────────────────────────────────────────────
+  { name: 'Lautaro Martínez',      team: 'Lombardia FC',          position: 'FWD', ovr: 88, price: 11.5, league: 'Serie A' },
+  { name: 'Alessandro Bastoni',    team: 'Lombardia FC',          position: 'DEF', ovr: 87, price: 10.0, league: 'Serie A' },
+  { name: 'Kevin De Bruyne',       team: 'SSC Napoli',            position: 'MID', ovr: 87, price: 11.0, league: 'Serie A' },
+  { name: 'Yann Sommer',           team: 'Lombardia FC',          position: 'GK',  ovr: 87, price: 9.5,  league: 'Serie A' },
+  { name: 'Mike Maignan',          team: 'Milano FC',             position: 'GK',  ovr: 87, price: 9.5,  league: 'Serie A' },
+  { name: 'Nicolò Barella',        team: 'Lombardia FC',          position: 'MID', ovr: 87, price: 10.5, league: 'Serie A' },
+  { name: 'Paulo Dybala',          team: 'AS Roma',               position: 'MID', ovr: 86, price: 9.5,  league: 'Serie A' },
+  { name: 'Hakan Çalhanoğlu',      team: 'Lombardia FC',          position: 'MID', ovr: 86, price: 9.5,  league: 'Serie A' },
+  { name: 'Federico Dimarco',      team: 'Lombardia FC',          position: 'DEF', ovr: 85, price: 9.0,  league: 'Serie A' },
+  { name: 'Scott McTominay',       team: 'SSC Napoli',            position: 'MID', ovr: 85, price: 9.0,  league: 'Serie A' },
+  { name: 'Marcus Thuram',         team: 'Lombardia FC',          position: 'FWD', ovr: 85, price: 9.5,  league: 'Serie A' },
+  { name: 'David De Gea',          team: 'Fiorentina',            position: 'GK',  ovr: 85, price: 9.0,  league: 'Serie A' },
+  { name: 'Rafael Leão',           team: 'Milano FC',             position: 'FWD', ovr: 84, price: 9.0,  league: 'Serie A' },
+  { name: 'Romelu Lukaku',         team: 'SSC Napoli',            position: 'FWD', ovr: 84, price: 8.5,  league: 'Serie A' },
+  { name: 'Ademola Lookman',       team: 'Bergamo Calcio',        position: 'FWD', ovr: 84, price: 8.5,  league: 'Serie A' },
+  { name: 'Christian Pulisic',     team: 'Milano FC',             position: 'FWD', ovr: 84, price: 8.5,  league: 'Serie A' },
+  { name: 'Santiago Giménez',      team: 'Milano FC',             position: 'FWD', ovr: 79, price: 7.5,  league: 'Serie A' },
+
+  // ─── LIGUE 1 ──────────────────────────────────────────────────────────────────
+  { name: 'Achraf Hakimi',         team: 'Paris Saint-Germain',   position: 'DEF', ovr: 89, price: 11.0, league: 'Ligue 1' },
+  { name: 'Vitinha',               team: 'Paris Saint-Germain',   position: 'MID', ovr: 89, price: 10.5, league: 'Ligue 1' },
+  { name: 'Gianluigi Donnarumma',  team: 'Paris Saint-Germain',   position: 'GK',  ovr: 89, price: 11.0, league: 'Ligue 1' },
+  { name: 'Khvicha Kvaratskhelia', team: 'Paris Saint-Germain',   position: 'FWD', ovr: 87, price: 10.0, league: 'Ligue 1' },
+  { name: 'Marquinhos',            team: 'Paris Saint-Germain',   position: 'DEF', ovr: 87, price: 9.5,  league: 'Ligue 1' },
+  { name: 'Nuno Mendes',           team: 'Paris Saint-Germain',   position: 'DEF', ovr: 86, price: 9.0,  league: 'Ligue 1' },
+  { name: 'Désiré Doué',           team: 'Paris Saint-Germain',   position: 'MID', ovr: 85, price: 9.0,  league: 'Ligue 1' },
+  { name: 'Fabian Ruiz',           team: 'Paris Saint-Germain',   position: 'MID', ovr: 85, price: 8.5,  league: 'Ligue 1' },
+  { name: 'João Neves',            team: 'Paris Saint-Germain',   position: 'MID', ovr: 85, price: 8.5,  league: 'Ligue 1' },
+  { name: 'Bradley Barcola',       team: 'Paris Saint-Germain',   position: 'FWD', ovr: 84, price: 8.5,  league: 'Ligue 1' },
+
+  // ─── LIGA MX (regresó en FC 26) ───────────────────────────────────────────────
+  { name: 'Henry Martín',          team: 'Club América',          position: 'FWD', ovr: 78, price: 7.0,  league: 'Liga MX' },
+  { name: 'Jonathan Rodríguez',    team: 'Club América',          position: 'FWD', ovr: 76, price: 6.5,  league: 'Liga MX' },
+  { name: 'Diego Valdés',          team: 'Club América',          position: 'MID', ovr: 76, price: 6.5,  league: 'Liga MX' },
+  { name: 'Chicote Calderón',      team: 'Guadalajara (Chivas)',  position: 'FWD', ovr: 75, price: 6.0,  league: 'Liga MX' },
+  { name: 'Fernando Beltrán',      team: 'Guadalajara (Chivas)',  position: 'MID', ovr: 74, price: 6.0,  league: 'Liga MX' },
+  { name: 'Carlos Salcedo',        team: 'Cruz Azul',             position: 'DEF', ovr: 75, price: 6.0,  league: 'Liga MX' },
+  { name: 'Rodrigo Huescas',       team: 'Cruz Azul',             position: 'MID', ovr: 74, price: 6.0,  league: 'Liga MX' },
+  { name: 'Germán Berterame',      team: 'CF Monterrey',          position: 'FWD', ovr: 77, price: 6.5,  league: 'Liga MX' },
+  { name: 'Jesús Gallardo',        team: 'CF Monterrey',          position: 'DEF', ovr: 76, price: 6.0,  league: 'Liga MX' },
+  { name: 'André-Pierre Gignac',   team: 'Tigres UANL',           position: 'FWD', ovr: 78, price: 7.0,  league: 'Liga MX' },
+  { name: 'Guido Pizarro',         team: 'Tigres UANL',           position: 'MID', ovr: 75, price: 6.0,  league: 'Liga MX' },
+]
+
+// ── FIFA 2026 World Cup — Selecciones ──────────────────────────────────────────
 const WC2026_TEAMS: GameTeam[] = [
   // Grupo A
-  { name: 'México',         league: 'Grupo A', country: '🇲🇽' },
-  { name: 'Sudáfrica',      league: 'Grupo A', country: '🇿🇦' },
-  { name: 'Corea del Sur',  league: 'Grupo A', country: '🇰🇷' },
-  { name: 'Rep. Checa',     league: 'Grupo A', country: '🇨🇿' },
+  { name: 'México',         league: 'Grupo A', country: '🇲🇽', rating: 79 },
+  { name: 'Ecuador',        league: 'Grupo A', country: '🇪🇨', rating: 76 },
+  { name: 'Jamaica',        league: 'Grupo A', country: '🇯🇲', rating: 65 },
+  { name: 'Irak',           league: 'Grupo A', country: '🇮🇶', rating: 66 },
   // Grupo B
-  { name: 'Canadá',         league: 'Grupo B', country: '🇨🇦' },
-  { name: 'Bosnia-Herzeg.', league: 'Grupo B', country: '🇧🇦' },
-  { name: 'Qatar',          league: 'Grupo B', country: '🇶🇦' },
-  { name: 'Suiza',          league: 'Grupo B', country: '🇨🇭' },
+  { name: 'España',         league: 'Grupo B', country: '🇪🇸', rating: 90 },
+  { name: 'Brasil',         league: 'Grupo B', country: '🇧🇷', rating: 86 },
+  { name: 'Japón',          league: 'Grupo B', country: '🇯🇵', rating: 82 },
+  { name: 'Camerún',        league: 'Grupo B', country: '🇨🇲', rating: 72 },
   // Grupo C
-  { name: 'Brasil',         league: 'Grupo C', country: '🇧🇷' },
-  { name: 'Marruecos',      league: 'Grupo C', country: '🇲🇦' },
-  { name: 'Haití',          league: 'Grupo C', country: '🇭🇹' },
-  { name: 'Escocia',        league: 'Grupo C', country: '🏴󠁧󠁢󠁳󠁣󠁴󠁿' },
+  { name: 'Colombia',       league: 'Grupo C', country: '🇨🇴', rating: 82 },
+  { name: 'Marruecos',      league: 'Grupo C', country: '🇲🇦', rating: 79 },
+  { name: 'Haití',          league: 'Grupo C', country: '🇭🇹', rating: 62 },
+  { name: 'Escocia',        league: 'Grupo C', country: '🏴󠁧󠁢󠁳󠁣󠁴󠁿', rating: 74 },
   // Grupo D
-  { name: 'Estados Unidos', league: 'Grupo D', country: '🇺🇸' },
-  { name: 'Paraguay',       league: 'Grupo D', country: '🇵🇾' },
-  { name: 'Australia',      league: 'Grupo D', country: '🇦🇺' },
-  { name: 'Turquía',        league: 'Grupo D', country: '🇹🇷' },
+  { name: 'Estados Unidos', league: 'Grupo D', country: '🇺🇸', rating: 80 },
+  { name: 'Paraguay',       league: 'Grupo D', country: '🇵🇾', rating: 74 },
+  { name: 'Australia',      league: 'Grupo D', country: '🇦🇺', rating: 73 },
+  { name: 'Turquía',        league: 'Grupo D', country: '🇹🇷', rating: 79 },
   // Grupo E
-  { name: 'Alemania',       league: 'Grupo E', country: '🇩🇪' },
-  { name: 'Curazao',        league: 'Grupo E', country: '🇨🇼' },
-  { name: 'Costa de Marfil',league: 'Grupo E', country: '🇨🇮' },
-  { name: 'Ecuador',        league: 'Grupo E', country: '🇪🇨' },
+  { name: 'Alemania',       league: 'Grupo E', country: '🇩🇪', rating: 87 },
+  { name: 'Curazao',        league: 'Grupo E', country: '🇨🇼', rating: 63 },
+  { name: 'Costa de Marfil',league: 'Grupo E', country: '🇨🇮', rating: 75 },
+  { name: 'Costa Rica',     league: 'Grupo E', country: '🇨🇷', rating: 72 },
   // Grupo F
-  { name: 'Países Bajos',   league: 'Grupo F', country: '🇳🇱' },
-  { name: 'Japón',          league: 'Grupo F', country: '🇯🇵' },
-  { name: 'Suecia',         league: 'Grupo F', country: '🇸🇪' },
-  { name: 'Túnez',          league: 'Grupo F', country: '🇹🇳' },
+  { name: 'Países Bajos',   league: 'Grupo F', country: '🇳🇱', rating: 86 },
+  { name: 'Suecia',         league: 'Grupo F', country: '🇸🇪', rating: 78 },
+  { name: 'Túnez',          league: 'Grupo F', country: '🇹🇳', rating: 72 },
+  { name: 'Perú',           league: 'Grupo F', country: '🇵🇪', rating: 74 },
   // Grupo G
-  { name: 'Bélgica',        league: 'Grupo G', country: '🇧🇪' },
-  { name: 'Egipto',         league: 'Grupo G', country: '🇪🇬' },
-  { name: 'Irán',           league: 'Grupo G', country: '🇮🇷' },
-  { name: 'Nueva Zelanda',  league: 'Grupo G', country: '🇳🇿' },
+  { name: 'Bélgica',        league: 'Grupo G', country: '🇧🇪', rating: 84 },
+  { name: 'Egipto',         league: 'Grupo G', country: '🇪🇬', rating: 73 },
+  { name: 'Irán',           league: 'Grupo G', country: '🇮🇷', rating: 72 },
+  { name: 'Nueva Zelanda',  league: 'Grupo G', country: '🇳🇿', rating: 67 },
   // Grupo H
-  { name: 'España',         league: 'Grupo H', country: '🇪🇸' },
-  { name: 'Cabo Verde',     league: 'Grupo H', country: '🇨🇻' },
-  { name: 'Arabia Saudita', league: 'Grupo H', country: '🇸🇦' },
-  { name: 'Uruguay',        league: 'Grupo H', country: '🇺🇾' },
+  { name: 'Uruguay',        league: 'Grupo H', country: '🇺🇾', rating: 83 },
+  { name: 'Cabo Verde',     league: 'Grupo H', country: '🇨🇻', rating: 68 },
+  { name: 'Arabia Saudita', league: 'Grupo H', country: '🇸🇦', rating: 74 },
+  { name: 'Venezuela',      league: 'Grupo H', country: '🇻🇪', rating: 73 },
   // Grupo I
-  { name: 'Francia',        league: 'Grupo I', country: '🇫🇷' },
-  { name: 'Senegal',        league: 'Grupo I', country: '🇸🇳' },
-  { name: 'Iraq',           league: 'Grupo I', country: '🇮🇶' },
-  { name: 'Noruega',        league: 'Grupo I', country: '🇳🇴' },
+  { name: 'Francia',        league: 'Grupo I', country: '🇫🇷', rating: 90 },
+  { name: 'Senegal',        league: 'Grupo I', country: '🇸🇳', rating: 77 },
+  { name: 'Noruega',        league: 'Grupo I', country: '🇳🇴', rating: 78 },
+  { name: 'Chile',          league: 'Grupo I', country: '🇨🇱', rating: 76 },
   // Grupo J
-  { name: 'Argentina',      league: 'Grupo J', country: '🇦🇷' },
-  { name: 'Argelia',        league: 'Grupo J', country: '🇩🇿' },
-  { name: 'Austria',        league: 'Grupo J', country: '🇦🇹' },
-  { name: 'Jordania',       league: 'Grupo J', country: '🇯🇴' },
+  { name: 'Argentina',      league: 'Grupo J', country: '🇦🇷', rating: 88 },
+  { name: 'Argelia',        league: 'Grupo J', country: '🇩🇿', rating: 72 },
+  { name: 'Austria',        league: 'Grupo J', country: '🇦🇹', rating: 78 },
+  { name: 'Jordania',       league: 'Grupo J', country: '🇯🇴', rating: 65 },
   // Grupo K
-  { name: 'Portugal',       league: 'Grupo K', country: '🇵🇹' },
-  { name: 'RD Congo',       league: 'Grupo K', country: '🇨🇩' },
-  { name: 'Uzbekistán',     league: 'Grupo K', country: '🇺🇿' },
-  { name: 'Colombia',       league: 'Grupo K', country: '🇨🇴' },
+  { name: 'Portugal',       league: 'Grupo K', country: '🇵🇹', rating: 87 },
+  { name: 'RD Congo',       league: 'Grupo K', country: '🇨🇩', rating: 70 },
+  { name: 'Uzbekistán',     league: 'Grupo K', country: '🇺🇿', rating: 67 },
+  { name: 'Bolivia',        league: 'Grupo K', country: '🇧🇴', rating: 67 },
   // Grupo L
-  { name: 'Inglaterra',     league: 'Grupo L', country: '🏴󠁧󠁢󠁥󠁮󠁧󠁿' },
-  { name: 'Croacia',        league: 'Grupo L', country: '🇭🇷' },
-  { name: 'Ghana',          league: 'Grupo L', country: '🇬🇭' },
-  { name: 'Panamá',         league: 'Grupo L', country: '🇵🇦' },
+  { name: 'Inglaterra',     league: 'Grupo L', country: '🏴󠁧󠁢󠁥󠁮󠁧󠁿', rating: 86 },
+  { name: 'Croacia',        league: 'Grupo L', country: '🇭🇷', rating: 81 },
+  { name: 'Ghana',          league: 'Grupo L', country: '🇬🇭', rating: 71 },
+  { name: 'Panamá',         league: 'Grupo L', country: '🇵🇦', rating: 68 },
 ]
 
 // ── Registry ───────────────────────────────────────────────────────────────────
@@ -252,14 +328,15 @@ export const GAME_TYPES: GameType[] = [
     id: 'fc26',
     label: 'EA Sports FC 26',
     emoji: '🎮',
-    description: 'Torneo del videojuego — elige tu club de la liga',
+    description: 'Torneo del videojuego — elige tu club favorito',
     teams: FC26_TEAMS.sort((a, b) => (b.rating ?? 0) - (a.rating ?? 0)),
+    players: FC26_PLAYERS.sort((a, b) => b.ovr - a.ovr),
   },
   {
     id: 'wc2026',
     label: 'FIFA 2026 World Cup',
     emoji: '🌍',
-    description: 'Las 48 selecciones del Mundial 2026',
+    description: '48 selecciones del Mundial 2026 en USA/Canadá/México',
     teams: WC2026_TEAMS,
   },
 ]
@@ -275,4 +352,17 @@ export function getTeamsByLeague(gameTypeId: string): Record<string, GameTeam[]>
     acc[t.league].push(t)
     return acc
   }, {} as Record<string, GameTeam[]>)
+}
+
+export function getPlayersByTeam(gameTypeId: string): Record<string, GamePlayer[]> {
+  const players = getGameType(gameTypeId).players ?? []
+  return players.reduce((acc, p) => {
+    if (!acc[p.team]) acc[p.team] = []
+    acc[p.team].push(p)
+    return acc
+  }, {} as Record<string, GamePlayer[]>)
+}
+
+export function getPlayersByPosition(gameTypeId: string, position: GamePlayer['position']): GamePlayer[] {
+  return (getGameType(gameTypeId).players ?? []).filter(p => p.position === position)
 }
