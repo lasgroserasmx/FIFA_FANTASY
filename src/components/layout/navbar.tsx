@@ -28,6 +28,14 @@ export function Navbar() {
 
   useEffect(() => { setMounted(true) }, [])
 
+  // Si el usuario está loggeado pero no tiene username, redirigir a completar perfil
+  useEffect(() => {
+    if (!mounted || !user || !profile) return
+    if (!profile.username && pathname !== '/dashboard/perfil') {
+      router.push('/dashboard/perfil')
+    }
+  }, [mounted, user, profile, pathname])
+
   const initials = profile?.full_name?.split(' ').map(n => n[0]).join('').toUpperCase() ||
     profile?.username?.slice(0, 2).toUpperCase() || 'U'
 

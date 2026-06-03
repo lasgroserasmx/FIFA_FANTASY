@@ -2,6 +2,7 @@
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useState } from 'react'
+import { useRouter } from 'next/navigation'
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
@@ -9,13 +10,17 @@ import { Label } from '@/components/ui/label'
 import { Textarea } from '@/components/ui/textarea'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { useAuth } from '@/hooks/use-auth'
+import { useAuthStore } from '@/stores/auth-store'
 import { updateProfileSchema, type UpdateProfileInput } from '@/lib/validations'
 import { createClient } from '@/lib/supabase/client'
 import { toast } from 'sonner'
 
 export default function PerfilPage() {
+  const router = useRouter()
   const { profile } = useAuth()
+  const setProfile = useAuthStore(s => s.setProfile)
   const [loading, setLoading] = useState(false)
+  const isFirstTime = !profile?.username
 
   const { register, handleSubmit, formState: { errors } } = useForm<UpdateProfileInput>({
     resolver: zodResolver(updateProfileSchema),
@@ -31,9 +36,15 @@ export default function PerfilPage() {
     if (!profile) return
     setLoading(true)
     const supabase = createClient()
-    const { error } = await supabase.from('profiles').update(data).eq('id', profile.id)
-    if (error) toast.error(error.message)
-    else toast.success('¡Perfil actualizado correctamente!')
+    const { data: updated, error } = await supabase
+      .from('profiles').update(data).eq('id', profile.id).select().single()
+    if (error) {
+      toast.error(error.message)
+    } else {
+      setProfile(updated)  // actualizar store para que el Navbar se refresque
+      toast.success('¡Perfil actualizado!')
+      if (isFirstTime) router.push('/dashboard')
+    }
     setLoading(false)
   }
 
@@ -43,10 +54,18 @@ export default function PerfilPage() {
     <div className="max-w-2xl space-y-6">
       <h1 className="text-2xl font-bold">Mi Perfil</h1>
 
+      {/* Banner primer acceso */}
+      {isFirstTime && (
+        <div className="rounded-xl border border-yellow-500/30 bg-yellow-500/8 p-4">
+          <p className="text-sm font-bold text-yellow-400">👋 ¡Bienvenido! Completa tu perfil antes de continuar.</p>
+          <p className="text-xs text-muted-foreground mt-1">Necesitas un nombre de usuario para aparecer en las ligas y torneos.</p>
+        </div>
+      )}
+
       <Card>
         <CardHeader>
           <CardTitle>Información personal</CardTitle>
-          <CardDescription>Actualiza tus datos de perfil</CardDescription>
+          <CardDescription>{isFirstTime ? 'Configura tu perfil para empezar' : 'Actualiza tus datos de perfil'}</CardDescription>
         </CardHeader>
         <CardContent>
           <div className="flex items-center gap-4 mb-6">
