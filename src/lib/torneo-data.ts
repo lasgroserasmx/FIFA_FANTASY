@@ -322,8 +322,66 @@ const WC2026_TEAMS: GameTeam[] = [
   { name: 'Panamá',         league: 'Grupo L', country: '🇵🇦', rating: 68 },
 ]
 
+// ── Mundial de Clubes FIFA 2025 — 32 equipos reales ───────────────────────────
+const CWC2025_TEAMS: GameTeam[] = [
+  // Grupo A
+  { name: 'Palmeiras',          league: 'Grupo A', country: '🇧🇷', rating: 82 },
+  { name: 'Porto',              league: 'Grupo A', country: '🇵🇹', rating: 80 },
+  { name: 'Al Ahly',            league: 'Grupo A', country: '🇪🇬', rating: 72 },
+  { name: 'Inter Miami',        league: 'Grupo A', country: '🇺🇸', rating: 76 },
+
+  // Grupo B
+  { name: 'Paris Saint-Germain',league: 'Grupo B', country: '🇫🇷', rating: 88 },
+  { name: 'Atlético de Madrid', league: 'Grupo B', country: '🇪🇸', rating: 87 },
+  { name: 'Botafogo',           league: 'Grupo B', country: '🇧🇷', rating: 75 },
+  { name: 'Seattle Sounders',   league: 'Grupo B', country: '🇺🇸', rating: 68 },
+
+  // Grupo C
+  { name: 'Bayern München',     league: 'Grupo C', country: '🇩🇪', rating: 90 },
+  { name: 'Boca Juniors',       league: 'Grupo C', country: '🇦🇷', rating: 78 },
+  { name: 'Benfica',            league: 'Grupo C', country: '🇵🇹', rating: 82 },
+  { name: 'Auckland City',      league: 'Grupo C', country: '🇳🇿', rating: 55 },
+
+  // Grupo D
+  { name: 'Flamengo',           league: 'Grupo D', country: '🇧🇷', rating: 83 },
+  { name: 'Chelsea',            league: 'Grupo D', country: '🏴󠁧󠁢󠁥󠁮󠁧󠁿', rating: 86 },
+  { name: 'Léon',               league: 'Grupo D', country: '🇲🇽', rating: 74 },
+  { name: 'ES Tunis',           league: 'Grupo D', country: '🇹🇳', rating: 65 },
+
+  // Grupo E
+  { name: 'River Plate',        league: 'Grupo E', country: '🇦🇷', rating: 82 },
+  { name: 'Inter Milan',        league: 'Grupo E', country: '🇮🇹', rating: 87 },
+  { name: 'Monterrey',          league: 'Grupo E', country: '🇲🇽', rating: 76 },
+  { name: 'Urawa Red Diamonds', league: 'Grupo E', country: '🇯🇵', rating: 66 },
+
+  // Grupo F
+  { name: 'Fluminense',         league: 'Grupo F', country: '🇧🇷', rating: 78 },
+  { name: 'Borussia Dortmund',  league: 'Grupo F', country: '🇩🇪', rating: 85 },
+  { name: 'Ulsan HD',           league: 'Grupo F', country: '🇰🇷', rating: 67 },
+  { name: 'Mamelodi Sundowns',  league: 'Grupo F', country: '🇿🇦', rating: 63 },
+
+  // Grupo G
+  { name: 'Manchester City',    league: 'Grupo G', country: '🏴󠁧󠁢󠁥󠁮󠁧󠁿', rating: 90 },
+  { name: 'Juventus',           league: 'Grupo G', country: '🇮🇹', rating: 84 },
+  { name: 'Wydad AC',           league: 'Grupo G', country: '🇲🇦', rating: 64 },
+  { name: 'Al Ain',             league: 'Grupo G', country: '🇦🇪', rating: 62 },
+
+  // Grupo H
+  { name: 'Real Madrid',        league: 'Grupo H', country: '🇪🇸', rating: 92 },
+  { name: 'Al Hilal',           league: 'Grupo H', country: '🇸🇦', rating: 79 },
+  { name: 'Pachuca',            league: 'Grupo H', country: '🇲🇽', rating: 73 },
+  { name: 'RB Salzburg',        league: 'Grupo H', country: '🇦🇹', rating: 77 },
+]
+
 // ── Registry ───────────────────────────────────────────────────────────────────
 export const GAME_TYPES: GameType[] = [
+  {
+    id: 'cwc2025',
+    label: 'Mundial de Clubes FIFA 2025',
+    emoji: '🏆',
+    description: '32 clubes reales — 8 grupos — USA 2025',
+    teams: CWC2025_TEAMS,
+  },
   {
     id: 'fc26',
     label: 'EA Sports FC 26',

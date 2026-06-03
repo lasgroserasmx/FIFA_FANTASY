@@ -29,7 +29,7 @@ export function TorneoListPage() {
   const [showCreate, setShowCreate] = useState(false)
   const [creating, setCreating] = useState(false)
   const [newName, setNewName] = useState('')
-  const [newType, setNewType] = useState('fc26')
+  const [newType, setNewType] = useState('cwc2025')
   const [deleting, setDeleting] = useState<string | null>(null)
   const [error, setError] = useState<string | null>(null)
 
@@ -61,7 +61,7 @@ export function TorneoListPage() {
       const row = await createTorneo(newName.trim(), newType)
       setShowCreate(false)
       setNewName('')
-      setNewType('fc26')
+      setNewType('cwc2025')
       router.push(`/torneo/${row.id}`)
     } catch (e: any) {
       setError(e.message)
