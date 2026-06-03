@@ -20,11 +20,14 @@ export default async function LigaPage({ params }: { params: Promise<{ id: strin
     : { data: [] }
 
   const profileMap = Object.fromEntries((profiles ?? []).map((p: { id: string }) => [p.id, p]))
-  const members = (rawMembers ?? []).map((m: { user_id: string; role: string; league_id: string }) => ({
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const members = (rawMembers ?? []).map((m: any) => ({
     ...m,
     id: m.user_id,
     total_fantasy_points: 0,
     total_prediction_points: 0,
+    joined_at: m.joined_at ?? null,
+    rank: m.rank ?? null,
     profile: profileMap[m.user_id] ?? null,
   }))
 
