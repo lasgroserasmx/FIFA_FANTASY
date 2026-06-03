@@ -31,9 +31,10 @@ interface Props {
   torneoId: string
   torneoName: string
   gameType: string
+  isOwner?: boolean
 }
 
-export function TorneoApp({ torneoId, torneoName, gameType }: Props) {
+export function TorneoApp({ torneoId, torneoName, gameType, isOwner = true }: Props) {
   const [S, setS] = useState<TorneoState>(INIT_STATE)
   const [tab, setTab] = useState<'setup' | 'grupos' | 'partido' | 'bracket' | 'finanzas'>('setup')
   const [toast, setToast] = useState<string | null>(null)
@@ -359,7 +360,7 @@ export function TorneoApp({ torneoId, torneoName, gameType }: Props) {
 
   const totalPot = S.players.length * S.config.entryFee
   const quinielaPot = S.matches.reduce((s, m) => s + m.bets.reduce((ss, b) => ss + b.amt, 0), 0)
-  const locked = S.phase !== 'setup'
+  const locked = S.phase !== 'setup' || !isOwner
   const ng = S.players.length <= 4 ? 1 : S.players.length <= 8 ? 2 : S.players.length <= 12 ? 3 : 4
 
   const availableMatches = S.matches.filter(m => {
@@ -398,7 +399,7 @@ export function TorneoApp({ torneoId, torneoName, gameType }: Props) {
       <div className="sticky top-16 z-40 bg-background/95 backdrop-blur border-b border-border/40">
         <div className="flex items-center justify-between px-4 h-10 gap-3">
           <div className="flex items-center gap-2">
-            <span className="font-black tracking-widest text-primary text-sm uppercase">⚽ {torneoName}</span>
+            <span className="font-black tracking-widest text-primary text-sm uppercase">⚔️ {torneoName}</span>
             {saving && <span className="text-[10px] text-muted-foreground animate-pulse">guardando…</span>}
           </div>
           <span className="text-[10px] font-bold tracking-widest uppercase px-2 py-0.5 rounded-full border border-primary/30 text-primary bg-primary/8">
@@ -661,6 +662,7 @@ export function TorneoApp({ torneoId, torneoName, gameType }: Props) {
                   state={S}
                   scores={scores}
                   bets={bets}
+                  isOwner={isOwner}
                   onSelectMatch={id => update(prev => ({ ...prev, selMatch: id }))}
                   onSetScores={setScores}
                   onSetBets={setBets}
@@ -739,9 +741,9 @@ function MatchCard({ m, players, selMatch, onSelect }: {
 }
 
 // ── PartidoPanel ───────────────────────────────────────────────────────────────
-function PartidoPanel({ m, state, scores, bets, onSelectMatch, onSetScores, onSetBets, onSetResult, onDoBet, onClearBet, availableMatches }: {
+function PartidoPanel({ m, state, scores, bets, isOwner, onSelectMatch, onSetScores, onSetBets, onSetResult, onDoBet, onClearBet, availableMatches }: {
   m: TorneoMatch; state: TorneoState; scores: Record<string, {s1:string;s2:string;pen:string}>
-  bets: Record<string, {pred:string;amt:string}>
+  bets: Record<string, {pred:string;amt:string}>; isOwner: boolean
   onSelectMatch: (id:string) => void; onSetScores: React.Dispatch<React.SetStateAction<Record<string, {s1:string;s2:string;pen:string}>>>
   onSetBets: React.Dispatch<React.SetStateAction<Record<string, {pred:string;amt:string}>>>
   onSetResult: (id:string) => void; onDoBet: (matchId:string, bettorId:string) => void
@@ -860,7 +862,7 @@ function PartidoPanel({ m, state, scores, bets, onSelectMatch, onSetScores, onSe
               </div>
               {spectators.length === 0
                 ? <p className="text-xs text-muted-foreground">No hay espectadores. Se necesitan más jugadores para La Quiniela.</p>
-                : <div className="space-y-1">
+                : <div className={`space-y-1 ${!isOwner ? 'opacity-40 pointer-events-none select-none' : ''}`}>
                   {spectators.map(sp => {
                     const ex = m.bets.find(b => b.bid === sp.id)
                     const bk = `${m.id}_${sp.id}`
@@ -900,7 +902,13 @@ function PartidoPanel({ m, state, scores, bets, onSelectMatch, onSetScores, onSe
 
             <hr className="border-white/6" />
 
-            <div className="space-y-4">
+            {!isOwner && (
+              <div className="rounded-lg border border-blue-500/20 bg-blue-500/5 px-4 py-3 text-xs text-blue-400">
+                👁 Modo solo lectura — solo el organizador puede registrar resultados y apuestas.
+              </div>
+            )}
+
+            <div className={`space-y-4 ${!isOwner ? 'opacity-40 pointer-events-none select-none' : ''}`}>
               <h3 className="text-sm font-black tracking-widest uppercase text-primary">📥 Registrar Resultado</h3>
               <div className="flex items-center gap-4">
                 <div className="flex-1 text-center">

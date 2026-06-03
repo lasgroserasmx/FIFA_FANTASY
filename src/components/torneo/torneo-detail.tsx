@@ -1,6 +1,6 @@
 'use client'
 import { useState, useEffect } from 'react'
-import { getTorneo } from '@/services/torneo'
+import { getTorneo, getCurrentUserId } from '@/services/torneo'
 import type { TorneoRow } from '@/services/torneo'
 import { TorneoApp } from './torneo-app'
 import Link from 'next/link'
@@ -8,16 +8,36 @@ import { GAME_TYPES } from '@/lib/torneo-data'
 
 export function TorneoDetailPage({ torneoId }: { torneoId: string }) {
   const [torneo, setTorneo] = useState<TorneoRow | null>(null)
+  const [isOwner, setIsOwner] = useState(false)
   const [loading, setLoading] = useState(true)
   const [notFound, setNotFound] = useState(false)
+  const [copied, setCopied] = useState(false)
 
   useEffect(() => {
-    getTorneo(torneoId).then(row => {
-      if (!row) setNotFound(true)
-      else setTorneo(row)
+    Promise.all([getTorneo(torneoId), getCurrentUserId()]).then(([row, uid]) => {
+      if (!row) { setNotFound(true) }
+      else {
+        setTorneo(row)
+        setIsOwner(row.user_id === uid)
+      }
       setLoading(false)
     })
   }, [torneoId])
+
+  function handleCopyLink() {
+    const url = `${window.location.origin}/torneo/${torneoId}`
+    navigator.clipboard.writeText(url).then(() => {
+      setCopied(true)
+      setTimeout(() => setCopied(false), 2000)
+    })
+  }
+
+  function handleCopyCode() {
+    navigator.clipboard.writeText(torneoId).then(() => {
+      setCopied(true)
+      setTimeout(() => setCopied(false), 2000)
+    })
+  }
 
   if (loading) {
     return (
@@ -44,18 +64,51 @@ export function TorneoDetailPage({ torneoId }: { torneoId: string }) {
 
   return (
     <div>
-      {/* Back link */}
-      <div className="flex items-center gap-3 mb-2 -mt-2">
-        <Link href="/torneo" className="text-xs text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1">
-          ← Mis torneos
-        </Link>
-        <span className="text-muted-foreground/40">·</span>
-        <span className="text-xs text-muted-foreground">{gameType?.emoji} {gameType?.label}</span>
+      {/* Top bar */}
+      <div className="flex items-center justify-between gap-3 mb-2 -mt-2 flex-wrap">
+        <div className="flex items-center gap-3">
+          <Link href="/torneo" className="text-xs text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1">
+            ← Mis torneos
+          </Link>
+          <span className="text-muted-foreground/40">·</span>
+          <span className="text-xs text-muted-foreground">{gameType?.emoji} {gameType?.label}</span>
+          {!isOwner && (
+            <>
+              <span className="text-muted-foreground/40">·</span>
+              <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-blue-500/15 text-blue-400 uppercase tracking-widest">
+                👁 Solo lectura
+              </span>
+            </>
+          )}
+        </div>
+
+        {/* Share button */}
+        <div className="flex items-center gap-2">
+          <button
+            onClick={handleCopyCode}
+            className="text-[10px] font-mono px-2 py-1 rounded border border-white/10 text-muted-foreground hover:text-foreground hover:border-white/20 transition-colors truncate max-w-[120px]"
+            title="Copiar código del torneo"
+          >
+            {torneoId.slice(0, 8)}…
+          </button>
+          <button
+            onClick={handleCopyLink}
+            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[11px] font-bold uppercase tracking-widest transition-colors ${
+              copied
+                ? 'bg-primary/15 text-primary border border-primary/30'
+                : 'bg-white/5 border border-white/10 text-muted-foreground hover:text-foreground hover:border-white/20'
+            }`}
+          >
+            {copied ? '✅ Copiado' : '🔗 Compartir'}
+          </button>
+        </div>
       </div>
+
       <TorneoApp
         torneoId={torneo.id}
         torneoName={torneo.name}
         gameType={torneo.game_type}
+        isOwner={isOwner}
       />
     </div>
   )

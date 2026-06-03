@@ -16,7 +16,7 @@ const navLinks = [
   { href: '/fantasy', label: 'Fantasy', icon: Star },
   { href: '/predicciones', label: 'Predicciones', icon: Target },
   { href: '/como-jugar', label: 'Cómo jugar', icon: BookOpen },
-  { href: '/torneo', label: 'Torneo FC', icon: Swords },
+  { href: '/torneo', label: 'Torneo', icon: Swords },
 ]
 
 export function Navbar() {
@@ -36,7 +36,7 @@ export function Navbar() {
               <Trophy className="h-4 w-4" />
             </div>
             <span className="hidden sm:block bg-gradient-to-r from-primary to-emerald-400 bg-clip-text text-transparent">
-              FIFA Fantasy
+              Fantasy
             </span>
           </Link>
 
