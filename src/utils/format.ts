@@ -22,7 +22,12 @@ export function formatMatchTime(date: string | Date) {
 }
 
 export function formatCurrency(amount: number, currency = 'USD') {
-  return new Intl.NumberFormat('es-ES', { style: 'currency', currency }).format(amount)
+  // Formato manual y determinístico (sin Intl ni toLocaleString) para evitar
+  // diferencias entre Node.js y el navegador que causan hydration error #418
+  const symbol = currency === 'MXN' ? 'MX$' : currency === 'EUR' ? '€' : '$'
+  const num = Math.abs(Number(amount))
+  const parts = num.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+  return `${amount < 0 ? '-' : ''}${symbol}${parts}`
 }
 
 export function formatPoints(points: number) {
