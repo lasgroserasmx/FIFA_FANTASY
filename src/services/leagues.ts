@@ -31,13 +31,23 @@ export async function getLeague(id: string): Promise<League | null> {
 
 export async function getLeagueMembers(leagueId: string): Promise<LeagueMember[]> {
   const supabase = createClient()
+
+  // Intentar con join a profiles
   const { data, error } = await supabase
     .from('league_members')
     .select('*, profile:profiles(*)')
     .eq('league_id', leagueId)
 
-  if (error) throw error
-  return (data ?? []) as LeagueMember[]
+  if (!error) return (data ?? []) as LeagueMember[]
+
+  // Fallback: sin join (FK no configurada aún)
+  const { data: plain, error: err2 } = await supabase
+    .from('league_members')
+    .select('*')
+    .eq('league_id', leagueId)
+
+  if (err2) throw err2
+  return (plain ?? []).map(m => ({ ...m, profile: null })) as LeagueMember[]
 }
 
 export async function createLeague(input: CreateLeagueInput): Promise<League> {
