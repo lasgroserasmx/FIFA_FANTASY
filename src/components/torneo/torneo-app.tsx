@@ -1,37 +1,9 @@
 'use client'
-import { useState, useEffect, useCallback } from 'react'
-
-// ── Types ──────────────────────────────────────────────────────────────────────
-interface TorneoPlayer { id: string; name: string; team: string }
-interface TorneoGroup  { id: string; pids: string[] }
-interface TorneoBet    { bid: string; pred: string; amt: number }
-interface Settlement {
-  pot: number; winner: string | null; winnerBonus: number; bettersPool: number
-  correctBettors: { bid: string; wagered: number; won: number }[]
-  noBettors: boolean
-}
-interface TorneoMatch {
-  id: string; ph: 'group' | 'knockout'
-  gid?: string; round?: number; slot?: number; tbd?: boolean
-  p1: string | null; p2: string | null
-  s1: number | null; s2: number | null
-  done: boolean; pen: string | null
-  bets: TorneoBet[]; settled: boolean; settlement: Settlement | null
-}
-interface TorneoConfig { entryFee: number; maxBet: number; winnerCut: number; prize1: number; prize2: number }
-interface TorneoState {
-  config: TorneoConfig
-  players: TorneoPlayer[]; groups: TorneoGroup[]; matches: TorneoMatch[]
-  phase: 'setup' | 'groups' | 'knockout' | 'finished'
-  selMatch: string | null; champion: string | null; runnerUp: string | null; nid: number
-}
-
-const INIT: TorneoState = {
-  config: { entryFee: 200, maxBet: 100, winnerCut: 10, prize1: 80, prize2: 20 },
-  players: [], groups: [], matches: [],
-  phase: 'setup', selMatch: null, champion: null, runnerUp: null, nid: 1,
-}
-const SK = 'fc_torneo_v4'
+import { useState, useEffect, useCallback, useRef } from 'react'
+import { getTorneo, saveTorneo } from '@/services/torneo'
+import { getTeamsByLeague } from '@/lib/torneo-data'
+import type { TorneoState, TorneoPlayer, TorneoGroup, TorneoMatch, TorneoBet, Settlement } from './torneo-types'
+import { INIT_STATE } from './torneo-types'
 
 // ── Avatar helpers ─────────────────────────────────────────────────────────────
 const AV_COLORS = [
@@ -55,22 +27,39 @@ function Avatar({ pid, players, size = 34 }: { pid: string | null; players: Torn
 }
 
 // ── Main component ─────────────────────────────────────────────────────────────
-export function TorneoApp() {
-  const [S, setS] = useState<TorneoState>(INIT)
+interface Props {
+  torneoId: string
+  torneoName: string
+  gameType: string
+}
+
+export function TorneoApp({ torneoId, torneoName, gameType }: Props) {
+  const [S, setS] = useState<TorneoState>(INIT_STATE)
   const [tab, setTab] = useState<'setup' | 'grupos' | 'partido' | 'bracket' | 'finanzas'>('setup')
   const [toast, setToast] = useState<string | null>(null)
+  const [loading, setLoading] = useState(true)
+  const [saving, setSaving] = useState(false)
+  const saveTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
 
-  // Load from localStorage
+  // Load from Supabase on mount
   useEffect(() => {
-    try {
-      const d = localStorage.getItem(SK)
-      if (d) setS(prev => ({ ...prev, ...JSON.parse(d) }))
-    } catch {}
-  }, [])
+    getTorneo(torneoId).then(row => {
+      if (row && row.state && row.state.nid) {
+        setS(prev => ({ ...INIT_STATE, ...row.state }))
+      }
+      setLoading(false)
+    }).catch(() => setLoading(false))
+  }, [torneoId])
 
+  // Debounced save to Supabase
   const save = useCallback((state: TorneoState) => {
-    try { localStorage.setItem(SK, JSON.stringify(state)) } catch {}
-  }, [])
+    if (saveTimer.current) clearTimeout(saveTimer.current)
+    saveTimer.current = setTimeout(async () => {
+      setSaving(true)
+      try { await saveTorneo(torneoId, state) } catch {}
+      setSaving(false)
+    }, 600)
+  }, [torneoId])
 
   const update = useCallback((fn: (prev: TorneoState) => TorneoState) => {
     setS(prev => { const next = fn(prev); save(next); return next })
@@ -80,6 +69,10 @@ export function TorneoApp() {
     setToast(msg)
     setTimeout(() => setToast(null), 2800)
   }
+
+  // Team data for this game type
+  const teamsByLeague = getTeamsByLeague(gameType)
+  const allTeams = Object.values(teamsByLeague).flat()
 
   // ── Game Logic ────────────────────────────────────────────────────────────────
   function uid(state: TorneoState): [string, TorneoState] {
@@ -343,8 +336,8 @@ export function TorneoApp() {
 
   function handleReset() {
     if (!confirm('¿Seguro que quieres reiniciar el torneo?\nSe perderán TODOS los datos.')) return
-    const next: TorneoState = { ...INIT, config: S.config, nid: S.nid }
-    save(next); setS(next); setTab('setup'); showToast('🔄 Torneo reiniciado')
+    const next: TorneoState = { ...INIT_STATE, config: S.config, nid: S.nid }
+    update(() => next); setTab('setup'); showToast('🔄 Torneo reiniciado')
   }
 
   // ── Finance ───────────────────────────────────────────────────────────────────
@@ -369,7 +362,6 @@ export function TorneoApp() {
   const locked = S.phase !== 'setup'
   const ng = S.players.length <= 4 ? 1 : S.players.length <= 8 ? 2 : S.players.length <= 12 ? 3 : 4
 
-  // Current match
   const availableMatches = S.matches.filter(m => {
     if (S.phase === 'groups') return m.ph === 'group'
     return m.ph === 'knockout' && m.p1 && m.p2 && !m.tbd
@@ -388,13 +380,27 @@ export function TorneoApp() {
 
   const PHASES: Record<string, string> = { setup: 'SETUP', groups: 'GRUPOS', knockout: 'ELIMINATORIA', finished: '🏆 CAMPEÓN' }
 
+  if (loading) {
+    return (
+      <div className="min-h-[60vh] flex items-center justify-center">
+        <div className="text-center space-y-3">
+          <div className="h-8 w-8 rounded-full border-2 border-primary border-t-transparent animate-spin mx-auto" />
+          <p className="text-sm text-muted-foreground">Cargando torneo…</p>
+        </div>
+      </div>
+    )
+  }
+
   // ── Render ────────────────────────────────────────────────────────────────────
   return (
     <div className="min-h-screen -mt-6 -mx-4">
       {/* Sub-header */}
       <div className="sticky top-16 z-40 bg-background/95 backdrop-blur border-b border-border/40">
         <div className="flex items-center justify-between px-4 h-10 gap-3">
-          <span className="font-black tracking-widest text-primary text-sm uppercase">⚽ FC Torneo</span>
+          <div className="flex items-center gap-2">
+            <span className="font-black tracking-widest text-primary text-sm uppercase">⚽ {torneoName}</span>
+            {saving && <span className="text-[10px] text-muted-foreground animate-pulse">guardando…</span>}
+          </div>
           <span className="text-[10px] font-bold tracking-widest uppercase px-2 py-0.5 rounded-full border border-primary/30 text-primary bg-primary/8">
             {PHASES[S.phase] ?? S.phase.toUpperCase()}
           </span>
@@ -482,7 +488,7 @@ export function TorneoApp() {
               {!locked && (
                 <div className="flex flex-wrap gap-2 items-end">
                   <div className="flex-1 min-w-[140px] space-y-1">
-                    <label className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">Nombre</label>
+                    <label className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">Nombre del jugador</label>
                     <input
                       value={addName} onChange={e => setAddName(e.target.value)}
                       onKeyDown={e => e.key === 'Enter' && handleAddPlayer()}
@@ -490,14 +496,31 @@ export function TorneoApp() {
                       className="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-sm focus:border-primary outline-none"
                     />
                   </div>
-                  <div className="flex-1 min-w-[140px] space-y-1">
+                  <div className="flex-1 min-w-[160px] space-y-1">
                     <label className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">Club en el juego</label>
-                    <input
-                      value={addTeam} onChange={e => setAddTeam(e.target.value)}
-                      onKeyDown={e => e.key === 'Enter' && handleAddPlayer()}
-                      placeholder="Ej. Manchester City"
-                      className="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-sm focus:border-primary outline-none"
-                    />
+                    {allTeams.length > 0 ? (
+                      <select
+                        value={addTeam}
+                        onChange={e => setAddTeam(e.target.value)}
+                        className="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-sm text-foreground focus:border-primary outline-none"
+                      >
+                        <option value="">— Selecciona equipo —</option>
+                        {Object.entries(teamsByLeague).map(([league, teams]) => (
+                          <optgroup key={league} label={league}>
+                            {teams.map(t => (
+                              <option key={t.name} value={t.name}>{t.name} {t.rating ? `(${t.rating})` : ''}</option>
+                            ))}
+                          </optgroup>
+                        ))}
+                      </select>
+                    ) : (
+                      <input
+                        value={addTeam} onChange={e => setAddTeam(e.target.value)}
+                        onKeyDown={e => e.key === 'Enter' && handleAddPlayer()}
+                        placeholder="Ej. Manchester City"
+                        className="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-sm focus:border-primary outline-none"
+                      />
+                    )}
                   </div>
                   <button onClick={handleAddPlayer} className="px-4 py-2 rounded-lg bg-primary text-black text-xs font-bold uppercase tracking-widest hover:bg-primary/90 transition-colors">
                     + Agregar
@@ -508,7 +531,7 @@ export function TorneoApp() {
               {S.players.length === 0
                 ? <div className="text-center py-8 text-muted-foreground text-sm">👤 Agrega mínimo 2 jugadores para iniciar.</div>
                 : <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
-                  {S.players.map((p, i) => (
+                  {S.players.map((p) => (
                     <div key={p.id} className="flex items-center gap-3 p-3 rounded-lg bg-white/3 border border-white/7 relative group hover:border-white/14 transition-colors">
                       <Avatar pid={p.id} players={S.players} />
                       <div className="flex-1 min-w-0">
@@ -732,7 +755,6 @@ function PartidoPanel({ m, state, scores, bets, onSelectMatch, onSetScores, onSe
   const pot = m.bets.reduce((s, b) => s + b.amt, 0)
   const onP1 = m.bets.filter(b => b.pred === m.p1).reduce((s, b) => s + b.amt, 0)
   const onP2 = m.bets.filter(b => b.pred === m.p2).reduce((s, b) => s + b.amt, 0)
-  const onDraw = m.bets.filter(b => b.pred === 'draw').reduce((s, b) => s + b.amt, 0)
   const sc = scores[m.id] ?? { s1: '0', s2: '0', pen: '' }
 
   return (
@@ -766,7 +788,6 @@ function PartidoPanel({ m, state, scores, bets, onSelectMatch, onSetScores, onSe
             <Avatar pid={m.p1} players={state.players} size={54} />
             <div className="font-black text-xl tracking-wide">{p1?.name}</div>
             <div className="text-xs text-muted-foreground">{p1?.team}</div>
-            {m.done && <div className="font-black text-5xl text-yellow-400">{m.s1}</div>}
           </div>
           <div className="text-center min-w-[60px]">
             {m.done
@@ -781,14 +802,12 @@ function PartidoPanel({ m, state, scores, bets, onSelectMatch, onSetScores, onSe
             <Avatar pid={m.p2} players={state.players} size={54} />
             <div className="font-black text-xl tracking-wide">{p2?.name}</div>
             <div className="text-xs text-muted-foreground">{p2?.team}</div>
-            {m.done && <div className="font-black text-5xl text-yellow-400">{m.s2}</div>}
           </div>
         </div>
 
         <hr className="border-white/6" />
 
         {m.done && m.settlement ? (
-          /* Settlement */
           <div className="space-y-3">
             <h3 className="text-sm font-black tracking-widest uppercase text-primary">🏁 Resultado Quiniela</h3>
             <div className="grid grid-cols-3 gap-3">
@@ -823,7 +842,6 @@ function PartidoPanel({ m, state, scores, bets, onSelectMatch, onSetScores, onSe
             </div>
           </div>
         ) : (
-          /* Betting + result entry */
           <div className="space-y-5">
             <div>
               <h3 className="text-sm font-black tracking-widest uppercase text-primary mb-3">🎲 La Quiniela</h3>
@@ -940,7 +958,7 @@ function BracketPanel({ state, onSelectMatch }: { state: TorneoState; onSelectMa
   const numR = maxR + 1
   const rLabels = numR === 1 ? ['Final'] : numR === 2 ? ['Semifinal', 'Final'] : ['Cuartos de Final', 'Semifinal', 'Final'].slice(3 - numR)
 
-  function matchWinner(m: TorneoMatch) {
+  function mWinner(m: TorneoMatch) {
     if (!m.done) return null
     if (m.s1! > m.s2!) return m.p1
     if (m.s2! > m.s1!) return m.p2
@@ -968,7 +986,7 @@ function BracketPanel({ state, onSelectMatch }: { state: TorneoState; onSelectMa
                 {rms.map(m => {
                   const p1 = m.p1 ? state.players.find(x => x.id === m.p1) : null
                   const p2 = m.p2 ? state.players.find(x => x.id === m.p2) : null
-                  const w = matchWinner(m)
+                  const w = mWinner(m)
                   return (
                     <div key={m.id} onClick={() => !m.tbd && onSelectMatch(m.id)} className="rounded-lg border border-white/10 bg-card overflow-hidden my-1.5 cursor-pointer hover:border-primary/30 transition-colors">
                       {[{ p: p1, pid: m.p1, score: m.s1 }, { p: p2, pid: m.p2, score: m.s2 }].map(({ p, pid, score }, idx) => (

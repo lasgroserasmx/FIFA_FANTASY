@@ -1,10 +1,10 @@
-import { TorneoApp } from '@/components/torneo/torneo-app'
+import { TorneoListPage } from '@/components/torneo/torneo-list'
 import { AppLayout } from '@/components/layout/app-layout'
 
 export default function TorneoPage() {
   return (
     <AppLayout>
-      <TorneoApp />
+      <TorneoListPage />
     </AppLayout>
   )
 }
