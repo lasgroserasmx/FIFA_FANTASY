@@ -62,8 +62,10 @@ export function Navbar() {
           </nav>
 
           <div className="flex items-center gap-2">
-            {/* Renderizar solo en cliente para evitar mismatch de hidratación */}
-            {mounted && (user ? (
+            {/* Skeleton mientras carga para evitar mismatch de hidratación */}
+            {!mounted ? (
+              <div className="h-9 w-9 rounded-full bg-muted animate-pulse" />
+            ) : user ? (
               <DropdownMenu>
                 <DropdownMenuTrigger className="relative h-9 w-9 rounded-full overflow-hidden focus:outline-none focus:ring-2 focus:ring-ring">
                   <Avatar className="h-9 w-9">
@@ -94,7 +96,7 @@ export function Navbar() {
               </DropdownMenu>
             ) : (
               <LinkButton href="/auth/login" size="sm">Iniciar sesión</LinkButton>
-            ))}
+            )}
 
             <Button variant="ghost" size="icon" className="md:hidden" onClick={() => setMobileOpen(!mobileOpen)}>
               {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}

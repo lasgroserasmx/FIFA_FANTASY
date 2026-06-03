@@ -7,14 +7,24 @@ export async function getLeagues(): Promise<League[]> {
   const { data: { user } } = await supabase.auth.getUser()
   if (!user) return []
 
-  const { data, error } = await supabase
+  // 1. Traer IDs de ligas del usuario
+  const { data: memberships, error } = await supabase
     .from('league_members')
-    .select('league:leagues(*)')
+    .select('league_id')
     .eq('user_id', user.id)
 
   if (error) throw error
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  return (data?.map((d: any) => d.league) ?? []) as League[]
+  if (!memberships || memberships.length === 0) return []
+
+  // 2. Traer las ligas por sus IDs (sin FK join para evitar errores de relación)
+  const leagueIds = memberships.map((m: { league_id: string }) => m.league_id)
+  const { data: leagues, error: leaguesError } = await supabase
+    .from('leagues')
+    .select('*')
+    .in('id', leagueIds)
+
+  if (leaguesError) throw leaguesError
+  return (leagues ?? []) as League[]
 }
 
 export async function getLeague(id: string): Promise<League | null> {
