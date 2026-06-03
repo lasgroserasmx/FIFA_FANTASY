@@ -3,6 +3,7 @@ import { useState, useEffect, useCallback, useRef } from 'react'
 import { getTorneo, saveTorneo } from '@/services/torneo'
 import { getTeamsByLeague } from '@/lib/torneo-data'
 import type { TorneoState, TorneoPlayer, TorneoGroup, TorneoMatch, TorneoBet, Settlement } from './torneo-types'
+import type { LeagueMember, Profile } from '@/types'
 import { INIT_STATE } from './torneo-types'
 
 // ── Avatar helpers ─────────────────────────────────────────────────────────────
@@ -32,10 +33,11 @@ interface Props {
   torneoName: string
   gameType: string
   isOwner?: boolean
-  embedded?: boolean  // true cuando está dentro de una pestaña de liga
+  embedded?: boolean
+  leagueMembers?: (LeagueMember & { profile: Profile | null })[]
 }
 
-export function TorneoApp({ torneoId, torneoName, gameType, isOwner = true, embedded = false }: Props) {
+export function TorneoApp({ torneoId, torneoName, gameType, isOwner = true, embedded = false, leagueMembers }: Props) {
   const [S, setS] = useState<TorneoState>(INIT_STATE)
   const [tab, setTab] = useState<'setup' | 'grupos' | 'partido' | 'bracket' | 'finanzas'>('setup')
   const [toast, setToast] = useState<string | null>(null)
@@ -487,66 +489,142 @@ export function TorneoApp({ torneoId, torneoName, gameType, isOwner = true, embe
             {/* Players */}
             <div className="rounded-xl border border-border/60 bg-card p-5 space-y-4">
               <h2 className="text-sm font-black tracking-widest uppercase text-primary">👥 Jugadores — {S.players.length} registrados</h2>
-              {!locked && (
-                <div className="flex flex-wrap gap-2 items-end">
-                  <div className="flex-1 min-w-[140px] space-y-1">
-                    <label className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">Nombre del jugador</label>
-                    <input
-                      value={addName} onChange={e => setAddName(e.target.value)}
-                      onKeyDown={e => e.key === 'Enter' && handleAddPlayer()}
-                      placeholder="Ej. César"
-                      className="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-sm focus:border-primary outline-none"
-                    />
-                  </div>
-                  <div className="flex-1 min-w-[160px] space-y-1">
-                    <label className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">Club en el juego</label>
-                    {allTeams.length > 0 ? (
-                      <select
-                        value={addTeam}
-                        onChange={e => setAddTeam(e.target.value)}
-                        className="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-sm text-foreground focus:border-primary outline-none"
-                      >
-                        <option value="">— Selecciona equipo —</option>
-                        {Object.entries(teamsByLeague).map(([league, teams]) => (
-                          <optgroup key={league} label={league}>
-                            {teams.map(t => (
-                              <option key={t.name} value={t.name}>{t.name} {t.rating ? `(${t.rating})` : ''}</option>
-                            ))}
-                          </optgroup>
-                        ))}
-                      </select>
-                    ) : (
-                      <input
-                        value={addTeam} onChange={e => setAddTeam(e.target.value)}
-                        onKeyDown={e => e.key === 'Enter' && handleAddPlayer()}
-                        placeholder="Ej. Manchester City"
-                        className="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-sm focus:border-primary outline-none"
-                      />
-                    )}
-                  </div>
-                  <button onClick={handleAddPlayer} className="px-4 py-2 rounded-lg bg-primary text-black text-xs font-bold uppercase tracking-widest hover:bg-primary/90 transition-colors">
-                    + Agregar
-                  </button>
-                </div>
-              )}
 
-              {S.players.length === 0
-                ? <div className="text-center py-8 text-muted-foreground text-sm">👤 Agrega mínimo 2 jugadores para iniciar.</div>
-                : <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
-                  {S.players.map((p) => (
-                    <div key={p.id} className="flex items-center gap-3 p-3 rounded-lg bg-white/3 border border-white/7 relative group hover:border-white/14 transition-colors">
-                      <Avatar pid={p.id} players={S.players} />
-                      <div className="flex-1 min-w-0">
-                        <div className="text-sm font-semibold truncate">{p.name}</div>
-                        <div className="text-xs text-muted-foreground truncate">{p.team}</div>
+              {/* Modo liga: miembros de la liga eligen su club */}
+              {leagueMembers ? (
+                <div className="space-y-3">
+                  <p className="text-xs text-muted-foreground">
+                    Los participantes son los miembros de la liga. {isOwner ? 'Asigna el club a cada uno para agregarlo al torneo.' : 'El organizador asigna los clubes.'}
+                  </p>
+                  {leagueMembers.map(member => {
+                    const name = member.profile?.full_name || member.profile?.username || member.user_id.slice(0, 8)
+                    const existing = S.players.find(p => p.id === member.user_id)
+                    const [teamSel, setTeamSel] = useState(existing?.team ?? '')
+
+                    function handleAddMember() {
+                      if (!teamSel) { showToast('⚠️ Selecciona un club'); return }
+                      update(prev => {
+                        const alreadyIn = prev.players.find(p => p.id === member.user_id)
+                        if (alreadyIn) {
+                          // actualizar club
+                          return { ...prev, players: prev.players.map(p => p.id === member.user_id ? { ...p, team: teamSel } : p) }
+                        }
+                        return { ...prev, players: [...prev.players, { id: member.user_id, name, team: teamSel }] }
+                      })
+                      showToast(`✅ ${name} agregado`)
+                    }
+
+                    function handleRemoveMember() {
+                      update(prev => ({ ...prev, players: prev.players.filter(p => p.id !== member.user_id) }))
+                    }
+
+                    return (
+                      <div key={member.user_id} className="flex items-center gap-3 p-3 rounded-lg bg-white/3 border border-white/7 flex-wrap">
+                        <div className="flex items-center gap-2 flex-1 min-w-[120px]">
+                          <Avatar pid={existing?.id ?? null} players={S.players.length ? S.players : [{ id: member.user_id, name, team: '' }]} size={28} />
+                          <div>
+                            <div className="text-sm font-semibold">{name}</div>
+                            {existing && <div className="text-[10px] text-primary">{existing.team} ✓</div>}
+                          </div>
+                        </div>
+                        {!locked && (
+                          <div className="flex items-center gap-2 flex-wrap">
+                            <select
+                              value={teamSel}
+                              onChange={e => setTeamSel(e.target.value)}
+                              className="bg-white/5 border border-white/10 rounded-lg px-2 py-1.5 text-xs text-foreground focus:border-primary outline-none min-w-[160px]"
+                            >
+                              <option value="">— Club —</option>
+                              {Object.entries(teamsByLeague).map(([league, teams]) => (
+                                <optgroup key={league} label={league}>
+                                  {teams.map(t => (
+                                    <option key={t.name} value={t.name}>{t.name}</option>
+                                  ))}
+                                </optgroup>
+                              ))}
+                            </select>
+                            <button onClick={handleAddMember} className="px-3 py-1.5 rounded-lg bg-primary text-black text-[10px] font-bold uppercase tracking-widest hover:bg-primary/90 transition-colors">
+                              {existing ? '✏️ Actualizar' : '+ Agregar'}
+                            </button>
+                            {existing && (
+                              <button onClick={handleRemoveMember} className="px-2 py-1.5 rounded-lg bg-white/5 border border-white/10 text-red-400 text-[10px] hover:bg-red-500/10 transition-colors">✕</button>
+                            )}
+                          </div>
+                        )}
+                        {locked && existing && (
+                          <span className="text-xs text-muted-foreground">{existing.team}</span>
+                        )}
+                        {locked && !existing && (
+                          <span className="text-xs text-muted-foreground italic">Sin club asignado</span>
+                        )}
                       </div>
-                      {!locked && (
-                        <button onClick={() => handleRemovePlayer(p.id)} className="opacity-0 group-hover:opacity-100 absolute top-2 right-2 text-muted-foreground hover:text-red-400 transition-all text-xs">✕</button>
-                      )}
-                    </div>
-                  ))}
+                    )
+                  })}
                 </div>
-              }
+              ) : (
+                /* Modo standalone: formulario libre */
+                <>
+                  {!locked && (
+                    <div className="flex flex-wrap gap-2 items-end">
+                      <div className="flex-1 min-w-[140px] space-y-1">
+                        <label className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">Nombre del jugador</label>
+                        <input
+                          value={addName} onChange={e => setAddName(e.target.value)}
+                          onKeyDown={e => e.key === 'Enter' && handleAddPlayer()}
+                          placeholder="Ej. César"
+                          className="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-sm focus:border-primary outline-none"
+                        />
+                      </div>
+                      <div className="flex-1 min-w-[160px] space-y-1">
+                        <label className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">Club en el juego</label>
+                        {allTeams.length > 0 ? (
+                          <select
+                            value={addTeam}
+                            onChange={e => setAddTeam(e.target.value)}
+                            className="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-sm text-foreground focus:border-primary outline-none"
+                          >
+                            <option value="">— Selecciona equipo —</option>
+                            {Object.entries(teamsByLeague).map(([league, teams]) => (
+                              <optgroup key={league} label={league}>
+                                {teams.map(t => (
+                                  <option key={t.name} value={t.name}>{t.name} {t.rating ? `(${t.rating})` : ''}</option>
+                                ))}
+                              </optgroup>
+                            ))}
+                          </select>
+                        ) : (
+                          <input
+                            value={addTeam} onChange={e => setAddTeam(e.target.value)}
+                            onKeyDown={e => e.key === 'Enter' && handleAddPlayer()}
+                            placeholder="Ej. Manchester City"
+                            className="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-sm focus:border-primary outline-none"
+                          />
+                        )}
+                      </div>
+                      <button onClick={handleAddPlayer} className="px-4 py-2 rounded-lg bg-primary text-black text-xs font-bold uppercase tracking-widest hover:bg-primary/90 transition-colors">
+                        + Agregar
+                      </button>
+                    </div>
+                  )}
+                  {S.players.length === 0
+                    ? <div className="text-center py-8 text-muted-foreground text-sm">👤 Agrega mínimo 2 jugadores para iniciar.</div>
+                    : <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
+                      {S.players.map((p) => (
+                        <div key={p.id} className="flex items-center gap-3 p-3 rounded-lg bg-white/3 border border-white/7 relative group hover:border-white/14 transition-colors">
+                          <Avatar pid={p.id} players={S.players} />
+                          <div className="flex-1 min-w-0">
+                            <div className="text-sm font-semibold truncate">{p.name}</div>
+                            <div className="text-xs text-muted-foreground truncate">{p.team}</div>
+                          </div>
+                          {!locked && (
+                            <button onClick={() => handleRemovePlayer(p.id)} className="opacity-0 group-hover:opacity-100 absolute top-2 right-2 text-muted-foreground hover:text-red-400 transition-all text-xs">✕</button>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  }
+                </>
+              )}
 
               {!locked && S.players.length >= 2 && (
                 <>

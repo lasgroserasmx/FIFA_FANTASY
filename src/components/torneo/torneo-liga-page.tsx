@@ -1,29 +1,30 @@
 'use client'
-import { useLeague } from '@/hooks/use-leagues'
+import { useLeague, useLeagueMembers } from '@/hooks/use-leagues'
 import { TorneoApp } from './torneo-app'
 import Link from 'next/link'
 import { ArrowLeft } from 'lucide-react'
 import { createClient } from '@/lib/supabase/client'
 import { useEffect, useState } from 'react'
+import type { LeagueMember, Profile } from '@/types'
 
 interface Props {
   ligaId: string
 }
 
 export function TorneoLigaPage({ ligaId }: Props) {
-  const { data: league, isLoading } = useLeague(ligaId)
+  const { data: league, isLoading: loadingLeague } = useLeague(ligaId)
+  const { data: members, isLoading: loadingMembers } = useLeagueMembers(ligaId)
   const [isAdmin, setIsAdmin] = useState(false)
 
   useEffect(() => {
     if (!league) return
     createClient().auth.getUser().then(({ data }) => {
       if (!data.user) return
-      // el admin es el creador de la liga
       setIsAdmin(league.admin_id === data.user.id)
     })
   }, [league])
 
-  if (isLoading) {
+  if (loadingLeague || loadingMembers) {
     return (
       <div className="min-h-[60vh] flex items-center justify-center">
         <div className="h-8 w-8 rounded-full border-2 border-primary border-t-transparent animate-spin" />
@@ -43,7 +44,6 @@ export function TorneoLigaPage({ ligaId }: Props) {
 
   return (
     <div>
-      {/* Back link */}
       <div className="flex items-center gap-2 px-4 pt-4 pb-2">
         <Link
           href={`/ligas/${ligaId}`}
@@ -59,6 +59,7 @@ export function TorneoLigaPage({ ligaId }: Props) {
         torneoName={league.name}
         gameType={league.tournament_type ?? 'fc26'}
         isOwner={isAdmin}
+        leagueMembers={members as (LeagueMember & { profile: Profile | null })[]}
       />
     </div>
   )
