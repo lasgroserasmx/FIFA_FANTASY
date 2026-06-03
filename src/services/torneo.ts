@@ -75,6 +75,39 @@ export async function saveTorneo(id: string, state: TorneoState): Promise<void> 
   if (error) throw new Error(error.message)
 }
 
+// ── Selecciones de club por miembro ───────────────────────────────────────────
+
+export interface PlayerSelection {
+  torneo_id: string
+  user_id: string
+  club: string
+  player_name: string
+  updated_at: string
+}
+
+export async function savePlayerSelection(torneoId: string, club: string, playerName: string): Promise<void> {
+  const supabase = createClient()
+  const { data: { user } } = await supabase.auth.getUser()
+  if (!user) throw new Error('No autenticado')
+
+  const { error } = await supabase
+    .from('torneo_player_selections')
+    .upsert({ torneo_id: torneoId, user_id: user.id, club, player_name: playerName }, { onConflict: 'torneo_id,user_id' })
+
+  if (error) throw new Error(error.message)
+}
+
+export async function loadPlayerSelections(torneoId: string): Promise<PlayerSelection[]> {
+  const supabase = createClient()
+  const { data, error } = await supabase
+    .from('torneo_player_selections')
+    .select('*')
+    .eq('torneo_id', torneoId)
+
+  if (error) return []
+  return (data ?? []) as PlayerSelection[]
+}
+
 export async function deleteTorneo(id: string): Promise<void> {
   const supabase = createClient()
   const { error } = await supabase

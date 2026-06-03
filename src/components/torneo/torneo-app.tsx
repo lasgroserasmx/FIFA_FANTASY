@@ -1,6 +1,7 @@
 'use client'
 import { useState, useEffect, useCallback, useRef } from 'react'
-import { getTorneo, saveTorneo } from '@/services/torneo'
+import { getTorneo, saveTorneo, savePlayerSelection, loadPlayerSelections } from '@/services/torneo'
+import type { PlayerSelection } from '@/services/torneo'
 import { getTeamsByLeague } from '@/lib/torneo-data'
 import type { TorneoState, TorneoPlayer, TorneoGroup, TorneoMatch, TorneoBet, Settlement } from './torneo-types'
 import type { LeagueMember, Profile } from '@/types'
@@ -44,14 +45,19 @@ export function TorneoApp({ torneoId, torneoName, gameType, isOwner = true, embe
   const [toast, setToast] = useState<string | null>(null)
   const [loading, setLoading] = useState(true)
   const [saving, setSaving] = useState(false)
+  const [memberSelections, setMemberSelections] = useState<PlayerSelection[]>([])
   const saveTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
 
-  // Load from Supabase on mount
+  // Load state + member selections from Supabase on mount
   useEffect(() => {
-    getTorneo(torneoId).then(row => {
+    Promise.all([
+      getTorneo(torneoId),
+      loadPlayerSelections(torneoId),
+    ]).then(([row, selections]) => {
       if (row && row.state && row.state.nid) {
         setS(prev => ({ ...INIT_STATE, ...row.state }))
       }
+      setMemberSelections(selections)
       setLoading(false)
     }).catch(() => setLoading(false))
   }, [torneoId])
@@ -432,7 +438,9 @@ export function TorneoApp({ torneoId, torneoName, gameType, isOwner = true, embe
         {/* Banner para miembros no-admin: seleccionar su club */}
         {!isOwner && S.phase === 'setup' && leagueMembers && currentUserId && (() => {
           const myMember = leagueMembers.find(m => m.user_id === currentUserId)
+          const mySelection = memberSelections.find(s => s.user_id === currentUserId)
           const myPlayer = S.players.find(p => p.id === currentUserId)
+            ?? (mySelection ? { id: currentUserId, name: mySelection.player_name, team: mySelection.club } : undefined)
           if (!myMember) return null
           const myName = myMember.profile?.username || myMember.profile?.full_name || 'Tú'
           return (
@@ -443,12 +451,16 @@ export function TorneoApp({ torneoId, torneoName, gameType, isOwner = true, embe
               players={S.players}
               teamsByLeague={teamsByLeague}
               onAdd={(name, team) => {
-                update(prev => {
-                  const alreadyIn = prev.players.find(p => p.id === currentUserId)
-                  if (alreadyIn) return { ...prev, players: prev.players.map(p => p.id === currentUserId ? { ...p, team } : p) }
-                  return { ...prev, players: [...prev.players, { id: currentUserId, name, team }] }
-                })
-                showToast('✅ Club seleccionado')
+                // Guardar en tabla separada (accesible para cualquier miembro)
+                savePlayerSelection(torneoId, team, name)
+                  .then(() => {
+                    setMemberSelections(prev => {
+                      const filtered = prev.filter(s => s.user_id !== currentUserId)
+                      return [...filtered, { torneo_id: torneoId, user_id: currentUserId, club: team, player_name: name, updated_at: new Date().toISOString() }]
+                    })
+                    showToast('✅ Club guardado')
+                  })
+                  .catch(() => showToast('❌ Error al guardar'))
               }}
             />
           )
@@ -533,25 +545,41 @@ export function TorneoApp({ torneoId, torneoName, gameType, isOwner = true, embe
                     Los participantes son los miembros de la liga. {isOwner ? 'Asigna el club a cada uno para agregarlo al torneo.' : 'El organizador asigna los clubes.'}
                   </p>
                   {leagueMembers.map(member => {
-                    // Cada jugador solo puede editar su propia fila
                     const isMe = member.user_id === currentUserId
                     const canEdit = !locked && (isMe || isOwner)
+                    // Mostrar club confirmado: primero del estado principal (admin lo aprobó),
+                    // luego de la selección personal guardada en la tabla separada
+                    const existingInState = S.players.find(p => p.id === member.user_id)
+                    const existingSelection = memberSelections.find(s => s.user_id === member.user_id)
+                    const existing = existingInState ?? (existingSelection ? { id: member.user_id, name: existingSelection.player_name, team: existingSelection.club } : undefined)
                     return (
                       <MemberRow
                         key={member.user_id}
                         member={member}
-                        existing={S.players.find(p => p.id === member.user_id)}
+                        existing={existing}
                         players={S.players}
                         teamsByLeague={teamsByLeague}
                         locked={!canEdit}
                         isMe={isMe}
                         onAdd={(name, team) => {
-                          update(prev => {
-                            const alreadyIn = prev.players.find(p => p.id === member.user_id)
-                            if (alreadyIn) return { ...prev, players: prev.players.map(p => p.id === member.user_id ? { ...p, team } : p) }
-                            return { ...prev, players: [...prev.players, { id: member.user_id, name, team }] }
-                          })
-                          showToast(`✅ ${name} agregado`)
+                          // Guardar selección personal en tabla separada (cualquier miembro puede)
+                          savePlayerSelection(torneoId, team, name)
+                            .then(() => {
+                              setMemberSelections(prev => {
+                                const filtered = prev.filter(s => s.user_id !== member.user_id)
+                                return [...filtered, { torneo_id: torneoId, user_id: member.user_id, club: team, player_name: name, updated_at: new Date().toISOString() }]
+                              })
+                            })
+                            .catch(() => showToast('❌ Error al guardar'))
+                          // Si es admin, también actualizar el estado principal del torneo
+                          if (isOwner) {
+                            update(prev => {
+                              const alreadyIn = prev.players.find(p => p.id === member.user_id)
+                              if (alreadyIn) return { ...prev, players: prev.players.map(p => p.id === member.user_id ? { ...p, team } : p) }
+                              return { ...prev, players: [...prev.players, { id: member.user_id, name, team }] }
+                            })
+                          }
+                          showToast(`✅ Club guardado`)
                         }}
                         onRemove={() => update(prev => ({ ...prev, players: prev.players.filter(p => p.id !== member.user_id) }))}
                       />
@@ -621,6 +649,35 @@ export function TorneoApp({ torneoId, torneoName, gameType, isOwner = true, embe
                     </div>
                   }
                 </>
+              )}
+
+              {/* Admin: aplicar selecciones de miembros al estado del torneo */}
+              {!locked && isOwner && leagueMembers && memberSelections.length > 0 && (
+                <div className="rounded-lg border border-blue-500/20 bg-blue-500/5 p-3 flex items-center justify-between gap-3 flex-wrap">
+                  <p className="text-xs text-blue-400">
+                    💡 {memberSelections.length} miembro{memberSelections.length > 1 ? 's han' : ' ha'} seleccionado su club.
+                  </p>
+                  <button
+                    onClick={() => {
+                      update(prev => {
+                        let players = [...prev.players]
+                        memberSelections.forEach(sel => {
+                          const idx = players.findIndex(p => p.id === sel.user_id)
+                          if (idx >= 0) {
+                            players[idx] = { ...players[idx], team: sel.club }
+                          } else {
+                            players = [...players, { id: sel.user_id, name: sel.player_name, team: sel.club }]
+                          }
+                        })
+                        return { ...prev, players }
+                      })
+                      showToast('✅ Selecciones aplicadas')
+                    }}
+                    className="text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-lg bg-blue-500 text-white hover:bg-blue-400 transition-colors"
+                  >
+                    ✅ Aplicar selecciones
+                  </button>
+                </div>
               )}
 
               {!locked && S.players.length >= 2 && (
