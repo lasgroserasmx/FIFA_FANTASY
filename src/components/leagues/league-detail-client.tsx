@@ -9,7 +9,6 @@ import { Badge } from '@/components/ui/badge'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { Avatar, AvatarFallback } from '@/components/ui/avatar'
 import { useLeaveLeague } from '@/hooks/use-leagues'
-import { TorneoApp } from '@/components/torneo/torneo-app'
 import { toast } from 'sonner'
 import type { League, LeagueMember, Profile } from '@/types'
 import { formatCurrency } from '@/utils/format'
@@ -190,13 +189,11 @@ export function LeagueDetailClient({ league, members, currentUserId, isMember, i
         {/* Torneo (bracket manager) */}
         {hasTorneo && league.torneo_id && (
           <TabsContent value="torneo" className="mt-4">
-            <TorneoApp
-              torneoId={league.torneo_id}
-              torneoName={league.name}
-              gameType={league.tournament_type ?? 'fc26'}
-              isOwner={isAdmin}
-              embedded
-            />
+            <div className="text-center py-10">
+              <div className="text-5xl mb-4">⚔️</div>
+              <p className="text-muted-foreground mb-4">Gestiona el bracket, grupos, quiniela y finanzas del torneo</p>
+              <LinkButton href={`/torneo/liga/${league.id}`}>Ir al Torneo</LinkButton>
+            </div>
           </TabsContent>
         )}
 
