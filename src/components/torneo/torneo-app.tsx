@@ -40,7 +40,7 @@ interface Props {
 
 export function TorneoApp({ torneoId, torneoName, gameType, isOwner = true, embedded = false, leagueMembers, currentUserId }: Props) {
   const [S, setS] = useState<TorneoState>(INIT_STATE)
-  const [tab, setTab] = useState<'setup' | 'grupos' | 'partido' | 'bracket' | 'finanzas'>('setup')
+  const [tab, setTab] = useState<'setup' | 'grupos' | 'partido' | 'bracket' | 'finanzas'>(isOwner ? 'setup' : 'grupos')
   const [toast, setToast] = useState<string | null>(null)
   const [loading, setLoading] = useState(true)
   const [saving, setSaving] = useState(false)
@@ -376,12 +376,12 @@ export function TorneoApp({ torneoId, torneoName, gameType, isOwner = true, embe
     ?? availableMatches[availableMatches.length - 1]
 
   const TABS = [
-    { id: 'setup', label: '⚙️ Setup' },
-    { id: 'grupos', label: '📊 Grupos' },
-    { id: 'partido', label: '⚽ Partido' },
-    { id: 'bracket', label: '🏆 Bracket' },
-    { id: 'finanzas', label: '💰 Finanzas' },
-  ] as const
+    { id: 'setup',    label: '⚙️ Setup',    ownerOnly: true  },
+    { id: 'grupos',   label: '📊 Grupos',   ownerOnly: false },
+    { id: 'partido',  label: '⚽ Partido',  ownerOnly: false },
+    { id: 'bracket',  label: '🏆 Bracket',  ownerOnly: false },
+    { id: 'finanzas', label: '💰 Finanzas', ownerOnly: false },
+  ].filter(t => !t.ownerOnly || isOwner) as { id: 'setup'|'grupos'|'partido'|'bracket'|'finanzas'; label: string }[]
 
   const PHASES: Record<string, string> = { setup: 'SETUP', groups: 'GRUPOS', knockout: 'ELIMINATORIA', finished: '🏆 CAMPEÓN' }
 
@@ -428,6 +428,41 @@ export function TorneoApp({ torneoId, torneoName, gameType, isOwner = true, embe
       </div>
 
       <div className="max-w-5xl mx-auto px-4 py-6 space-y-4">
+
+        {/* Banner para miembros no-admin: seleccionar su club */}
+        {!isOwner && S.phase === 'setup' && leagueMembers && currentUserId && (() => {
+          const myMember = leagueMembers.find(m => m.user_id === currentUserId)
+          const myPlayer = S.players.find(p => p.id === currentUserId)
+          if (!myMember) return null
+          const myName = myMember.profile?.username || myMember.profile?.full_name || 'Tú'
+          return (
+            <MemberSetupBanner
+              member={myMember}
+              myName={myName}
+              existing={myPlayer}
+              players={S.players}
+              teamsByLeague={teamsByLeague}
+              onAdd={(name, team) => {
+                update(prev => {
+                  const alreadyIn = prev.players.find(p => p.id === currentUserId)
+                  if (alreadyIn) return { ...prev, players: prev.players.map(p => p.id === currentUserId ? { ...p, team } : p) }
+                  return { ...prev, players: [...prev.players, { id: currentUserId, name, team }] }
+                })
+                showToast('✅ Club seleccionado')
+              }}
+            />
+          )
+        })()}
+
+        {/* Mensaje de espera para no-admin cuando el torneo aún no inicia */}
+        {!isOwner && S.phase === 'setup' && tab !== 'setup' && (
+          <div className="rounded-xl border border-border/60 bg-card p-8 text-center space-y-3">
+            <div className="text-4xl">⏳</div>
+            <p className="font-bold text-foreground">Esperando al organizador</p>
+            <p className="text-sm text-muted-foreground">El torneo aún no ha iniciado. Selecciona tu club arriba y espera a que el organizador arranque la competición.</p>
+          </div>
+        )}
+
         {/* SETUP */}
         {tab === 'setup' && (
           <div className="space-y-4">
@@ -1232,6 +1267,60 @@ function MemberRow({ member, existing, players, teamsByLeague, locked, isMe, onA
           <span className="text-xs text-yellow-400">⏳ El torneo ya inició</span>
         )
       )}
+    </div>
+  )
+}
+
+// ── Banner de selección de club para miembros no-admin ─────────────────────────
+function MemberSetupBanner({ member, myName, existing, players, teamsByLeague, onAdd }: {
+  member: LeagueMember & { profile: Profile | null }
+  myName: string
+  existing: TorneoPlayer | undefined
+  players: TorneoPlayer[]
+  teamsByLeague: Record<string, { name: string; rating?: number }[]>
+  onAdd: (name: string, team: string) => void
+}) {
+  const [teamSel, setTeamSel] = useState(existing?.team ?? '')
+
+  return (
+    <div className="rounded-xl border border-primary/30 bg-primary/5 p-4 space-y-3">
+      <div className="flex items-center gap-2">
+        <Avatar pid={existing?.id ?? null} players={players.length ? players : [{ id: member.user_id, name: myName, team: '' }]} size={32} />
+        <div>
+          <p className="text-sm font-bold text-foreground flex items-center gap-1.5">
+            Tu participación
+            <span className="text-[9px] font-bold px-1.5 py-0.5 rounded bg-primary/20 text-primary uppercase tracking-widest">Tú</span>
+          </p>
+          {existing
+            ? <p className="text-xs text-primary">✓ Club seleccionado: <strong>{existing.team}</strong></p>
+            : <p className="text-xs text-muted-foreground">Elige tu club para participar en el torneo.</p>
+          }
+        </div>
+      </div>
+      <div className="flex items-center gap-2 flex-wrap">
+        <select
+          value={teamSel}
+          onChange={e => setTeamSel(e.target.value)}
+          className="flex-1 min-w-[180px] bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-sm focus:border-primary outline-none"
+          style={{ colorScheme: 'dark' }}
+        >
+          <option value="">— Elige tu club —</option>
+          {Object.entries(teamsByLeague).map(([league, teams]) => (
+            <optgroup key={league} label={league}>
+              {teams.map(t => (
+                <option key={t.name} value={t.name}>{t.name}</option>
+              ))}
+            </optgroup>
+          ))}
+        </select>
+        <button
+          onClick={() => { if (teamSel) onAdd(myName, teamSel) }}
+          disabled={!teamSel}
+          className="px-4 py-2 rounded-lg bg-primary text-black text-xs font-bold uppercase tracking-widest hover:bg-primary/90 transition-colors disabled:opacity-40"
+        >
+          {existing ? '✏️ Cambiar club' : '✅ Confirmar club'}
+        </button>
+      </div>
     </div>
   )
 }

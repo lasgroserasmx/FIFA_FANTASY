@@ -8,7 +8,7 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { DropdownMenu, DropdownMenuContent, DropdownMenuTrigger } from '@/components/ui/dropdown-menu'
 import { useAuth } from '@/hooks/use-auth'
 import { cn } from '@/lib/utils'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 const navLinks = [
   { href: '/dashboard', label: 'Inicio', icon: LayoutDashboard },
@@ -23,6 +23,9 @@ export function Navbar() {
   const pathname = usePathname()
   const { user, profile, signOut } = useAuth()
   const [mobileOpen, setMobileOpen] = useState(false)
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => { setMounted(true) }, [])
 
   const initials = profile?.full_name?.split(' ').map(n => n[0]).join('').toUpperCase() ||
     profile?.username?.slice(0, 2).toUpperCase() || 'U'
@@ -59,7 +62,8 @@ export function Navbar() {
           </nav>
 
           <div className="flex items-center gap-2">
-            {user ? (
+            {/* Renderizar solo en cliente para evitar mismatch de hidratación */}
+            {mounted && (user ? (
               <DropdownMenu>
                 <DropdownMenuTrigger className="relative h-9 w-9 rounded-full overflow-hidden focus:outline-none focus:ring-2 focus:ring-ring">
                   <Avatar className="h-9 w-9">
@@ -90,7 +94,7 @@ export function Navbar() {
               </DropdownMenu>
             ) : (
               <LinkButton href="/auth/login" size="sm">Iniciar sesión</LinkButton>
-            )}
+            ))}
 
             <Button variant="ghost" size="icon" className="md:hidden" onClick={() => setMobileOpen(!mobileOpen)}>
               {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
