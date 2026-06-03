@@ -35,9 +35,10 @@ interface Props {
   isOwner?: boolean
   embedded?: boolean
   leagueMembers?: (LeagueMember & { profile: Profile | null })[]
+  currentUserId?: string | null
 }
 
-export function TorneoApp({ torneoId, torneoName, gameType, isOwner = true, embedded = false, leagueMembers }: Props) {
+export function TorneoApp({ torneoId, torneoName, gameType, isOwner = true, embedded = false, leagueMembers, currentUserId }: Props) {
   const [S, setS] = useState<TorneoState>(INIT_STATE)
   const [tab, setTab] = useState<'setup' | 'grupos' | 'partido' | 'bracket' | 'finanzas'>('setup')
   const [toast, setToast] = useState<string | null>(null)
@@ -496,25 +497,31 @@ export function TorneoApp({ torneoId, torneoName, gameType, isOwner = true, embe
                   <p className="text-xs text-muted-foreground">
                     Los participantes son los miembros de la liga. {isOwner ? 'Asigna el club a cada uno para agregarlo al torneo.' : 'El organizador asigna los clubes.'}
                   </p>
-                  {leagueMembers.map(member => (
-                    <MemberRow
-                      key={member.user_id}
-                      member={member}
-                      existing={S.players.find(p => p.id === member.user_id)}
-                      players={S.players}
-                      teamsByLeague={teamsByLeague}
-                      locked={locked}
-                      onAdd={(name, team) => {
-                        update(prev => {
-                          const alreadyIn = prev.players.find(p => p.id === member.user_id)
-                          if (alreadyIn) return { ...prev, players: prev.players.map(p => p.id === member.user_id ? { ...p, team } : p) }
-                          return { ...prev, players: [...prev.players, { id: member.user_id, name, team }] }
-                        })
-                        showToast(`✅ ${name} agregado`)
-                      }}
-                      onRemove={() => update(prev => ({ ...prev, players: prev.players.filter(p => p.id !== member.user_id) }))}
-                    />
-                  ))}
+                  {leagueMembers.map(member => {
+                    // Cada jugador solo puede editar su propia fila
+                    const isMe = member.user_id === currentUserId
+                    const canEdit = !locked && (isMe || isOwner)
+                    return (
+                      <MemberRow
+                        key={member.user_id}
+                        member={member}
+                        existing={S.players.find(p => p.id === member.user_id)}
+                        players={S.players}
+                        teamsByLeague={teamsByLeague}
+                        locked={!canEdit}
+                        isMe={isMe}
+                        onAdd={(name, team) => {
+                          update(prev => {
+                            const alreadyIn = prev.players.find(p => p.id === member.user_id)
+                            if (alreadyIn) return { ...prev, players: prev.players.map(p => p.id === member.user_id ? { ...p, team } : p) }
+                            return { ...prev, players: [...prev.players, { id: member.user_id, name, team }] }
+                          })
+                          showToast(`✅ ${name} agregado`)
+                        }}
+                        onRemove={() => update(prev => ({ ...prev, players: prev.players.filter(p => p.id !== member.user_id) }))}
+                      />
+                    )
+                  })}
                 </div>
               ) : (
                 /* Modo standalone: formulario libre */
@@ -1160,12 +1167,13 @@ function FinanzasPanel({ state, finances, totalPot, quinielaPot }: {
 }
 
 // ── MemberRow — componente separado para respetar Rules of Hooks ───────────────
-function MemberRow({ member, existing, players, teamsByLeague, locked, onAdd, onRemove }: {
+function MemberRow({ member, existing, players, teamsByLeague, locked, isMe, onAdd, onRemove }: {
   member: LeagueMember & { profile: Profile | null }
   existing: TorneoPlayer | undefined
   players: TorneoPlayer[]
   teamsByLeague: Record<string, { name: string; rating?: number }[]>
   locked: boolean
+  isMe: boolean
   onAdd: (name: string, team: string) => void
   onRemove: () => void
 }) {
@@ -1173,22 +1181,30 @@ function MemberRow({ member, existing, players, teamsByLeague, locked, onAdd, on
   const [teamSel, setTeamSel] = useState(existing?.team ?? '')
 
   return (
-    <div className="flex items-center gap-3 p-3 rounded-lg bg-white/3 border border-white/7 flex-wrap">
+    <div className={`flex items-center gap-3 p-3 rounded-lg border flex-wrap ${isMe ? 'border-primary/30 bg-primary/5' : 'border-white/7 bg-white/3'}`}>
       <div className="flex items-center gap-2 flex-1 min-w-[120px]">
         <Avatar pid={existing?.id ?? null} players={players.length ? players : [{ id: member.user_id, name, team: '' }]} size={28} />
         <div>
-          <div className="text-sm font-semibold">{name}</div>
-          {existing && <div className="text-[10px] text-primary">{existing.team} ✓</div>}
+          <div className="text-sm font-semibold flex items-center gap-1.5">
+            {name}
+            {isMe && <span className="text-[9px] font-bold px-1.5 py-0.5 rounded bg-primary/20 text-primary uppercase tracking-widest">Tú</span>}
+          </div>
+          {existing
+            ? <div className="text-[10px] text-primary">{existing.team} ✓</div>
+            : <div className="text-[10px] text-muted-foreground italic">Sin club asignado</div>
+          }
         </div>
       </div>
-      {!locked && (
+
+      {/* Solo se puede editar si es tu propia fila (o el admin) y el torneo no ha iniciado */}
+      {!locked ? (
         <div className="flex items-center gap-2 flex-wrap">
           <select
             value={teamSel}
             onChange={e => setTeamSel(e.target.value)}
             className="bg-white/5 border border-white/10 rounded-lg px-2 py-1.5 text-xs text-foreground focus:border-primary outline-none min-w-[160px]"
           >
-            <option value="">— Club —</option>
+            <option value="">— Elige tu club —</option>
             {Object.entries(teamsByLeague).map(([league, teams]) => (
               <optgroup key={league} label={league}>
                 {teams.map(t => (
@@ -1201,14 +1217,17 @@ function MemberRow({ member, existing, players, teamsByLeague, locked, onAdd, on
             onClick={() => { if (teamSel) onAdd(name, teamSel) }}
             className="px-3 py-1.5 rounded-lg bg-primary text-black text-[10px] font-bold uppercase tracking-widest hover:bg-primary/90 transition-colors"
           >
-            {existing ? '✏️ Actualizar' : '+ Agregar'}
+            {existing ? '✏️ Cambiar' : '+ Confirmar'}
           </button>
           {existing && (
             <button onClick={onRemove} className="px-2 py-1.5 rounded-lg bg-white/5 border border-white/10 text-red-400 text-[10px] hover:bg-red-500/10 transition-colors">✕</button>
           )}
         </div>
+      ) : (
+        !existing && isMe && (
+          <span className="text-xs text-yellow-400">⏳ El torneo ya inició</span>
+        )
       )}
-      {locked && <span className="text-xs text-muted-foreground">{existing ? existing.team : <em>Sin club</em>}</span>}
     </div>
   )
 }

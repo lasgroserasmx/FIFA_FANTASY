@@ -15,11 +15,13 @@ export function TorneoLigaPage({ ligaId }: Props) {
   const { data: league, isLoading: loadingLeague } = useLeague(ligaId)
   const { data: members, isLoading: loadingMembers } = useLeagueMembers(ligaId)
   const [isAdmin, setIsAdmin] = useState(false)
+  const [currentUserId, setCurrentUserId] = useState<string | null>(null)
 
   useEffect(() => {
     if (!league) return
     createClient().auth.getUser().then(({ data }) => {
       if (!data.user) return
+      setCurrentUserId(data.user.id)
       setIsAdmin(league.admin_id === data.user.id)
     })
   }, [league])
@@ -59,6 +61,7 @@ export function TorneoLigaPage({ ligaId }: Props) {
         torneoName={league.name}
         gameType={league.tournament_type ?? 'fc26'}
         isOwner={isAdmin}
+        currentUserId={currentUserId}
         leagueMembers={members as (LeagueMember & { profile: Profile | null })[]}
       />
     </div>
