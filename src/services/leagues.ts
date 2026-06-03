@@ -35,7 +35,6 @@ export async function getLeagueMembers(leagueId: string): Promise<LeagueMember[]
     .from('league_members')
     .select('*, profile:profiles(*)')
     .eq('league_id', leagueId)
-    .order('joined_at', { ascending: true })
 
   if (error) throw error
   return (data ?? []) as LeagueMember[]
