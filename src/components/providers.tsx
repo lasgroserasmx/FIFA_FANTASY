@@ -17,7 +17,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
           <Toaster richColors position="top-right" />
         </TooltipProvider>
       </ThemeProvider>
-      <ReactQueryDevtools initialIsOpen={false} />
+      {process.env.NODE_ENV !== 'production' && <ReactQueryDevtools initialIsOpen={false} />}
     </QueryClientProvider>
   )
 }

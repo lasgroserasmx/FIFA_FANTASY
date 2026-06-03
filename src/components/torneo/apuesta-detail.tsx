@@ -1,6 +1,8 @@
 'use client'
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import { format, parseISO } from 'date-fns'
+import { es } from 'date-fns/locale'
 import {
   getApuesta, getMembers, joinApuesta, getCurrentUserId, getCreatorProfile,
   type ApuestaRow, type ApuestaMember, type ActivityType,
@@ -316,7 +318,7 @@ function MemberRow({ userId, isCreator, isMe, joinedAt, profile }: {
         </div>
         {joinedAt && (
           <p className="text-[10px] text-muted-foreground">
-            Se unió {new Date(joinedAt).toLocaleDateString('es-MX', { day: 'numeric', month: 'short' })}
+            Se unió {format(parseISO(joinedAt), 'd MMM', { locale: es })}
           </p>
         )}
       </div>

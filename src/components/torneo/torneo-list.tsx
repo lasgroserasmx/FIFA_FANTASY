@@ -2,6 +2,8 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
+import { format, parseISO } from 'date-fns'
+import { es } from 'date-fns/locale'
 import { listTorneos, createTorneo, deleteTorneo, getTorneo } from '@/services/torneo'
 import type { TorneoRow } from '@/services/torneo'
 import { GAME_TYPES } from '@/lib/torneo-data'
@@ -266,7 +268,7 @@ export function TorneoListPage() {
 
                   <div className="flex items-center gap-4 text-xs text-muted-foreground">
                     <span>👥 {t.player_count} jugadores</span>
-                    <span>🕐 {new Date(t.updated_at).toLocaleDateString('es-MX', { day: 'numeric', month: 'short' })}</span>
+                    <span>🕐 {format(parseISO(t.updated_at), 'd MMM', { locale: es })}</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <Link
